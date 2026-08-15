@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T09:41:09.707Z",
+  "updated": "2026-08-15T09:46:42.665Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -327,6 +327,108 @@
       "par": 0.667,
       "updatedAt": "2026-08-15T09:41:08.712Z",
       "order": 3
+    },
+    {
+      "id": "bmsu6tmvg",
+      "title": "الكويت في زمن الأربعينيات والخمسينيات",
+      "author": "حمد عبدالمحسن الحمد",
+      "year": "١٤٤٧ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#c9c19b",
+      "hidden": false,
+      "sar": 0.088,
+      "cover": {
+        "front": "images/bmsu6tmvg/front-msu6yrfj.jpg",
+        "spine": "images/bmsu6tmvg/spine-msu6yrfj.jpg",
+        "back": "images/bmsu6tmvg/back-msu6yrfj.jpg"
+      },
+      "ar": 0.709,
+      "pages": [
+        {
+          "r": "images/bmsu6tmvg/p01-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p01-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p02-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p02-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p03-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p03-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p04-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p04-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p05-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p05-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p06-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p06-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p07-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p07-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p08-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p08-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p09-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p09-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p10-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p10-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p11-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p11-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p12-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p12-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p13-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p13-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p14-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p14-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p15-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p15-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p16-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p16-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p17-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p17-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p18-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p18-l-msu6yrfj.jpg"
+        },
+        {
+          "r": "images/bmsu6tmvg/p19-r-msu6yrfj.jpg",
+          "l": "images/bmsu6tmvg/p19-l-msu6yrfj.jpg"
+        }
+      ],
+      "par": 0.709,
+      "updatedAt": "2026-08-15T09:46:41.648Z",
+      "order": 4
     }
   ]
 }
