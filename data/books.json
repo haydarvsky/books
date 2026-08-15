@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T08:48:05.993Z",
+  "updated": "2026-08-15T09:11:13.555Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -73,71 +73,6 @@
       "par": 0.715,
       "updatedAt": "2026-08-15T08:46:05.839Z",
       "order": 0
-    },
-    {
-      "id": "bmsu4trpg",
-      "title": "التعليم الواعي",
-      "author": "أحمد فيصل",
-      "year": "١٤٤٧ه - ٢٠٢٦م",
-      "note": "المسؤولية الأخلاقية لبناء الإنسان في ضوء فلسفة باولو فريري",
-      "work": [
-        "cover",
-        "typeset"
-      ],
-      "thick": 3,
-      "color": "#675642",
-      "hidden": false,
-      "cover": {
-        "front": "images/bmsu4trpg/front-msu4ve8e.jpg",
-        "spine": "images/bmsu4trpg/spine-msu4ve8e.jpg",
-        "back": "images/bmsu4trpg/back-msu4ve8e.jpg"
-      },
-      "ar": 0.709,
-      "pages": [
-        {
-          "r": "images/bmsu4trpg/p01-r-msu4ve8e.jpg",
-          "l": "images/bmsu4trpg/p01-l-msu4ve8e.jpg"
-        },
-        {
-          "r": "images/bmsu4trpg/p02-r-msu4ve8e.jpg",
-          "l": "images/bmsu4trpg/p02-l-msu4ve8e.jpg"
-        },
-        {
-          "r": "images/bmsu4trpg/p03-r-msu4ve8e.jpg",
-          "l": "images/bmsu4trpg/p03-l-msu4ve8e.jpg"
-        },
-        {
-          "r": "images/bmsu4trpg/p04-r-msu4ve8e.jpg",
-          "l": "images/bmsu4trpg/p04-l-msu4ve8e.jpg"
-        },
-        {
-          "r": "images/bmsu4trpg/p05-r-msu4ve8e.jpg",
-          "l": "images/bmsu4trpg/p05-l-msu4ve8e.jpg"
-        },
-        {
-          "r": "images/bmsu4trpg/p06-r-msu4ve8e.jpg",
-          "l": "images/bmsu4trpg/p06-l-msu4ve8e.jpg"
-        },
-        {
-          "r": "images/bmsu4trpg/p07-r-msu4ve8e.jpg",
-          "l": "images/bmsu4trpg/p07-l-msu4ve8e.jpg"
-        },
-        {
-          "r": "images/bmsu4trpg/p08-r-msu4ve8e.jpg",
-          "l": "images/bmsu4trpg/p08-l-msu4ve8e.jpg"
-        },
-        {
-          "r": "images/bmsu4trpg/p09-r-msu4ve8e.jpg",
-          "l": "images/bmsu4trpg/p09-l-msu4ve8e.jpg"
-        },
-        {
-          "r": "images/bmsu4trpg/p10-r-msu4ve8e.jpg",
-          "l": "images/bmsu4trpg/p10-l-msu4ve8e.jpg"
-        }
-      ],
-      "par": 0.715,
-      "updatedAt": "2026-08-15T08:48:04.827Z",
-      "order": 1
     }
   ]
 }
