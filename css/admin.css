@@ -81,6 +81,8 @@ legend{padding:0 8px;font-weight:700;color:var(--green)}
 .work{display:flex;gap:18px;flex-wrap:wrap}
 .work.vis{flex-direction:column;gap:6px}
 .vis-hint{font-weight:400;font-size:.9rem}
+.thick-auto{font-weight:400;color:var(--green)}
+#thickWrap.auto input[type=range]{display:none}
 .chk input[type=radio]{width:18px;height:18px;accent-color:var(--green)}
 .item.is-hidden{background:repeating-linear-gradient(135deg,#fff 0 12px,#f6f1e6 12px 24px)}
 .item.is-hidden .thumb{filter:grayscale(.7);opacity:.75}

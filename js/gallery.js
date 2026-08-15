@@ -206,7 +206,7 @@
     const ch = Math.min(stageR.height - 50, 520);
     const cw = Math.min(ch * ar, stageR.width * 0.7);
     const thick = Math.min(5, Math.max(1, +b.thick || 2));
-    const ct = Math.round((14 + thick * 7) * (ch / 230) * 0.9);
+    const ct = b.sar > 0 ? Math.round(Math.max(10, Math.min(ch * 0.45, ch * b.sar))) : Math.round((14 + thick * 7) * (ch / 230) * 0.9);
     cover3d.style.cssText = `--cw:${cw}px;--ch:${ch}px;--ct:${ct}px;--c:${b.color || '#0F4C3A'}`;
     const face = (id, src, txt) => { const el = $(id); el.innerHTML = src ? `<img src="${esc(src)}" alt="">` : `<div class="noimg">${esc(txt || '')}</div>`; el.dataset.src = src || ''; };
     face('#cfFront', b.cover?.front, b.title);

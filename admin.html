@@ -6,7 +6,7 @@
 <title>لوحة التحكم — معرض الكتب</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="img/logo-dark.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/admin.css?v=5">
+<link rel="stylesheet" href="css/admin.css?v=6">
 </head>
 <body>
 
@@ -98,8 +98,9 @@
           <div class="dz" data-slot="back"><input type="file" accept="image/*"><div class="dz-in"><span class="dz-ico">🖼</span><b>الغلاف الخلفي</b><small>اختياري</small></div><img class="dz-prev" alt=""><button type="button" class="dz-x" title="إزالة">✕</button></div>
         </div>
         <div class="grid2 small">
-          <label><span>سماكة الكتاب على الرفّ <output id="thickOut">٣</output></span>
-            <input type="range" id="fThick" min="1" max="5" value="3"></label>
+          <label id="thickWrap"><span>سماكة الكتاب على الرفّ <output id="thickOut">٣</output></span>
+            <input type="range" id="fThick" min="1" max="5" value="3">
+            <span class="muted thick-auto" id="thickAuto" hidden>✓ تُحسب آليًّا من صورة الكعب (عرضه ÷ ارتفاعه) — على الرفّ وفي المجسّم.</span></label>
           <label><span>لون الكعب (يُستخرج من الغلاف تلقائيًّا)</span>
             <span class="color-row"><input type="color" id="fColor" value="#0F4C3A"><button type="button" class="btn btn-ghost btn-sm" id="btnAutoColor">🎨 تلقائي</button></span></label>
         </div>
@@ -134,8 +135,8 @@
 </div>
 <div class="toast" id="toast" hidden></div>
 
-<script src="js/gh-api.js?v=5"></script>
-<script src="js/imgtools.js?v=5"></script>
-<script src="js/admin.js?v=5"></script>
+<script src="js/gh-api.js?v=6"></script>
+<script src="js/imgtools.js?v=6"></script>
+<script src="js/admin.js?v=6"></script>
 </body>
 </html>

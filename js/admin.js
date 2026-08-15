@@ -166,7 +166,7 @@
     ED.pairs = (b?.pages || []).map(p => ({ r: newSlot(p.r), l: newSlot(p.l) }));
     renderPairs();
     $('#btnDelete').hidden = !b;
-    syncSections();
+    syncSections(); syncThick();
     editor.hidden = false; updateSaveHint();
     editor.scrollIntoView({ behavior: 'smooth', block: 'start' });
     setTimeout(() => F.title.focus(), 300);
@@ -186,6 +186,7 @@
     $('#coverHint').textContent = c ? 'ارفع الغلاف الأمامي (إلزامي)، والكعب والخلفي إن وُجدا. تُضغط الصور تلقائيًّا قبل الرفع.'
       : 'اختياري: صورة الغلاف كما طُبع ليظهر الكتاب على الرفّ بشكله الحقيقي؛ وإن تركتها فُرض غلاف بلون الكعب وعنوان الكتاب.';
     $$('.dz[data-slot=spine],.dz[data-slot=back]').forEach(d => d.hidden = !c);
+    if (ED) syncThick();
   }
 
   /* --- خانات الصور --- */
@@ -207,7 +208,8 @@
     dz.addEventListener('drop', async e => { e.preventDefault(); dz.classList.remove('over'); const f = e.dataTransfer.files[0]; if (!f) return; await assignFile(getSlot(), f); paintSlot(dz, getSlot()); after && after(); });
     const x = $('.dz-x', dz); if (x) x.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); const s = getSlot(); s.file = null; s.removed = !!s.path; s.preview = ''; paintSlot(dz, s); after && after(); });
   }
-  ['front', 'spine', 'back'].forEach(k => bindDz($(`.dz[data-slot=${k}]`), () => ED.slots[k], k === 'front' ? autoColorIfAuto : null));
+  ['front', 'spine', 'back'].forEach(k => bindDz($(`.dz[data-slot=${k}]`), () => ED.slots[k], k === 'front' ? autoColorIfAuto : k === 'spine' ? syncThick : null));
+  function syncThick() { const has = ED && slotHas(ED.slots.spine) && F.wCover.checked; $('#thickWrap').classList.toggle('auto', !!has); $('#thickAuto').hidden = !has; }
   async function autoColorIfAuto() { if (ED && ED.colorAuto) autoColor(); }
   async function autoColor() {
     const s = ED?.slots.front; if (!s) return;
@@ -300,6 +302,7 @@
         const sp = await prep(ED.slots.spine, `images/${ED.id}/spine-${ts}.jpg`, { maxEdge: 2000, quality: .88 }); if (sp) { cover.spine = sp.path; if (sp.w) b.sar = +(sp.w / sp.h).toFixed(4); } else delete b.sar;
         const bk = await prep(ED.slots.back, `images/${ED.id}/back-${ts}.jpg`, { maxEdge: 2000, quality: .88 }); if (bk) cover.back = bk.path;
       } else { ['spine', 'back'].forEach(k => { const s = ED.slots[k]; if (s.path) deletes.add(s.path); }); }
+      if (cover.spine && !b.sar) { try { const im = new Image(); await new Promise((res, rej) => { im.onload = res; im.onerror = rej; im.src = cover.spine; }); if (im.naturalHeight) b.sar = +(im.naturalWidth / im.naturalHeight).toFixed(4); } catch { } }
       b.cover = cover; if (ar) b.ar = ar;
       // الصفحات
       const pages = []; let par = ED.orig?.par || 0;
