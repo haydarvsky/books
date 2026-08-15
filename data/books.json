@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T09:14:47.041Z",
+  "updated": "2026-08-15T09:21:04.947Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -175,6 +175,76 @@
       "par": 0.667,
       "updatedAt": "2026-08-15T09:14:46.113Z",
       "order": 1
+    },
+    {
+      "id": "bmsu5w29j",
+      "title": "طفيات من ديوان الشيخ صالح الكواز",
+      "author": "حيدر المعاتيق",
+      "year": "١٤٤٨ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#63643c",
+      "hidden": false,
+      "sar": 0.058,
+      "cover": {
+        "front": "images/bmsu5w29j/front-msu61tey.jpg",
+        "spine": "images/bmsu5w29j/spine-msu61tey.jpg",
+        "back": "images/bmsu5w29j/back-msu61tey.jpg"
+      },
+      "ar": 0.709,
+      "pages": [
+        {
+          "r": "images/bmsu5w29j/p01-r-msu61tey.jpg",
+          "l": "images/bmsu5w29j/p01-l-msu61tey.jpg"
+        },
+        {
+          "r": "images/bmsu5w29j/p02-r-msu61tey.jpg",
+          "l": "images/bmsu5w29j/p02-l-msu61tey.jpg"
+        },
+        {
+          "r": "images/bmsu5w29j/p03-r-msu61tey.jpg",
+          "l": "images/bmsu5w29j/p03-l-msu61tey.jpg"
+        },
+        {
+          "r": "images/bmsu5w29j/p04-r-msu61tey.jpg",
+          "l": "images/bmsu5w29j/p04-l-msu61tey.jpg"
+        },
+        {
+          "r": "images/bmsu5w29j/p05-r-msu61tey.jpg",
+          "l": "images/bmsu5w29j/p05-l-msu61tey.jpg"
+        },
+        {
+          "r": "images/bmsu5w29j/p06-r-msu61tey.jpg",
+          "l": "images/bmsu5w29j/p06-l-msu61tey.jpg"
+        },
+        {
+          "r": "images/bmsu5w29j/p07-r-msu61tey.jpg",
+          "l": "images/bmsu5w29j/p07-l-msu61tey.jpg"
+        },
+        {
+          "r": "images/bmsu5w29j/p08-r-msu61tey.jpg",
+          "l": "images/bmsu5w29j/p08-l-msu61tey.jpg"
+        },
+        {
+          "r": "images/bmsu5w29j/p09-r-msu61tey.jpg",
+          "l": "images/bmsu5w29j/p09-l-msu61tey.jpg"
+        },
+        {
+          "r": "images/bmsu5w29j/p10-r-msu61tey.jpg",
+          "l": "images/bmsu5w29j/p10-l-msu61tey.jpg"
+        },
+        {
+          "r": "images/bmsu5w29j/p11-r-msu61tey.jpg",
+          "l": "images/bmsu5w29j/p11-l-msu61tey.jpg"
+        }
+      ],
+      "par": 0.709,
+      "updatedAt": "2026-08-15T09:21:04.159Z",
+      "order": 2
     }
   ]
 }
