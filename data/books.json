@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T09:46:42.665Z",
+  "updated": "2026-08-15T10:05:26.829Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -429,6 +429,88 @@
       "par": 0.709,
       "updatedAt": "2026-08-15T09:46:41.648Z",
       "order": 4
+    },
+    {
+      "id": "bmsu7kf3m",
+      "title": "كعبة الكون",
+      "author": "حيدر المعاتيق",
+      "year": "٢٠٢٤ م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#38848f",
+      "hidden": false,
+      "sar": 0.062,
+      "cover": {
+        "front": "images/bmsu7kf3m/front-msu7mv3m.jpg",
+        "spine": "images/bmsu7kf3m/spine-msu7mv3m.jpg",
+        "back": "images/bmsu7kf3m/back-msu7mv3m.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmsu7kf3m/p01-r-msu7mv3m.jpg",
+          "l": "images/bmsu7kf3m/p01-l-msu7mv3m.jpg"
+        },
+        {
+          "r": "images/bmsu7kf3m/p02-r-msu7mv3m.jpg",
+          "l": "images/bmsu7kf3m/p02-l-msu7mv3m.jpg"
+        },
+        {
+          "r": "images/bmsu7kf3m/p03-r-msu7mv3m.jpg",
+          "l": "images/bmsu7kf3m/p03-l-msu7mv3m.jpg"
+        },
+        {
+          "r": "images/bmsu7kf3m/p04-r-msu7mv3m.jpg",
+          "l": "images/bmsu7kf3m/p04-l-msu7mv3m.jpg"
+        },
+        {
+          "r": "images/bmsu7kf3m/p05-r-msu7mv3m.jpg",
+          "l": "images/bmsu7kf3m/p05-l-msu7mv3m.jpg"
+        },
+        {
+          "r": "images/bmsu7kf3m/p06-r-msu7mv3m.jpg",
+          "l": "images/bmsu7kf3m/p06-l-msu7mv3m.jpg"
+        },
+        {
+          "r": "images/bmsu7kf3m/p07-r-msu7mv3m.jpg",
+          "l": "images/bmsu7kf3m/p07-l-msu7mv3m.jpg"
+        },
+        {
+          "r": "images/bmsu7kf3m/p08-r-msu7mv3m.jpg",
+          "l": "images/bmsu7kf3m/p08-l-msu7mv3m.jpg"
+        },
+        {
+          "r": "images/bmsu7kf3m/p09-r-msu7mv3m.jpg",
+          "l": "images/bmsu7kf3m/p09-l-msu7mv3m.jpg"
+        },
+        {
+          "r": "images/bmsu7kf3m/p10-r-msu7mv3m.jpg",
+          "l": "images/bmsu7kf3m/p10-l-msu7mv3m.jpg"
+        },
+        {
+          "r": "images/bmsu7kf3m/p11-r-msu7mv3m.jpg",
+          "l": "images/bmsu7kf3m/p11-l-msu7mv3m.jpg"
+        },
+        {
+          "r": "images/bmsu7kf3m/p12-r-msu7mv3m.jpg",
+          "l": "images/bmsu7kf3m/p12-l-msu7mv3m.jpg"
+        },
+        {
+          "r": "images/bmsu7kf3m/p13-r-msu7mv3m.jpg",
+          "l": "images/bmsu7kf3m/p13-l-msu7mv3m.jpg"
+        },
+        {
+          "r": "images/bmsu7kf3m/p14-r-msu7mv3m.jpg",
+          "l": "images/bmsu7kf3m/p14-l-msu7mv3m.jpg"
+        }
+      ],
+      "par": 0.664,
+      "updatedAt": "2026-08-15T10:05:25.727Z",
+      "order": 5
     }
   ]
 }
