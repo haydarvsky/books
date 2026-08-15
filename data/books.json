@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T20:42:53.923Z",
+  "updated": "2026-08-15T20:46:02.807Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -947,6 +947,52 @@
       "par": 0.705,
       "updatedAt": "2026-08-15T20:42:52.516Z",
       "order": 13
+    },
+    {
+      "id": "bmsuufjd0",
+      "title": "صفر صفر تسعة",
+      "author": "داود عبدالعزيز غلوم",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#2d3842",
+      "hidden": false,
+      "sar": 0.089,
+      "cover": {
+        "front": "images/bmsuufjd0/front-msuuiosp.jpg",
+        "spine": "images/bmsuufjd0/spine-msuuiosp.jpg",
+        "back": "images/bmsuufjd0/back-msuuiosp.jpg"
+      },
+      "ar": 0.705,
+      "pages": [
+        {
+          "r": "images/bmsuufjd0/p01-r-msuuiosp.jpg",
+          "l": "images/bmsuufjd0/p01-l-msuuiosp.jpg"
+        },
+        {
+          "r": "images/bmsuufjd0/p02-r-msuuiosp.jpg",
+          "l": "images/bmsuufjd0/p02-l-msuuiosp.jpg"
+        },
+        {
+          "r": "images/bmsuufjd0/p03-r-msuuiosp.jpg",
+          "l": "images/bmsuufjd0/p03-l-msuuiosp.jpg"
+        },
+        {
+          "r": "images/bmsuufjd0/p04-r-msuuiosp.jpg",
+          "l": "images/bmsuufjd0/p04-l-msuuiosp.jpg"
+        },
+        {
+          "r": "images/bmsuufjd0/p05-r-msuuiosp.jpg",
+          "l": "images/bmsuufjd0/p05-l-msuuiosp.jpg"
+        }
+      ],
+      "par": 0.705,
+      "updatedAt": "2026-08-15T20:46:01.652Z",
+      "order": 14
     }
   ]
 }
