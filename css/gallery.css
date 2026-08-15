@@ -77,7 +77,7 @@ img{display:block;max-width:100%}
 .slot{
   position:relative;height:var(--h);width:var(--sw,var(--t));
   transform-style:preserve-3d;flex:none;
-  animation:arrive .8s cubic-bezier(.2,.8,.2,1) both;
+  animation:arrive .8s cubic-bezier(.2,.8,.2,1) backwards; /* backwards لا both: التعبئة الأمامية كانت تحجب النقر على الوجوه */
 }
 @keyframes arrive{from{opacity:0;transform:translateY(-40px) translateZ(120px)}to{opacity:1;transform:none}}
 .book{
