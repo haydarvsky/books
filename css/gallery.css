@@ -256,7 +256,8 @@ img{display:block;max-width:100%}
 /* الكتاب المفتوح */
 .book-open-wrap{display:flex;align-items:center;gap:10px;justify-content:center;perspective:2400px}
 .book-open{
-  position:relative;display:flex;height:min(560px,68vh);aspect-ratio:calc(2*var(--par,0.7));max-width:100%;
+  --bh:min(560px,68vh);
+  position:relative;display:flex;width:min(100%,calc(var(--bh) * 2 * var(--par,0.7)));aspect-ratio:calc(2*var(--par,0.7));height:auto;
   transform-style:preserve-3d;box-shadow:0 40px 80px -30px rgba(0,0,0,.65);border-radius:4px;
 }
 .pg{width:50%;height:100%;background:#fff;overflow:hidden;position:relative;cursor:zoom-in}
@@ -307,8 +308,13 @@ img{display:block;max-width:100%}
   .modal-box{padding:16px 14px 20px}
   .m-hdr h2{font-size:1.4rem}
   .cover-stage{height:min(420px,60vh)}
-  .book-open{height:min(360px,52vh)}
-  .pg-nav{width:38px;height:38px;font-size:1.5rem}
+  .book-open{--bh:min(360px,52vh)}
+  .book-open-wrap{position:relative;gap:0}
+  .pg-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:44px;height:44px;font-size:1.7rem;opacity:.9;box-shadow:0 6px 16px rgba(0,0,0,.4)}
+  .pg-prev{right:-6px}
+  .pg-next{left:-6px}
+  .pg-nav:disabled{opacity:.25}
+  .pane-pages{padding:0 6px}
   .hint{font-size:.9rem}
   .shelf-row{gap:8px;padding:0 6px}
   .slot:hover .book,.slot.is-peek .book{transform:translateZ(70px) translateY(-12px) rotateY(84deg)}
