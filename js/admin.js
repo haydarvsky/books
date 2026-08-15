@@ -297,7 +297,7 @@
       const fr = await prep(ED.slots.front, `images/${ED.id}/front-${ts}.jpg`, { maxEdge: 2000, quality: .88 });
       if (fr) { cover.front = fr.path; if (fr.w) ar = +(fr.w / fr.h).toFixed(3); }
       if (showCover) {
-        const sp = await prep(ED.slots.spine, `images/${ED.id}/spine-${ts}.jpg`, { maxEdge: 2000, quality: .88 }); if (sp) cover.spine = sp.path;
+        const sp = await prep(ED.slots.spine, `images/${ED.id}/spine-${ts}.jpg`, { maxEdge: 2000, quality: .88 }); if (sp) { cover.spine = sp.path; if (sp.w) b.sar = +(sp.w / sp.h).toFixed(4); } else delete b.sar;
         const bk = await prep(ED.slots.back, `images/${ED.id}/back-${ts}.jpg`, { maxEdge: 2000, quality: .88 }); if (bk) cover.back = bk.path;
       } else { ['spine', 'back'].forEach(k => { const s = ED.slots[k]; if (s.path) deletes.add(s.path); }); }
       b.cover = cover; if (ar) b.ar = ar;

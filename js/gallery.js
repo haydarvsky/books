@@ -45,8 +45,17 @@
       console.warn('تعذّر تحميل البيانات', e);
       BOOKS = [];
     }
+    await measureSpines();
     loadingEl.hidden = true;
     render();
+  }
+  /* يقيس نسبة عرض الكعب إلى ارتفاعه من صورته إن لم تكن محفوظة في البيانات */
+  function measureSpines() {
+    const jobs = BOOKS.filter(b => b.cover?.spine && !b.sar).map(b => new Promise(res => {
+      const im = new Image(); const done = () => { if (im.naturalWidth && im.naturalHeight) b.sar = im.naturalWidth / im.naturalHeight; res(); };
+      im.onload = done; im.onerror = res; im.src = b.cover.spine; setTimeout(res, 4000);
+    }));
+    return Promise.all(jobs);
   }
 
   /* ---------- بناء الرفوف ---------- */
@@ -57,11 +66,12 @@
     const ar = Math.min(0.9, Math.max(0.55, +b.ar || 0.68));
     const w = Math.round(h * ar);
     const thick = Math.min(5, Math.max(1, +b.thick || 2));
-    const t = Math.round((18 + thick * 8) * (baseH / 230));
+    let t = Math.round((18 + thick * 8) * (baseH / 230));
+    if (b.sar > 0) t = Math.round(Math.min(h * 0.45, Math.max(10, h * b.sar))); // من صورة الكعب نفسها
     return { h, w, t };
   }
   const MOB = () => innerWidth <= 820;
-  function slotWidth(b) { const d = bookDims(b); return d.t + d.w * (MOB() ? 0.22 : 0.34) + (MOB() ? 10 : 16); }
+  function slotWidth(b) { const d = bookDims(b); return d.t + (MOB() ? 8 : 12); }
 
   function bookEl(b) {
     const d = bookDims(b);
@@ -69,7 +79,7 @@
     const tc = textOn(c);
     const slot = document.createElement('div');
     slot.className = 'slot';
-    slot.style.cssText = `--w:${d.w}px;--h:${d.h}px;--t:${d.t}px;--c:${c};--tc:${tc};--ex:${MOB() ? .22 : .34}`;
+    slot.style.cssText = `--w:${d.w}px;--h:${d.h}px;--t:${d.t}px;--c:${c};--tc:${tc};--ex:0`;
     slot.dataset.id = b.id;
     const front = b.cover?.front, spine = b.cover?.spine, back = b.cover?.back;
     const tags = (b.work || []).map(w => `<span class="tag t-${w}">${workLabel[w] || w}</span>`).join('');
