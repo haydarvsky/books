@@ -186,7 +186,9 @@
   viewsNav.addEventListener('click', e => { const b = e.target.closest('button[data-v]'); if (b) setView(b.dataset.v); });
   $$('button', viewsNav).forEach(b => b.classList.toggle('is-on', b.dataset.v === VIEW));
 
-  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(render, 180); });
+  // إعادة الرسم عند تغيّر العرض فقط — على الجوال يتغيّر الارتفاع باستمرار مع شريط العنوان أثناء التمرير، ولا داعي لإعادة بناء الرفّ حينها
+  let rt, lastW = innerWidth;
+  addEventListener('resize', () => { if (innerWidth === lastW) return; clearTimeout(rt); rt = setTimeout(() => { if (innerWidth !== lastW) { lastW = innerWidth; render(); } }, 250); });
 
   /* ---------- حركة الرفّ مع الفأرة ---------- */
   let tx = 0, ty = 0, cx = 0, cy = 0, raf = null, baseX = VIEW === 'stack' ? 14 : 0, cbx = 0;
