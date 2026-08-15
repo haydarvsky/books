@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T11:13:47.824Z",
+  "updated": "2026-08-15T11:16:12.986Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -634,6 +634,45 @@
       "par": 0.667,
       "updatedAt": "2026-08-15T11:13:46.556Z",
       "order": 7
+    },
+    {
+      "id": "bmsua3od5",
+      "title": "تجسسات لا شعورية",
+      "author": "حسين",
+      "year": "",
+      "note": "هذه ليست مجموعة قصصية",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#556474",
+      "hidden": false,
+      "featured": true,
+      "sar": 0.062,
+      "cover": {
+        "front": "images/bmsua3od5/front-msua5vpk.jpg",
+        "spine": "images/bmsua3od5/spine-msua5vpk.jpg",
+        "back": "images/bmsua3od5/back-msua5vpk.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmsua3od5/p01-r-msua5vpk.jpg",
+          "l": "images/bmsua3od5/p01-l-msua5vpk.jpg"
+        },
+        {
+          "r": "images/bmsua3od5/p02-r-msua5vpk.jpg",
+          "l": "images/bmsua3od5/p02-l-msua5vpk.jpg"
+        },
+        {
+          "r": "images/bmsua3od5/p03-r-msua5vpk.jpg",
+          "l": "images/bmsua3od5/p03-l-msua5vpk.jpg"
+        }
+      ],
+      "par": 0.667,
+      "updatedAt": "2026-08-15T11:16:11.689Z",
+      "order": 8
     }
   ]
 }
