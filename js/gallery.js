@@ -67,7 +67,7 @@
     const w = Math.round(h * ar);
     const thick = Math.min(5, Math.max(1, +b.thick || 2));
     let t = Math.round((18 + thick * 8) * (baseH / 230));
-    if (b.sar > 0) t = Math.round(Math.min(h * 0.45, Math.max(10, h * b.sar))); // من صورة الكعب نفسها
+    if (b.sar > 0) t = Math.round(Math.min(h * 0.45, Math.max(20, h * b.sar))); // من صورة الكعب نفسها
     return { h, w, t };
   }
   const MOB = () => innerWidth <= 820;
