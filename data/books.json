@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T20:46:02.807Z",
+  "updated": "2026-08-15T20:49:32.492Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -993,6 +993,56 @@
       "par": 0.705,
       "updatedAt": "2026-08-15T20:46:01.652Z",
       "order": 14
+    },
+    {
+      "id": "bmsuujzro",
+      "title": "حسن بن رقية",
+      "author": "حسن الفيلكاوي",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#68581b",
+      "hidden": false,
+      "sar": 0.062,
+      "cover": {
+        "front": "images/bmsuujzro/front-msuumqt4.jpg",
+        "spine": "images/bmsuujzro/spine-msuumqt4.jpg",
+        "back": "images/bmsuujzro/back-msuumqt4.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmsuujzro/p01-r-msuumqt4.jpg",
+          "l": "images/bmsuujzro/p01-l-msuumqt4.jpg"
+        },
+        {
+          "r": "images/bmsuujzro/p02-r-msuumqt4.jpg",
+          "l": "images/bmsuujzro/p02-l-msuumqt4.jpg"
+        },
+        {
+          "r": "images/bmsuujzro/p03-r-msuumqt4.jpg",
+          "l": "images/bmsuujzro/p03-l-msuumqt4.jpg"
+        },
+        {
+          "r": "images/bmsuujzro/p04-r-msuumqt4.jpg",
+          "l": "images/bmsuujzro/p04-l-msuumqt4.jpg"
+        },
+        {
+          "r": "images/bmsuujzro/p05-r-msuumqt4.jpg",
+          "l": "images/bmsuujzro/p05-l-msuumqt4.jpg"
+        },
+        {
+          "r": "images/bmsuujzro/p06-r-msuumqt4.jpg",
+          "l": "images/bmsuujzro/p06-l-msuumqt4.jpg"
+        }
+      ],
+      "par": 0.667,
+      "updatedAt": "2026-08-15T20:49:31.424Z",
+      "order": 15
     }
   ]
 }
