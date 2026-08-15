@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لوحة التحكم — معرض الكتب</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/logo-dark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/admin.css?v=1">
+</head>
+<body>
+
+<header class="top">
+  <img src="img/logo-dark.svg" alt="حيدر" class="logo">
+  <div class="top-t">
+    <h1>لوحة تحكم المعرض</h1>
+    <p>أضِف كتبك وأعمالك — وسيتحدّث المعرض تلقائيًّا بعد النشر</p>
+  </div>
+  <a class="btn btn-ghost" href="./" target="_blank">↗ فتح المعرض</a>
+</header>
+
+<main class="wrap">
+
+  <!-- الإعداد -->
+  <section class="card" id="setup">
+    <div class="card-h">
+      <h2>الاتصال بـGitHub</h2>
+      <span class="status" id="ghStatus">غير متصل</span>
+    </div>
+    <div class="setup-row">
+      <input type="password" id="token" placeholder="ألصق هنا رمز الوصول (Personal Access Token)" autocomplete="off" spellcheck="false">
+      <button class="btn" id="btnSaveToken">حفظ واختبار</button>
+      <button class="btn btn-ghost" id="btnForget" title="حذف الرمز من هذا المتصفح">نسيان</button>
+    </div>
+    <details class="help">
+      <summary>كيف أُنشئ رمز الوصول؟ (مرة واحدة فقط)</summary>
+      <ol>
+        <li>افتح <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a> (رمز دقيق الصلاحيات — Fine-grained).</li>
+        <li>الاسم: <code>books-gallery</code> · المدة: اختر أطول مدة (أو بلا انتهاء).</li>
+        <li><b>Repository access</b>: «Only select repositories» ← اختر <code>books</code>.</li>
+        <li><b>Permissions ← Repository permissions ← Contents</b>: <b>Read and write</b>. (لا حاجة لغيرها.)</li>
+        <li>اضغط Generate token وانسخه هنا. يُحفظ في متصفحك هذا فقط ولا يُرسل إلا إلى GitHub.</li>
+      </ol>
+      <p class="muted">يصلح أيضًا الرمز الكلاسيكي (ghp_…) بصلاحية <code>repo</code>.</p>
+    </details>
+  </section>
+
+  <!-- القائمة -->
+  <section class="card" id="listCard">
+    <div class="card-h">
+      <h2>الكتب <span class="count" id="count"></span></h2>
+      <div class="row-btns">
+        <button class="btn btn-ghost" id="btnReload" title="إعادة التحميل من GitHub">⟳ تحديث</button>
+        <button class="btn btn-gold" id="btnSaveOrder" hidden>💾 حفظ الترتيب</button>
+        <button class="btn btn-primary" id="btnAdd">➕ إضافة كتاب</button>
+      </div>
+    </div>
+    <p class="muted" id="listHint">اسحب الكتاب من مقبضه أو استعمل الأسهم لتغيير ترتيبه على الرفّ.</p>
+    <div class="list" id="list"></div>
+    <div class="empty-list" id="emptyList" hidden>لا كتب بعد — ابدأ بإضافة أول كتاب.</div>
+  </section>
+
+  <!-- المحرّر -->
+  <section class="card editor" id="editor" hidden>
+    <div class="card-h">
+      <h2 id="edTitle">إضافة كتاب</h2>
+      <button class="btn btn-ghost" id="btnCancel">✕ إلغاء</button>
+    </div>
+    <form id="form" novalidate>
+      <div class="grid2">
+        <label><span>اسم الكتاب <span class="req">*</span></span><input id="fTitle" required placeholder="مثال: ديوان الصَّبا"></label>
+        <label><span>المؤلف</span><input id="fAuthor" placeholder="مثال: سالم بن ناصر"></label>
+        <label><span>السنة / الطبعة</span><input id="fYear" placeholder="مثال: ١٤٤٦هـ · الطبعة الأولى"></label>
+        <label><span>نبذة عن العمل</span><input id="fNote" placeholder="سطر يشرح ما عملته في هذا الكتاب"></label>
+      </div>
+
+      <fieldset class="work">
+        <legend>نوع العمل <span class="req">*</span></legend>
+        <label class="chk"><input type="checkbox" id="wCover"> <span>تصميم الغلاف</span></label>
+        <label class="chk"><input type="checkbox" id="wTypeset"> <span>التنضيد الداخلي</span></label>
+      </fieldset>
+
+      <!-- الغلاف -->
+      <fieldset class="sec" id="secCover">
+        <legend id="coverLegend">صور الغلاف</legend>
+        <p class="muted" id="coverHint">ارفع الغلاف الأمامي (إلزامي)، والكعب والخلفي إن وُجدا. تُضغط الصور تلقائيًّا قبل الرفع.</p>
+        <div class="dz-row">
+          <div class="dz" data-slot="front"><input type="file" accept="image/*"><div class="dz-in"><span class="dz-ico">🖼</span><b>الغلاف الأمامي</b><small>اسحب الصورة هنا أو اضغط</small></div><img class="dz-prev" alt=""><button type="button" class="dz-x" title="إزالة">✕</button></div>
+          <div class="dz dz-spine" data-slot="spine"><input type="file" accept="image/*"><div class="dz-in"><span class="dz-ico">▮</span><b>الكعب</b><small>اختياري</small></div><img class="dz-prev" alt=""><button type="button" class="dz-x" title="إزالة">✕</button></div>
+          <div class="dz" data-slot="back"><input type="file" accept="image/*"><div class="dz-in"><span class="dz-ico">🖼</span><b>الغلاف الخلفي</b><small>اختياري</small></div><img class="dz-prev" alt=""><button type="button" class="dz-x" title="إزالة">✕</button></div>
+        </div>
+        <div class="grid2 small">
+          <label><span>سماكة الكتاب على الرفّ <output id="thickOut">٣</output></span>
+            <input type="range" id="fThick" min="1" max="5" value="3"></label>
+          <label><span>لون الكعب (يُستخرج من الغلاف تلقائيًّا)</span>
+            <span class="color-row"><input type="color" id="fColor" value="#0F4C3A"><button type="button" class="btn btn-ghost btn-sm" id="btnAutoColor">🎨 تلقائي</button></span></label>
+        </div>
+      </fieldset>
+
+      <!-- التنضيد -->
+      <fieldset class="sec" id="secPages">
+        <legend>صفحات من داخل الكتاب</legend>
+        <p class="muted">كل «فتحة» صفحتان: يمين ويسار. ارفع الصور مرّةً واحدة وسترتَّب تلقائيًّا (الأولى يمين، الثانية يسار، وهكذا) — أو أضِف كل فتحة بيدك.</p>
+        <div class="dz dz-multi" id="dzMulti"><input type="file" accept="image/*" multiple><div class="dz-in"><span class="dz-ico">📚</span><b>اسحب صور الصفحات هنا</b><small>بعدد زوجي (صفحتان، أربع، ست، ثمانٍ، عشر…)</small></div></div>
+        <div class="pairs" id="pairs"></div>
+        <button type="button" class="btn btn-ghost" id="btnAddPair">➕ إضافة فتحة</button>
+      </fieldset>
+
+      <div class="form-foot">
+        <button type="button" class="btn btn-danger" id="btnDelete" hidden>🗑 حذف الكتاب</button>
+        <span class="spacer"></span>
+        <span class="muted" id="saveHint"></span>
+        <button type="submit" class="btn btn-primary btn-lg" id="btnSave">💾 حفظ ونشر</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<div class="busy" id="busy" hidden>
+  <div class="busy-box">
+    <div class="spin"></div>
+    <h3 id="busyTitle">جارٍ النشر…</h3>
+    <div class="bar"><i id="busyBar"></i></div>
+    <p id="busyMsg"></p>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script src="js/gh-api.js?v=1"></script>
+<script src="js/imgtools.js?v=1"></script>
+<script src="js/admin.js?v=1"></script>
+</body>
+</html>

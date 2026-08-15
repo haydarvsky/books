@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>معرض أعمالي في الكتب — حيدر</title>
+<meta name="description" content="معرض أعمال حيدر في تصميم أغلفة الكتب والتنضيد الداخلي — رفّ كتب تفاعلي.">
+<link rel="icon" href="img/logo-cream.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/gallery.css?v=1">
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="./" aria-label="حيدر">
+      <img src="img/logo-cream.svg" alt="حيدر" class="brand-logo">
+    </a>
+    <div class="hdr-txt">
+      <h1>معرض أعمالي في الكتب</h1>
+      <p>تصميم الأغلفة · التنضيد الداخلي · إخراج الكتاب من الفكرة إلى المطبعة</p>
+    </div>
+    <nav class="filters" id="filters" aria-label="تصفية الأعمال">
+      <button class="chip is-on" data-f="all">الكل</button>
+      <button class="chip" data-f="cover">أغلفة</button>
+      <button class="chip" data-f="typeset">تنضيد</button>
+    </nav>
+  </div>
+</header>
+
+<main class="stage" id="stage">
+  <p class="hint" id="hint">حرّك الفأرة فوق الرفّ · قِف على كتابٍ لتقرأ عنوانه · اضغطه لتتأمّل العمل عن قرب</p>
+  <div class="scene" id="scene">
+    <div class="bookcase" id="bookcase" aria-live="polite"></div>
+  </div>
+  <div class="empty" id="empty" hidden>
+    <img src="img/logo-cream.svg" alt="" class="empty-logo">
+    <h2>الرفّ بانتظار أول كتاب</h2>
+    <p>أضِف أعمالك من <a href="admin.html">لوحة التحكم</a> وسيظهر الكتاب هنا فور نشره.</p>
+    <p class="empty-demo"><a href="?demo=1">أو شاهد نموذجاً تجريبيًّا للرفّ</a></p>
+  </div>
+  <div class="loading" id="loading"><span></span> جارٍ ترتيب الرفّ…</div>
+</main>
+
+<section class="cta" id="cta">
+  <p class="cta-t">للاستفسار والطلبات الجديدة</p>
+  <a class="wa" href="https://wa.me/966567565937" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C9.4 3 4 8.36 4 14.96c0 2.6.83 5.02 2.25 7l-1.48 5.4 5.56-1.45a12.1 12.1 0 0 0 5.71 1.44C22.68 27.35 28 22 28 15.4 28 8.36 22.68 3 16.04 3zm0 21.86c-1.83 0-3.6-.5-5.14-1.42l-.37-.22-3.3.86.88-3.2-.24-.34a9.86 9.86 0 0 1-1.86-5.78c0-5.46 4.5-9.9 10.03-9.9 5.52 0 9.94 4.44 9.94 9.9 0 5.5-4.42 10.1-9.94 10.1zm5.5-7.4c-.3-.15-1.78-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.95 1.17-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5a9 9 0 0 1-1.67-2.07c-.18-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.25-.6-.5-.5-.68-.51h-.58c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.48.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z"/></svg>
+    <span>تواصل معي على واتساب</span>
+  </a>
+  <p class="cta-s">حيدر — أبو إيليا · تصميم أغلفة الكتب والتنضيد الداخلي</p>
+</section>
+
+<footer class="ftr">
+  <span>© <span id="year"></span> حيدر</span>
+  <a class="admin-link" href="admin.html" title="لوحة التحكم">⚙</a>
+</footer>
+
+<!-- نافذة الكتاب -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-bg" data-close></div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="m-close" data-close aria-label="إغلاق">✕</button>
+    <header class="m-hdr">
+      <div>
+        <h2 id="mTitle"></h2>
+        <p id="mAuthor"></p>
+      </div>
+      <div class="m-badges" id="mBadges"></div>
+    </header>
+    <p class="m-note" id="mNote" hidden></p>
+    <nav class="m-tabs" id="mTabs"></nav>
+    <div class="m-body">
+      <!-- عرض الغلاف -->
+      <section class="pane pane-cover" id="paneCover" hidden>
+        <div class="cover-stage" id="coverStage">
+          <div class="cover3d" id="cover3d">
+            <div class="cf cf-front" id="cfFront"></div>
+            <div class="cf cf-spine" id="cfSpine"></div>
+            <div class="cf cf-back"  id="cfBack"></div>
+            <div class="cf cf-pages"></div>
+            <div class="cf cf-top"></div>
+            <div class="cf cf-bottom"></div>
+          </div>
+          <div class="cover-flat" id="coverFlat" hidden>
+            <img id="flatFront" alt="الغلاف الأمامي">
+            <img id="flatSpine" alt="الكعب">
+            <img id="flatBack"  alt="الغلاف الخلفي">
+          </div>
+        </div>
+        <div class="cover-ctl">
+          <button data-view="front" class="is-on">الأمامي</button>
+          <button data-view="spine">الكعب</button>
+          <button data-view="back">الخلفي</button>
+          <button data-view="flat">مسطّح</button>
+          <span class="sep"></span>
+          <button data-zoom>🔍 تكبير</button>
+        </div>
+        <p class="ctl-hint">اسحب الكتاب لتدويره · اضغط أيّ وجهٍ لتكبيره</p>
+      </section>
+
+      <!-- عرض التنضيد -->
+      <section class="pane pane-pages" id="panePages" hidden>
+        <div class="book-open-wrap">
+          <button class="pg-nav pg-prev" id="pgPrev" aria-label="الصفحتان السابقتان">›</button>
+          <div class="book-open" id="bookOpen">
+            <div class="pg pg-r" id="pgR"><img alt="الصفحة اليمنى"></div>
+            <div class="pg pg-l" id="pgL"><img alt="الصفحة اليسرى"></div>
+            <div class="leaf" id="leaf" hidden>
+              <div class="leaf-f"><img alt=""></div>
+              <div class="leaf-b"><img alt=""></div>
+            </div>
+          </div>
+          <button class="pg-nav pg-next" id="pgNext" aria-label="الصفحتان التاليتان">‹</button>
+        </div>
+        <div class="pg-ctl">
+          <span id="pgCount"></span>
+          <button data-zoom-page>🔍 تكبير الصفحة</button>
+        </div>
+        <p class="ctl-hint">اقلب الصفحات بالأسهم أو بلوحة المفاتيح · اضغط الصفحة لتكبيرها</p>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- المكبّر -->
+<div class="zoom" id="zoom" hidden>
+  <button class="z-close" id="zClose" aria-label="إغلاق">✕</button>
+  <div class="z-ctl">
+    <button id="zOut">−</button>
+    <span id="zPct">100٪</span>
+    <button id="zIn">+</button>
+    <button id="zFit">ملاءمة</button>
+  </div>
+  <div class="z-view" id="zView"><img id="zImg" alt=""></div>
+  <p class="z-hint">عجلة الفأرة للتكبير · اسحب للتنقّل · نقرتان للتبديل</p>
+</div>
+
+<script src="js/demo.js?v=1"></script>
+<script src="js/gallery.js?v=1"></script>
+</body>
+</html>
