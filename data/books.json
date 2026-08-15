@@ -1,4 +1,78 @@
 {
-  "updated": null,
-  "books": []
+  "updated": "2026-08-15T08:46:06.419Z",
+  "books": [
+    {
+      "id": "bmsu458rv",
+      "title": "التعليم الواعي",
+      "author": "أحمد فيصل",
+      "year": "١٤٤٧ه - ٢٠٢٦م",
+      "note": "المسؤولية الأخلاقية لبناء الإنسان في ضوء فلسفة باولو فريري",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 2,
+      "color": "#665642",
+      "hidden": false,
+      "cover": {
+        "front": "images/bmsu458rv/front-msu4sthe.jpg",
+        "spine": "images/bmsu458rv/spine-msu4sthe.jpg",
+        "back": "images/bmsu458rv/back-msu4sthe.jpg"
+      },
+      "ar": 0.709,
+      "pages": [
+        {
+          "r": "images/bmsu458rv/p01-r-msu4sthe.jpg",
+          "l": "images/bmsu458rv/p01-l-msu4sthe.jpg"
+        },
+        {
+          "r": "images/bmsu458rv/p02-r-msu4sthe.jpg",
+          "l": "images/bmsu458rv/p02-l-msu4sthe.jpg"
+        },
+        {
+          "r": "images/bmsu458rv/p03-r-msu4sthe.jpg",
+          "l": "images/bmsu458rv/p03-l-msu4sthe.jpg"
+        },
+        {
+          "r": "images/bmsu458rv/p04-r-msu4sthe.jpg",
+          "l": "images/bmsu458rv/p04-l-msu4sthe.jpg"
+        },
+        {
+          "r": "images/bmsu458rv/p05-r-msu4sthe.jpg",
+          "l": "images/bmsu458rv/p05-l-msu4sthe.jpg"
+        },
+        {
+          "r": "images/bmsu458rv/p06-r-msu4sthe.jpg",
+          "l": "images/bmsu458rv/p06-l-msu4sthe.jpg"
+        },
+        {
+          "r": "images/bmsu458rv/p07-r-msu4sthe.jpg",
+          "l": "images/bmsu458rv/p07-l-msu4sthe.jpg"
+        },
+        {
+          "r": "images/bmsu458rv/p08-r-msu4sthe.jpg",
+          "l": "images/bmsu458rv/p08-l-msu4sthe.jpg"
+        },
+        {
+          "r": "images/bmsu458rv/p09-r-msu4sthe.jpg",
+          "l": "images/bmsu458rv/p09-l-msu4sthe.jpg"
+        },
+        {
+          "r": "images/bmsu458rv/p10-r-msu4sthe.jpg",
+          "l": "images/bmsu458rv/p10-l-msu4sthe.jpg"
+        },
+        {
+          "r": "images/bmsu458rv/p11-r-msu4sthe.jpg",
+          "l": "images/bmsu458rv/p11-l-msu4sthe.jpg"
+        },
+        {
+          "r": "images/bmsu458rv/p12-r-msu4sthe.jpg",
+          "l": "images/bmsu458rv/p12-l-msu4sthe.jpg"
+        }
+      ],
+      "par": 0.715,
+      "updatedAt": "2026-08-15T08:46:05.839Z",
+      "order": 0
+    }
+  ]
 }
