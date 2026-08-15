@@ -75,7 +75,7 @@ img{display:block;max-width:100%}
 
 /* ---------- الكتاب ---------- */
 .slot{
-  position:relative;height:var(--h);width:calc(var(--t) + var(--w)*.34);
+  position:relative;height:var(--h);width:calc(var(--t) + var(--w)*var(--ex,.34));
   transform-style:preserve-3d;flex:none;
   animation:arrive .8s cubic-bezier(.2,.8,.2,1) both;
 }
@@ -299,6 +299,7 @@ img{display:block;max-width:100%}
 /* ---------- تجاوب ---------- */
 @media (max-width:820px){
   :root{--book-h:180px}
+  .stage{padding:6px 12px 24px}
   .hdr h1{font-size:1.6rem}
   .brand-logo{height:60px}
   .filters{width:100%;justify-content:center}

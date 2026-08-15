@@ -60,7 +60,8 @@
     const t = Math.round((18 + thick * 8) * (baseH / 230));
     return { h, w, t };
   }
-  function slotWidth(b) { const d = bookDims(b); return d.t + d.w * 0.34 + (innerWidth <= 820 ? 10 : 16); }
+  const MOB = () => innerWidth <= 820;
+  function slotWidth(b) { const d = bookDims(b); return d.t + d.w * (MOB() ? 0.22 : 0.34) + (MOB() ? 10 : 16); }
 
   function bookEl(b) {
     const d = bookDims(b);
@@ -68,7 +69,7 @@
     const tc = textOn(c);
     const slot = document.createElement('div');
     slot.className = 'slot';
-    slot.style.cssText = `--w:${d.w}px;--h:${d.h}px;--t:${d.t}px;--c:${c};--tc:${tc}`;
+    slot.style.cssText = `--w:${d.w}px;--h:${d.h}px;--t:${d.t}px;--c:${c};--tc:${tc};--ex:${MOB() ? .22 : .34}`;
     slot.dataset.id = b.id;
     const front = b.cover?.front, spine = b.cover?.spine, back = b.cover?.back;
     const tags = (b.work || []).map(w => `<span class="tag t-${w}">${workLabel[w] || w}</span>`).join('');
