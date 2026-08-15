@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T09:21:04.947Z",
+  "updated": "2026-08-15T09:41:09.707Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -245,6 +245,88 @@
       "par": 0.709,
       "updatedAt": "2026-08-15T09:21:04.159Z",
       "order": 2
+    },
+    {
+      "id": "bmsu6pnlr",
+      "title": "لطائف من الموسوعة الكويتية المختصرة",
+      "author": "خالد سالم السدّاني",
+      "year": "١٤٤٨ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#969682",
+      "hidden": false,
+      "sar": 0.05,
+      "cover": {
+        "front": "images/bmsu6pnlr/front-msu6rmuz.jpg",
+        "spine": "images/bmsu6pnlr/spine-msu6rmuz.jpg",
+        "back": "images/bmsu6pnlr/back-msu6rmuz.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmsu6pnlr/p01-r-msu6rmuz.jpg",
+          "l": "images/bmsu6pnlr/p01-l-msu6rmuz.jpg"
+        },
+        {
+          "r": "images/bmsu6pnlr/p02-r-msu6rmuz.jpg",
+          "l": "images/bmsu6pnlr/p02-l-msu6rmuz.jpg"
+        },
+        {
+          "r": "images/bmsu6pnlr/p03-r-msu6rmuz.jpg",
+          "l": "images/bmsu6pnlr/p03-l-msu6rmuz.jpg"
+        },
+        {
+          "r": "images/bmsu6pnlr/p04-r-msu6rmuz.jpg",
+          "l": "images/bmsu6pnlr/p04-l-msu6rmuz.jpg"
+        },
+        {
+          "r": "images/bmsu6pnlr/p05-r-msu6rmuz.jpg",
+          "l": "images/bmsu6pnlr/p05-l-msu6rmuz.jpg"
+        },
+        {
+          "r": "images/bmsu6pnlr/p06-r-msu6rmuz.jpg",
+          "l": "images/bmsu6pnlr/p06-l-msu6rmuz.jpg"
+        },
+        {
+          "r": "images/bmsu6pnlr/p07-r-msu6rmuz.jpg",
+          "l": "images/bmsu6pnlr/p07-l-msu6rmuz.jpg"
+        },
+        {
+          "r": "images/bmsu6pnlr/p08-r-msu6rmuz.jpg",
+          "l": "images/bmsu6pnlr/p08-l-msu6rmuz.jpg"
+        },
+        {
+          "r": "images/bmsu6pnlr/p09-r-msu6rmuz.jpg",
+          "l": "images/bmsu6pnlr/p09-l-msu6rmuz.jpg"
+        },
+        {
+          "r": "images/bmsu6pnlr/p10-r-msu6rmuz.jpg",
+          "l": "images/bmsu6pnlr/p10-l-msu6rmuz.jpg"
+        },
+        {
+          "r": "images/bmsu6pnlr/p11-r-msu6rmuz.jpg",
+          "l": "images/bmsu6pnlr/p11-l-msu6rmuz.jpg"
+        },
+        {
+          "r": "images/bmsu6pnlr/p12-r-msu6rmuz.jpg",
+          "l": "images/bmsu6pnlr/p12-l-msu6rmuz.jpg"
+        },
+        {
+          "r": "images/bmsu6pnlr/p13-r-msu6rmuz.jpg",
+          "l": "images/bmsu6pnlr/p13-l-msu6rmuz.jpg"
+        },
+        {
+          "r": "images/bmsu6pnlr/p14-r-msu6rmuz.jpg",
+          "l": "images/bmsu6pnlr/p14-l-msu6rmuz.jpg"
+        }
+      ],
+      "par": 0.667,
+      "updatedAt": "2026-08-15T09:41:08.712Z",
+      "order": 3
     }
   ]
 }
