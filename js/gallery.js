@@ -63,8 +63,9 @@
   }
 
   /* ---------- بناء الرفوف ---------- */
-  function bookDims(b) {
-    const baseH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--book-h')) || 230;
+  function bookDims(b, mode = VIEW) {
+    let baseH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--book-h')) || 230;
+    if (mode === 'stack') baseH *= MOB() ? 1.15 : 1.4; // الكتب المستلقية أكبر لتُقرأ كعوبها
     const hs = 0.84 + ((hash(b.id || b.title) % 17) / 100); // تنويع طفيف في الارتفاع
     const h = Math.round(baseH * (b.hs || hs));
     const ar = Math.min(0.9, Math.max(0.55, +b.ar || 0.68));
@@ -76,8 +77,8 @@
   }
 
 
-  function bookEl(b, feat) {
-    const d = bookDims(b);
+  function bookEl(b, feat, mode = VIEW) {
+    const d = bookDims(b, mode);
     const c = b.color || '#0F4C3A';
     const tc = textOn(c);
     const slot = document.createElement('div');
@@ -108,7 +109,7 @@
 
   /* عرض فتحة كتاب بحسب طريقة العرض */
   function slotW(b, mode = VIEW) {
-    const d = bookDims(b);
+    const d = bookDims(b, mode);
     if (mode === 'cover') return d.w + (MOB() ? 10 : 18);
     return Math.max(d.t, 22) + (MOB() ? 8 : 12);
   }
@@ -124,7 +125,7 @@
       const sizes = [4, 5, 3, 6, 4];
       const piles = []; let k = 0, si = 0;
       while (k < list.length) { const n = sizes[si++ % sizes.length]; piles.push(list.slice(k, k + n)); k += n; }
-      const pileW = p => Math.max(...p.map(b => bookDims(b).h)) + 10;
+      const pileW = p => Math.max(...p.map(b => bookDims(b, 'stack').h)) + 10;
       let row = null, wsum = 0;
       piles.forEach(p => {
         const pw = pileW(p);
@@ -133,8 +134,8 @@
         const pile = document.createElement('div'); pile.className = 'pile';
         let y = 0; const nodes = [];
         p.forEach((b, j) => {
-          const d = bookDims(b);
-          const slot = bookEl(b, false);
+          const d = bookDims(b, 'stack');
+          const slot = bookEl(b, false, 'stack');
           const jx = ((hash(b.id) % 21) - 10) * 0.6; // إزاحة أفقية طفيفة
           slot.style.setProperty('--y', y + 'px'); slot.style.setProperty('--jx', jx + 'px');
           slot.style.animationDelay = (i++ * 45) + 'ms';
@@ -152,7 +153,7 @@
       const sw = slotW(b, mode);
       if (!row || wsum + sw > avail) { row = mkShelf(); wsum = 0; }
       wsum += sw;
-      const slot = bookEl(b, feat); slot.style.animationDelay = (i++ * 45) + 'ms'; row.appendChild(slot);
+      const slot = bookEl(b, feat, mode); slot.style.animationDelay = (i++ * 45) + 'ms'; row.appendChild(slot);
     });
   }
 
