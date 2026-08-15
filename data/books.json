@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T11:16:12.986Z",
+  "updated": "2026-08-15T11:20:34.968Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -673,6 +673,48 @@
       "par": 0.667,
       "updatedAt": "2026-08-15T11:16:11.689Z",
       "order": 8
+    },
+    {
+      "id": "bmsua90p9",
+      "title": "عهد العمر الأول",
+      "author": "روابي العسيري",
+      "year": "",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#55392b",
+      "hidden": false,
+      "sar": 0.0725,
+      "cover": {
+        "front": "images/bmsua90p9/front-msuabhz3.jpg",
+        "spine": "images/bmsua90p9/spine-msuabhz3.jpg",
+        "back": "images/bmsua90p9/back-msuabhz3.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmsua90p9/p01-r-msuabhz3.jpg",
+          "l": "images/bmsua90p9/p01-l-msuabhz3.jpg"
+        },
+        {
+          "r": "images/bmsua90p9/p02-r-msuabhz3.jpg",
+          "l": "images/bmsua90p9/p02-l-msuabhz3.jpg"
+        },
+        {
+          "r": "images/bmsua90p9/p03-r-msuabhz3.jpg",
+          "l": "images/bmsua90p9/p03-l-msuabhz3.jpg"
+        },
+        {
+          "r": "images/bmsua90p9/p04-r-msuabhz3.jpg",
+          "l": "images/bmsua90p9/p04-l-msuabhz3.jpg"
+        }
+      ],
+      "par": 0.667,
+      "updatedAt": "2026-08-15T11:20:33.889Z",
+      "order": 9
     }
   ]
 }
