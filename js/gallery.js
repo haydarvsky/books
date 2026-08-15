@@ -67,11 +67,11 @@
     const w = Math.round(h * ar);
     const thick = Math.min(5, Math.max(1, +b.thick || 2));
     let t = Math.round((18 + thick * 8) * (baseH / 230));
-    if (b.sar > 0) t = Math.round(Math.min(h * 0.45, Math.max(20, h * b.sar))); // من صورة الكعب نفسها
+    if (b.sar > 0) t = Math.max(4, Math.round(Math.min(h * 0.45, h * b.sar))); // من صورة الكعب نفسها بلا قصّ
     return { h, w, t };
   }
   const MOB = () => innerWidth <= 820;
-  function slotWidth(b) { const d = bookDims(b); return d.t + (MOB() ? 8 : 12); }
+  function slotWidth(b) { const d = bookDims(b); return Math.max(d.t, 22) + (MOB() ? 8 : 12); }
 
   function bookEl(b) {
     const d = bookDims(b);
@@ -79,7 +79,7 @@
     const tc = textOn(c);
     const slot = document.createElement('div');
     slot.className = 'slot';
-    slot.style.cssText = `--w:${d.w}px;--h:${d.h}px;--t:${d.t}px;--c:${c};--tc:${tc};--ex:0`;
+    slot.style.cssText = `--w:${d.w}px;--h:${d.h}px;--t:${d.t}px;--c:${c};--tc:${tc};--ex:0;--sw:${Math.max(d.t, 22)}px`;
     slot.dataset.id = b.id;
     const front = b.cover?.front, spine = b.cover?.spine, back = b.cover?.back;
     const tags = (b.work || []).map(w => `<span class="tag t-${w}">${workLabel[w] || w}</span>`).join('');
@@ -206,7 +206,7 @@
     const ch = Math.min(stageR.height - 50, 520);
     const cw = Math.min(ch * ar, stageR.width * 0.7);
     const thick = Math.min(5, Math.max(1, +b.thick || 2));
-    const ct = b.sar > 0 ? Math.round(Math.max(10, Math.min(ch * 0.45, ch * b.sar))) : Math.round((14 + thick * 7) * (ch / 230) * 0.9);
+    const ct = b.sar > 0 ? Math.max(4, Math.round(Math.min(ch * 0.45, ch * b.sar))) : Math.round((14 + thick * 7) * (ch / 230) * 0.9);
     cover3d.style.cssText = `--cw:${cw}px;--ch:${ch}px;--ct:${ct}px;--c:${b.color || '#0F4C3A'}`;
     const face = (id, src, txt) => { const el = $(id); el.innerHTML = src ? `<img src="${esc(src)}" alt="">` : `<div class="noimg">${esc(txt || '')}</div>`; el.dataset.src = src || ''; };
     face('#cfFront', b.cover?.front, b.title);
