@@ -93,7 +93,7 @@
     DB.books.forEach((b, i) => {
       const it = document.createElement('div'); it.className = 'item' + (b.hidden ? ' is-hidden' : ''); it.draggable = true; it.dataset.i = i;
       const th = b.cover?.front ? `<img class="thumb" src="${esc(b.cover.front)}" alt="">` : `<div class="thumb txt" style="background:${esc(b.color || '#0F4C3A')}">${esc(b.title)}</div>`;
-      const tags = (b.work || []).map(w => `<span class="tag t-${w}">${workLabel[w]}</span>`).join('') + (b.pages?.length ? `<span class="tag t-pages">${arNum(b.pages.length)} فتحات</span>` : '') + (b.hidden ? '<span class="tag t-hidden">🙈 مخفي</span>' : '');
+      const tags = (b.work || []).map(w => `<span class="tag t-${w}">${workLabel[w]}</span>`).join('') + (b.pages?.length ? `<span class="tag t-pages">${arNum(b.pages.length)} فتحات</span>` : '') + (b.hidden ? '<span class="tag t-hidden">🙈 مخفي</span>' : '') + (b.featured ? '<span class="tag t-feat">✦ مميّز</span>' : '');
       it.innerHTML = `<span class="grip" title="اسحب للترتيب">⋮⋮</span>${th}
         <div class="item-t"><b>${esc(b.title)}</b><small>${esc(b.author || '')}${b.year ? ' · ' + esc(b.year) : ''}</small><div class="tags">${tags}</div></div>
         <div class="item-b"><button data-vis title="${b.hidden ? 'إظهار في المعرض' : 'إخفاء من المعرض'}">${b.hidden ? '🙈' : '👁'}</button><button data-up title="أعلى">▲</button><button data-down title="أسفل">▼</button><button data-edit title="تعديل">✎</button></div>`;
@@ -161,10 +161,12 @@
     F.wCover.checked = b ? (b.work || []).includes('cover') : true; F.wTypeset.checked = b ? (b.work || []).includes('typeset') : false;
     F.thick.value = b?.thick || 3; $('#thickOut').textContent = arNum(F.thick.value);
     $('#visOff').checked = !!b?.hidden; $('#visOn').checked = !b?.hidden;
+    $('#fFeatured').checked = !!b?.featured; $('#fPhil').value = b?.philosophy || '';
+    ED.hotspots = (b?.hotspots || []).map(h => ({ x: +h.x, y: +h.y, t: h.t || '' }));
     F.color.value = b?.color || '#0F4C3A';
     ['front', 'spine', 'back'].forEach(k => { ED.slots[k] = newSlot(b?.cover?.[k]); paintSlot($(`.dz[data-slot=${k}]`), ED.slots[k]); });
     ED.pairs = (b?.pages || []).map(p => ({ r: newSlot(p.r), l: newSlot(p.l) }));
-    renderPairs();
+    renderPairs(); renderHotspots(); syncHsPic();
     $('#btnDelete').hidden = !b;
     syncSections(); syncThick();
     editor.hidden = false; updateSaveHint();
@@ -208,7 +210,48 @@
     dz.addEventListener('drop', async e => { e.preventDefault(); dz.classList.remove('over'); const f = e.dataTransfer.files[0]; if (!f) return; await assignFile(getSlot(), f); paintSlot(dz, getSlot()); after && after(); });
     const x = $('.dz-x', dz); if (x) x.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); const s = getSlot(); s.file = null; s.removed = !!s.path; s.preview = ''; paintSlot(dz, s); after && after(); });
   }
-  ['front', 'spine', 'back'].forEach(k => bindDz($(`.dz[data-slot=${k}]`), () => ED.slots[k], k === 'front' ? autoColorIfAuto : k === 'spine' ? syncThick : null));
+  ['front', 'spine', 'back'].forEach(k => bindDz($(`.dz[data-slot=${k}]`), () => ED.slots[k], k === 'front' ? () => { autoColorIfAuto(); syncHsPic(); } : k === 'spine' ? syncThick : null));
+
+  /* --- فلسفة الغلاف: نقاط التفاصيل --- */
+  const hsStage = $('#hsStage'), hsPic = $('#hsPic'), hsDots = $('#hsDots'), hsList = $('#hsList');
+  function syncHsPic() {
+    const s = ED?.slots.front; const has = s && slotHas(s);
+    hsStage.classList.toggle('has', !!has);
+    if (has) hsPic.src = s.preview; else hsPic.removeAttribute('src');
+  }
+  function renderHotspots() {
+    const hs = ED?.hotspots || [];
+    hsDots.innerHTML = hs.map((h, i) => `<span class="hs-dot" data-i="${i}" style="left:${(h.x * 100).toFixed(2)}%;top:${(h.y * 100).toFixed(2)}%">${arNum(i + 1)}</span>`).join('');
+    hsList.innerHTML = hs.map((h, i) => `<div class="hs-item" data-i="${i}"><i>${arNum(i + 1)}</i><textarea rows="2" placeholder="اكتب شرح هذه التفصيلة…">${esc(h.t)}</textarea><button type="button" data-del title="حذف النقطة">✕</button></div>`).join('')
+      + (hs.length ? '' : '<p class="hs-note">لا نقاط بعد — اضغط على الصورة لإضافة أول نقطة. يمكنك سحب النقطة لتحريكها.</p>');
+    $$('.hs-item textarea', hsList).forEach(t => t.addEventListener('input', () => { ED.hotspots[+t.parentElement.dataset.i].t = t.value; }));
+    $$('.hs-item textarea', hsList).forEach(t => t.addEventListener('focus', () => hsSelect(+t.parentElement.dataset.i)));
+    $$('.hs-item [data-del]', hsList).forEach(bt => bt.addEventListener('click', () => { ED.hotspots.splice(+bt.parentElement.dataset.i, 1); renderHotspots(); }));
+  }
+  function hsSelect(i) { $$('.hs-dot,.hs-item', $('#secNotes')).forEach(el => el.classList.toggle('is-on', +el.dataset.i === i)); }
+  let hsDrag = null;
+  hsStage.addEventListener('pointerdown', e => {
+    if (!ED || !hsStage.classList.contains('has')) return;
+    const dot = e.target.closest('.hs-dot');
+    if (dot) { hsDrag = { i: +dot.dataset.i, moved: false }; hsStage.setPointerCapture(e.pointerId); hsSelect(hsDrag.i); e.preventDefault(); }
+  });
+  hsStage.addEventListener('pointermove', e => {
+    if (!hsDrag) return; hsDrag.moved = true;
+    const r = hsPic.getBoundingClientRect();
+    const x = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)), y = Math.min(1, Math.max(0, (e.clientY - r.top) / r.height));
+    ED.hotspots[hsDrag.i].x = x; ED.hotspots[hsDrag.i].y = y;
+    const d = $(`.hs-dot[data-i="${hsDrag.i}"]`, hsDots); d.style.left = (x * 100) + '%'; d.style.top = (y * 100) + '%';
+  });
+  const hsUp = () => { hsDrag = null; };
+  hsStage.addEventListener('pointerup', hsUp); hsStage.addEventListener('pointercancel', hsUp);
+  hsStage.addEventListener('click', e => {
+    if (!ED || !hsStage.classList.contains('has') || e.target.closest('.hs-dot')) return;
+    const r = hsPic.getBoundingClientRect(); if (!r.width) return;
+    const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    if (x < 0 || x > 1 || y < 0 || y > 1) return;
+    ED.hotspots.push({ x: +x.toFixed(4), y: +y.toFixed(4), t: '' }); renderHotspots(); hsSelect(ED.hotspots.length - 1);
+    const ta = $$('.hs-item textarea', hsList).pop(); if (ta) ta.focus();
+  });
   function syncThick() { const has = ED && slotHas(ED.slots.spine) && F.wCover.checked; $('#thickWrap').classList.toggle('auto', !!has); $('#thickAuto').hidden = !has; }
   async function autoColorIfAuto() { if (ED && ED.colorAuto) autoColor(); }
   async function autoColor() {
@@ -281,7 +324,8 @@
       showBusy('جارٍ تجهيز الصور…');
       const ts = Date.now().toString(36);
       const files = [], deletes = new Set(ED.trash || []);
-      const b = { ...(ED.orig || {}), id: ED.id, title, author: F.author.value.trim(), year: F.year.value.trim(), note: F.note.value.trim(), work, thick: +F.thick.value, color: F.color.value, hidden: $('#visOff').checked };
+      const b = { ...(ED.orig || {}), id: ED.id, title, author: F.author.value.trim(), year: F.year.value.trim(), note: F.note.value.trim(), work, thick: +F.thick.value, color: F.color.value, hidden: $('#visOff').checked, featured: $('#fFeatured').checked, philosophy: $('#fPhil').value.trim(), hotspots: (ED.hotspots || []).filter(h => h.t && h.t.trim()).map(h => ({ x: +(+h.x).toFixed(4), y: +(+h.y).toFixed(4), t: h.t.trim() })) };
+      if (!b.philosophy) delete b.philosophy; if (!b.hotspots.length) delete b.hotspots; if (!b.featured) delete b.featured;
       // الغلاف
       const cover = {}; let ar = ED.orig?.ar || 0;
       let n = 0, total = ['front', 'spine', 'back'].filter(k => ED.slots[k].file).length + pairs.reduce((a, p) => a + (p.r.file ? 1 : 0) + (p.l.file ? 1 : 0), 0);

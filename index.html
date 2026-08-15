@@ -6,7 +6,7 @@
 <title>معرض أعمالي في الكتب — حيدر</title>
 <meta name="description" content="معرض أعمال حيدر في تصميم أغلفة الكتب والتنضيد الداخلي — رفّ كتب تفاعلي.">
 <link rel="icon" href="img/logo-cream.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/gallery.css?v=9">
+<link rel="stylesheet" href="css/gallery.css?v=10">
 </head>
 <body>
 
@@ -19,16 +19,29 @@
       <h1>معرض أعمالي في الكتب</h1>
       <p>تصميم الأغلفة · التنضيد الداخلي · إخراج الكتاب من الفكرة إلى المطبعة</p>
     </div>
-    <nav class="filters" id="filters" aria-label="تصفية الأعمال">
-      <button class="chip is-on" data-f="all">الكل</button>
-      <button class="chip" data-f="cover">أغلفة</button>
-      <button class="chip" data-f="typeset">تنضيد</button>
-    </nav>
+    <div class="ctrls">
+      <nav class="filters" id="filters" aria-label="تصفية الأعمال">
+        <button class="chip is-on" data-f="all">الكل</button>
+        <button class="chip" data-f="cover">أغلفة</button>
+        <button class="chip" data-f="typeset">تنضيد</button>
+      </nav>
+      <nav class="views" id="views" aria-label="طريقة العرض">
+        <button data-v="spine" class="is-on" title="الكعوب على الرفّ"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="3.5" height="16" rx=".6"/><rect x="9" y="6" width="3" height="14" rx=".6"/><rect x="13.5" y="3" width="4" height="17" rx=".6"/><rect x="19" y="7" width="2.5" height="13" rx=".6"/></svg><span>كعوب</span></button>
+        <button data-v="cover" title="الأغلفة الأمامية"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/></svg><span>أغلفة</span></button>
+        <button data-v="stack" title="أكداس الكتب"><svg viewBox="0 0 24 24"><rect x="4" y="16" width="16" height="3.5" rx=".6"/><rect x="5" y="11.5" width="14" height="3.5" rx=".6"/><rect x="6" y="7" width="12" height="3.5" rx=".6"/><rect x="7" y="3" width="10" height="3" rx=".6"/></svg><span>أكداس</span></button>
+      </nav>
+    </div>
   </div>
 </header>
 
 <main class="stage" id="stage">
   <p class="hint" id="hint">حرّك الفأرة فوق الرفّ · قِف على كتابٍ لتقرأ عنوانه · اضغطه لتتأمّل العمل عن قرب</p>
+  <section class="featured" id="featured" hidden>
+    <h2 class="sec-t"><span>✦</span> مميّز الأعمال <span>✦</span></h2>
+    <p class="sec-s">أعمالٌ أعتزّ بها — اضغط الكتاب لتقرأ فلسفة غلافه وتفاصيله</p>
+    <div class="scene scene-f"><div class="bookcase" id="featCase"></div></div>
+  </section>
+  <h2 class="sec-t sec-all" id="allTitle" hidden>كلّ الأعمال</h2>
   <div class="scene" id="scene">
     <div class="bookcase" id="bookcase" aria-live="polite"></div>
   </div>
@@ -85,8 +98,18 @@
             <img id="flatSpine" alt="الكعب">
             <img id="flatBack"  alt="الغلاف الخلفي">
           </div>
+          <div class="cover-notes" id="coverNotes" hidden>
+            <div class="cn-img" id="cnImg"><img id="cnPic" alt="الغلاف الأمامي"><div class="cn-dots" id="cnDots"></div></div>
+            <div class="cn-txt">
+              <h3>فلسفة الغلاف</h3>
+              <p id="cnPhil"></p>
+              <ol id="cnList"></ol>
+              <p class="cn-hint">اضغط أيّ رقمٍ على الغلاف أو في القائمة لتظهر تفصيلته</p>
+            </div>
+          </div>
         </div>
         <div class="cover-ctl">
+          <button data-view="notes" id="btnNotes" hidden>✦ فلسفة الغلاف</button>
           <button data-view="front" class="is-on">الأمامي</button>
           <button data-view="spine">الكعب</button>
           <button data-view="back">الخلفي</button>
@@ -134,7 +157,7 @@
   <p class="z-hint">عجلة الفأرة للتكبير · اسحب للتنقّل · نقرتان للتبديل</p>
 </div>
 
-<script src="js/demo.js?v=9"></script>
-<script src="js/gallery.js?v=9"></script>
+<script src="js/demo.js?v=10"></script>
+<script src="js/gallery.js?v=10"></script>
 </body>
 </html>

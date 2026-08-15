@@ -6,7 +6,7 @@
 <title>لوحة التحكم — معرض الكتب</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="img/logo-dark.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/admin.css?v=6">
+<link rel="stylesheet" href="css/admin.css?v=7">
 </head>
 <body>
 
@@ -85,6 +85,7 @@
           <label class="chk"><input type="radio" name="vis" id="visOn" value="1" checked> <span>👁 ظاهر على الرفّ</span></label>
           <label class="chk"><input type="radio" name="vis" id="visOff" value="0"> <span>🙈 مخفي (بانتظار النشر)</span></label>
           <p class="muted vis-hint">الكتاب المخفي يبقى محفوظًا بصوره كاملة في اللوحة، ولا يراه زوّار المعرض حتى تُظهره.</p>
+          <label class="chk feat-chk"><input type="checkbox" id="fFeatured"> <span>✦ عرضه في «رفّ المميّز» أعلى الصفحة</span></label>
         </fieldset>
       </div>
 
@@ -103,6 +104,17 @@
             <span class="muted thick-auto" id="thickAuto" hidden>✓ تُحسب آليًّا من صورة الكعب (عرضه ÷ ارتفاعه) — على الرفّ وفي المجسّم.</span></label>
           <label><span>لون الكعب (يُستخرج من الغلاف تلقائيًّا)</span>
             <span class="color-row"><input type="color" id="fColor" value="#0F4C3A"><button type="button" class="btn btn-ghost btn-sm" id="btnAutoColor">🎨 تلقائي</button></span></label>
+        </div>
+      </fieldset>
+
+      <!-- فلسفة الغلاف وتفاصيله -->
+      <fieldset class="sec" id="secNotes">
+        <legend>✦ فلسفة الغلاف وتفاصيله <span class="muted">(اختياري)</span></legend>
+        <p class="muted">اشرح فكرة الغلاف، ثم اضغط على صورة الغلاف الأمامي لتضع نقطةً مرقّمة عند أي تفصيلة مهمة واكتب شرحها. تظهر للزائر في نافذة الكتاب تحت زر «فلسفة الغلاف»، ولكتب رفّ المميّز تُفتح مباشرة.</p>
+        <label><span>فلسفة الغلاف</span><textarea id="fPhil" rows="4" placeholder="مثال: انطلق الغلاف من فكرة… واخترتُ اللون… لأن…"></textarea></label>
+        <div class="hs-wrap">
+          <div class="hs-stage" id="hsStage" title="اضغط لإضافة نقطة"><img id="hsPic" alt=""><div class="hs-dots" id="hsDots"></div><div class="hs-empty" id="hsEmpty">ارفع صورة الغلاف الأمامي أولًا</div></div>
+          <div class="hs-list" id="hsList"></div>
         </div>
       </fieldset>
 
@@ -135,8 +147,8 @@
 </div>
 <div class="toast" id="toast" hidden></div>
 
-<script src="js/gh-api.js?v=6"></script>
-<script src="js/imgtools.js?v=6"></script>
-<script src="js/admin.js?v=6"></script>
+<script src="js/gh-api.js?v=7"></script>
+<script src="js/imgtools.js?v=7"></script>
+<script src="js/admin.js?v=7"></script>
 </body>
 </html>

@@ -87,6 +87,7 @@ legend{padding:0 8px;font-weight:700;color:var(--green)}
 .item.is-hidden{background:repeating-linear-gradient(135deg,#fff 0 12px,#f6f1e6 12px 24px)}
 .item.is-hidden .thumb{filter:grayscale(.7);opacity:.75}
 .tag.t-hidden{background:#8a7a68}
+.tag.t-feat{background:var(--gold);color:var(--ink)}
 .item-b button.on{background:var(--green);color:#fff;border-color:var(--green)}
 .chk{flex-direction:row;align-items:center;gap:8px;font-size:1.05rem;cursor:pointer}
 .chk input{width:20px;height:20px;accent-color:var(--green)}
@@ -144,3 +145,23 @@ output{font-weight:400;color:#7a6a58}
   .pair{flex-wrap:wrap}
   .pair .pair-b{margin-right:0;width:100%;justify-content:flex-end}
 }
+
+/* فلسفة الغلاف والنقاط */
+.feat-chk{margin-top:6px;color:var(--amber)}
+#fPhil{padding:8px 12px;border:1px solid var(--line);border-radius:10px;font-weight:400;resize:vertical;line-height:1.6}
+.hs-wrap{display:flex;gap:16px;margin-top:12px;align-items:flex-start;flex-wrap:wrap}
+.hs-stage{position:relative;width:min(320px,100%);min-height:120px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#f2ede2;cursor:crosshair;flex:none}
+.hs-stage img{width:100%;height:auto;display:block;pointer-events:none;user-select:none}
+.hs-stage img:not([src]){display:none}
+.hs-dots{position:absolute;inset:0}
+.hs-dot{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:var(--gold);color:var(--ink);font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.35);cursor:grab;user-select:none;touch-action:none}
+.hs-dot.is-on{background:var(--green);color:#fff}
+.hs-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#8a7a68;font-size:.95rem;pointer-events:none}
+.hs-stage.has .hs-empty{display:none}
+.hs-list{flex:1;min-width:240px;display:flex;flex-direction:column;gap:8px}
+.hs-item{display:flex;gap:8px;align-items:flex-start;padding:8px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.hs-item.is-on{border-color:var(--gold);box-shadow:0 0 0 2px rgba(217,164,65,.35)}
+.hs-item i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--gold);color:var(--ink);font-style:normal;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;margin-top:4px}
+.hs-item textarea{flex:1;padding:6px 10px;border:1px solid var(--line);border-radius:8px;font-weight:400;resize:vertical;min-height:38px;line-height:1.5}
+.hs-item button{border:1px solid var(--line);background:#fff;border-radius:8px;width:30px;height:30px;cursor:pointer;flex:none;margin-top:2px}
+.hs-note{color:#8a7a68;font-size:.9rem}

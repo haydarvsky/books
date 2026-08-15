@@ -14,6 +14,9 @@
 
   let BOOKS = [];
   let FILTER = 'all';
+  const VIEWS = ['spine', 'cover', 'stack'];
+  let VIEW = VIEWS.includes(localStorage.getItem('bg_view')) ? localStorage.getItem('bg_view') : 'spine';
+  const featCase = $('#featCase'), featSec = $('#featured'), allTitle = $('#allTitle');
   const isTouch = matchMedia('(hover:none)').matches;
 
   /* ---------- أدوات ---------- */
@@ -28,6 +31,7 @@
   const textOn = hex => luminance(hex) > 0.6 ? '#2A1A0F' : '#FAF6EF';
   const workLabel = { cover: 'تصميم الغلاف', typeset: 'التنضيد الداخلي' };
   const hasWork = (b, w) => Array.isArray(b.work) && b.work.includes(w);
+  const MOB = () => innerWidth <= 820;
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
   /* ---------- تحميل البيانات ---------- */
@@ -47,7 +51,7 @@
     }
     await measureSpines();
     loadingEl.hidden = true;
-    render();
+    render(); if (VIEW === 'stack') kick();
   }
   /* يقيس نسبة عرض الكعب إلى ارتفاعه من صورته إن لم تكن محفوظة في البيانات */
   function measureSpines() {
@@ -70,10 +74,9 @@
     if (b.sar > 0) t = Math.max(4, Math.round(Math.min(h * 0.45, h * b.sar))); // من صورة الكعب نفسها بلا قصّ
     return { h, w, t };
   }
-  const MOB = () => innerWidth <= 820;
-  function slotWidth(b) { const d = bookDims(b); return Math.max(d.t, 22) + (MOB() ? 8 : 12); }
 
-  function bookEl(b) {
+
+  function bookEl(b, feat) {
     const d = bookDims(b);
     const c = b.color || '#0F4C3A';
     const tc = textOn(c);
@@ -95,6 +98,7 @@
         <div class="face f-bottom"></div>
       </div>
       <div class="book-shadow"></div>
+      ${feat ? `<span class="feat-star">✦</span><div class="feat-cap"><b>${esc(b.title)}</b>${b.author ? `<small>${esc(b.author)}</small>` : ''}</div>` : ''}
       <div class="tip"><b>${esc(b.title)}</b>${b.author ? `<small>${esc(b.author)}</small>` : ''}<div class="tags">${tags}</div></div>`;
     const bookNode = $('.book', slot);
     bookNode.addEventListener('click', () => openBook(b));
@@ -102,8 +106,64 @@
     return slot;
   }
 
+  /* عرض فتحة كتاب بحسب طريقة العرض */
+  function slotW(b, mode = VIEW) {
+    const d = bookDims(b);
+    if (mode === 'cover') return d.w + (MOB() ? 10 : 18);
+    return Math.max(d.t, 22) + (MOB() ? 8 : 12);
+  }
+  /* يبني صفوف رفوف من قائمة كتب داخل حاوية */
+  function buildShelves(container, list, { mode = VIEW, feat = false } = {}) {
+    container.innerHTML = '';
+    container.className = 'bookcase mode-' + mode;
+    const avail = Math.max(280, container.clientWidth - (MOB() ? 24 : 60));
+    let i = 0;
+    const mkShelf = () => { const shelf = document.createElement('div'); shelf.className = 'shelf'; const sr = document.createElement('div'); sr.className = 'shelf-row'; const plank = document.createElement('div'); plank.className = 'plank'; shelf.append(sr, plank); container.appendChild(shelf); return sr; };
+    if (mode === 'stack') {
+      // أكداس: كل كدس ٣–٦ كتب مستلقية
+      const sizes = [4, 5, 3, 6, 4];
+      const piles = []; let k = 0, si = 0;
+      while (k < list.length) { const n = sizes[si++ % sizes.length]; piles.push(list.slice(k, k + n)); k += n; }
+      const pileW = p => Math.max(...p.map(b => bookDims(b).h)) + 10;
+      let row = null, wsum = 0;
+      piles.forEach(p => {
+        const pw = pileW(p);
+        if (!row || wsum + pw + 36 > avail) { row = mkShelf(); wsum = 0; }
+        wsum += pw + 36;
+        const pile = document.createElement('div'); pile.className = 'pile';
+        let y = 0; const nodes = [];
+        p.forEach((b, j) => {
+          const d = bookDims(b);
+          const slot = bookEl(b, false);
+          const jx = ((hash(b.id) % 21) - 10) * 0.6; // إزاحة أفقية طفيفة
+          slot.style.setProperty('--y', y + 'px'); slot.style.setProperty('--jx', jx + 'px');
+          slot.style.animationDelay = (i++ * 45) + 'ms';
+          nodes.push(slot); y += d.t + 1;
+        });
+        pile.style.setProperty('--ph', y + 'px'); pile.style.setProperty('--pw', pw + 'px');
+        nodes.forEach(n => pile.appendChild(n));
+        row.appendChild(pile);
+      });
+      $$('.shelf', container).forEach(sh => { const maxH = Math.max(...$$('.pile', sh).map(p => parseFloat(p.style.getPropertyValue('--ph')))); sh.style.height = (maxH + 40) + 'px'; $('.shelf-row', sh).style.height = maxH + 'px'; $('.plank', sh).style.top = maxH + 'px'; });
+      return;
+    }
+    let row = null, wsum = 0;
+    list.forEach(b => {
+      const sw = slotW(b, mode);
+      if (!row || wsum + sw > avail) { row = mkShelf(); wsum = 0; }
+      wsum += sw;
+      const slot = bookEl(b, feat); slot.style.animationDelay = (i++ * 45) + 'ms'; row.appendChild(slot);
+    });
+  }
+
   function render() {
+    // رفّ المميّز (أغلفة أمامية دائماً)
+    const feats = BOOKS.filter(b => b.featured);
+    featSec.hidden = !feats.length;
+    if (feats.length) buildShelves(featCase, feats, { mode: 'cover', feat: true });
+    // كل الأعمال
     const list = BOOKS.filter(b => FILTER === 'all' || hasWork(b, FILTER));
+    allTitle.hidden = !(feats.length && list.length);
     bookcase.innerHTML = '';
     if (!list.length) {
       emptyEl.hidden = false;
@@ -111,37 +171,29 @@
       return;
     }
     emptyEl.hidden = true;
-    const avail = Math.max(280, bookcase.clientWidth - (innerWidth <= 820 ? 24 : 60));
-    const rows = [];
-    let row = [], wsum = 0;
-    for (const b of list) {
-      const sw = slotWidth(b);
-      if (row.length && wsum + sw > avail) { rows.push(row); row = []; wsum = 0; }
-      row.push(b); wsum += sw;
-    }
-    if (row.length) rows.push(row);
-    let i = 0;
-    rows.forEach(r => {
-      const shelf = document.createElement('div');
-      shelf.className = 'shelf';
-      const sr = document.createElement('div');
-      sr.className = 'shelf-row';
-      r.forEach(b => { const s = bookEl(b); s.style.animationDelay = (i++ * 45) + 'ms'; sr.appendChild(s); });
-      const plank = document.createElement('div');
-      plank.className = 'plank';
-      shelf.append(sr, plank);
-      bookcase.appendChild(shelf);
-    });
+    buildShelves(bookcase, list, { mode: VIEW });
+    document.body.dataset.view = VIEW;
   }
+  /* مبدّل طريقة العرض */
+  const viewsNav = $('#views');
+  function setView(v, save = true) {
+    VIEW = v; if (save) localStorage.setItem('bg_view', v);
+    $$('button', viewsNav).forEach(b => b.classList.toggle('is-on', b.dataset.v === v));
+    baseX = v === 'stack' ? 14 : 0; kick();
+    render();
+  }
+  viewsNav.addEventListener('click', e => { const b = e.target.closest('button[data-v]'); if (b) setView(b.dataset.v); });
+  $$('button', viewsNav).forEach(b => b.classList.toggle('is-on', b.dataset.v === VIEW));
 
   let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(render, 180); });
 
   /* ---------- حركة الرفّ مع الفأرة ---------- */
-  let tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
+  let tx = 0, ty = 0, cx = 0, cy = 0, raf = null, baseX = VIEW === 'stack' ? 14 : 0, cbx = 0;
   function tick() {
-    cx += (tx - cx) * 0.08; cy += (ty - cy) * 0.08;
-    bookcase.style.transform = `rotateX(${cy}deg) rotateY(${cx}deg)`;
-    if (Math.abs(tx - cx) > 0.01 || Math.abs(ty - cy) > 0.01) raf = requestAnimationFrame(tick); else raf = null;
+    cx += (tx - cx) * 0.08; cy += (ty - cy) * 0.08; cbx += (baseX - cbx) * 0.08;
+    bookcase.style.transform = `rotateX(${cy + cbx}deg) rotateY(${cx}deg)`;
+    featCase.style.transform = `rotateX(${cy}deg) rotateY(${cx}deg)`;
+    if (Math.abs(tx - cx) > 0.01 || Math.abs(ty - cy) > 0.01 || Math.abs(baseX - cbx) > 0.01) raf = requestAnimationFrame(tick); else raf = null;
   }
   function kick() { if (!raf) raf = requestAnimationFrame(tick); }
   if (!isTouch) {
@@ -216,8 +268,26 @@
     const setFlat = (id, src) => { const im = $(id); im.hidden = !src; if (src) im.src = src; };
     setFlat('#flatFront', b.cover?.front); setFlat('#flatSpine', b.cover?.spine); setFlat('#flatBack', b.cover?.back);
     $$('img', coverFlat).forEach(im => { im.onload = fitFlat; });
-    setView('front', true);
+    // فلسفة الغلاف وتفاصيله
+    const hs = (b.hotspots || []).filter(h => h && h.t);
+    const hasNotes = !!(b.philosophy || hs.length) && !!b.cover?.front;
+    $('#btnNotes').hidden = !hasNotes;
+    if (hasNotes) {
+      $('#cnPic').src = b.cover.front; $('#cnPhil').textContent = b.philosophy || ''; $('#cnPhil').hidden = !b.philosophy;
+      $('#cnDots').innerHTML = hs.map((h, i) => `<span class="cn-dot" data-i="${i}" style="left:${(+h.x * 100).toFixed(2)}%;top:${(+h.y * 100).toFixed(2)}%">${arNum(i + 1)}<span class="cn-bubble">${esc(h.t)}</span></span>`).join('');
+      $('#cnList').innerHTML = hs.map((h, i) => `<li data-i="${i}"><i>${arNum(i + 1)}</i><span>${esc(h.t)}</span></li>`).join('');
+      $('.cn-hint', coverNotes).hidden = !hs.length;
+    }
+    setCoverView(hasNotes && b.featured ? 'notes' : 'front', true);
   }
+  const coverNotes = $('#coverNotes');
+  function cnSelect(i, toggle) {
+    const cur = $('.cn-dot.is-on', coverNotes)?.dataset.i;
+    const on = toggle && cur === String(i) ? null : String(i);
+    $$('.cn-dot,#cnList li', coverNotes).forEach(el => el.classList.toggle('is-on', el.dataset.i === on));
+  }
+  coverNotes.addEventListener('click', e => { const el = e.target.closest('.cn-dot,#cnList li'); if (el) cnSelect(el.dataset.i, true); });
+  coverNotes.addEventListener('mouseover', e => { const el = e.target.closest('.cn-dot,#cnList li'); if (el && !$('.cn-dot.is-on', coverNotes)) $$('.cn-dot,#cnList li', coverNotes).forEach(x => x.classList.toggle('is-hl', x.dataset.i === el.dataset.i)); });
   function fitFlat() { // ملاءمة الغلاف المسطّح داخل المسرح
     if (coverFlat.hidden) return;
     const r = coverStage.getBoundingClientRect();
@@ -228,17 +298,18 @@
   }
   addEventListener('resize', fitFlat);
   function applyRot() { cover3d.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`; }
-  function setView(v, instant) {
+  function setCoverView(v, instant) {
     $$('.cover-ctl [data-view]').forEach(b => b.classList.toggle('is-on', b.dataset.view === v));
-    const flat = v === 'flat';
-    coverFlat.hidden = !flat; cover3d.hidden = flat;
+    const flat = v === 'flat', notes = v === 'notes';
+    coverFlat.hidden = !flat; coverNotes.hidden = !notes; cover3d.hidden = flat || notes;
+    if (notes) return;
     if (flat) { fitFlat(); return; }
     rx = 0;
     if (v === 'front') ry = -22; else if (v === 'spine') ry = -90; else if (v === 'back') ry = -200;
     if (instant) { cover3d.classList.add('dragging'); applyRot(); void cover3d.offsetWidth; cover3d.classList.remove('dragging'); }
     else applyRot();
   }
-  $$('.cover-ctl [data-view]').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+  $$('.cover-ctl [data-view]').forEach(b => b.addEventListener('click', () => setCoverView(b.dataset.view)));
   coverStage.addEventListener('pointerdown', e => {
     if (cover3d.hidden) return;
     drag = { x: e.clientX, y: e.clientY, ry, rx }; moved = false;
