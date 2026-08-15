@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T20:38:33.214Z",
+  "updated": "2026-08-15T20:42:53.923Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -889,6 +889,64 @@
       "par": 0.667,
       "updatedAt": "2026-08-15T20:38:31.282Z",
       "order": 12
+    },
+    {
+      "id": "bmsuub0kg",
+      "title": "المتاهات المضيئة",
+      "author": "حيدر علي السرور",
+      "year": "2025م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#242e2a",
+      "hidden": false,
+      "sar": 0.051,
+      "cover": {
+        "front": "images/bmsuub0kg/front-msuudsnv.jpg",
+        "spine": "images/bmsuub0kg/spine-msuudsnv.jpg",
+        "back": "images/bmsuub0kg/back-msuudsnv.jpg"
+      },
+      "ar": 0.705,
+      "pages": [
+        {
+          "r": "images/bmsuub0kg/p01-r-msuudsnv.jpg",
+          "l": "images/bmsuub0kg/p01-l-msuudsnv.jpg"
+        },
+        {
+          "r": "images/bmsuub0kg/p02-r-msuudsnv.jpg",
+          "l": "images/bmsuub0kg/p02-l-msuudsnv.jpg"
+        },
+        {
+          "r": "images/bmsuub0kg/p03-r-msuudsnv.jpg",
+          "l": "images/bmsuub0kg/p03-l-msuudsnv.jpg"
+        },
+        {
+          "r": "images/bmsuub0kg/p04-r-msuudsnv.jpg",
+          "l": "images/bmsuub0kg/p04-l-msuudsnv.jpg"
+        },
+        {
+          "r": "images/bmsuub0kg/p05-r-msuudsnv.jpg",
+          "l": "images/bmsuub0kg/p05-l-msuudsnv.jpg"
+        },
+        {
+          "r": "images/bmsuub0kg/p06-r-msuudsnv.jpg",
+          "l": "images/bmsuub0kg/p06-l-msuudsnv.jpg"
+        },
+        {
+          "r": "images/bmsuub0kg/p07-r-msuudsnv.jpg",
+          "l": "images/bmsuub0kg/p07-l-msuudsnv.jpg"
+        },
+        {
+          "r": "images/bmsuub0kg/p08-r-msuudsnv.jpg",
+          "l": "images/bmsuub0kg/p08-l-msuudsnv.jpg"
+        }
+      ],
+      "par": 0.705,
+      "updatedAt": "2026-08-15T20:42:52.516Z",
+      "order": 13
     }
   ]
 }
