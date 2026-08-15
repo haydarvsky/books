@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T09:11:13.555Z",
+  "updated": "2026-08-15T09:14:47.041Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -73,6 +73,108 @@
       "par": 0.715,
       "updatedAt": "2026-08-15T08:46:05.839Z",
       "order": 0
+    },
+    {
+      "id": "bmsu5qkul",
+      "title": "الحرب على الدين",
+      "author": "أحمد فيصل",
+      "year": "١٤٤٧ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#49381f",
+      "hidden": false,
+      "sar": 0.0725,
+      "cover": {
+        "front": "images/bmsu5qkul/front-msu5ti1b.jpg",
+        "spine": "images/bmsu5qkul/spine-msu5ti1b.jpg",
+        "back": "images/bmsu5qkul/back-msu5ti1b.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmsu5qkul/p01-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p01-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p02-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p02-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p03-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p03-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p04-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p04-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p05-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p05-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p06-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p06-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p07-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p07-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p08-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p08-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p09-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p09-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p10-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p10-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p11-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p11-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p12-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p12-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p13-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p13-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p14-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p14-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p15-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p15-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p16-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p16-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p17-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p17-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p18-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p18-l-msu5ti1b.jpg"
+        },
+        {
+          "r": "images/bmsu5qkul/p19-r-msu5ti1b.jpg",
+          "l": "images/bmsu5qkul/p19-l-msu5ti1b.jpg"
+        }
+      ],
+      "par": 0.667,
+      "updatedAt": "2026-08-15T09:14:46.113Z",
+      "order": 1
     }
   ]
 }
