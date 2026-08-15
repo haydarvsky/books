@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T11:20:34.968Z",
+  "updated": "2026-08-15T11:25:13.853Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -715,6 +715,60 @@
       "par": 0.667,
       "updatedAt": "2026-08-15T11:20:33.889Z",
       "order": 9
+    },
+    {
+      "id": "bmsuafl1b",
+      "title": "على أعتابهم",
+      "author": "ياسر التميمي",
+      "year": "١٤٤٧ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#5c3b1e",
+      "hidden": false,
+      "sar": 0.0725,
+      "cover": {
+        "front": "images/bmsuafl1b/front-msuahh6g.jpg",
+        "spine": "images/bmsuafl1b/spine-msuahh6g.jpg",
+        "back": "images/bmsuafl1b/back-msuahh6g.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmsuafl1b/p01-r-msuahh6g.jpg",
+          "l": "images/bmsuafl1b/p01-l-msuahh6g.jpg"
+        },
+        {
+          "r": "images/bmsuafl1b/p02-r-msuahh6g.jpg",
+          "l": "images/bmsuafl1b/p02-l-msuahh6g.jpg"
+        },
+        {
+          "r": "images/bmsuafl1b/p03-r-msuahh6g.jpg",
+          "l": "images/bmsuafl1b/p03-l-msuahh6g.jpg"
+        },
+        {
+          "r": "images/bmsuafl1b/p04-r-msuahh6g.jpg",
+          "l": "images/bmsuafl1b/p04-l-msuahh6g.jpg"
+        },
+        {
+          "r": "images/bmsuafl1b/p05-r-msuahh6g.jpg",
+          "l": "images/bmsuafl1b/p05-l-msuahh6g.jpg"
+        },
+        {
+          "r": "images/bmsuafl1b/p06-r-msuahh6g.jpg",
+          "l": "images/bmsuafl1b/p06-l-msuahh6g.jpg"
+        },
+        {
+          "r": "images/bmsuafl1b/p07-r-msuahh6g.jpg",
+          "l": "images/bmsuafl1b/p07-l-msuahh6g.jpg"
+        }
+      ],
+      "par": 0.667,
+      "updatedAt": "2026-08-15T11:25:12.897Z",
+      "order": 10
     }
   ]
 }
