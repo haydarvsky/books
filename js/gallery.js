@@ -39,7 +39,7 @@
         const r = await fetch('data/books.json?t=' + Date.now(), { cache: 'no-store' });
         if (!r.ok) throw new Error('HTTP ' + r.status);
         const j = await r.json();
-        BOOKS = (j.books || []).slice().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+        BOOKS = (j.books || []).filter(b => !b.hidden).sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
       }
     } catch (e) {
       console.warn('تعذّر تحميل البيانات', e);

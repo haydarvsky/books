@@ -6,7 +6,7 @@
 <title>لوحة التحكم — معرض الكتب</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="img/logo-dark.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/admin.css?v=2">
+<link rel="stylesheet" href="css/admin.css?v=4">
 </head>
 <body>
 
@@ -74,11 +74,19 @@
         <label><span>نبذة عن العمل</span><input id="fNote" placeholder="سطر يشرح ما عملته في هذا الكتاب"></label>
       </div>
 
-      <fieldset class="work">
-        <legend>نوع العمل <span class="req">*</span></legend>
-        <label class="chk"><input type="checkbox" id="wCover"> <span>تصميم الغلاف</span></label>
-        <label class="chk"><input type="checkbox" id="wTypeset"> <span>التنضيد الداخلي</span></label>
-      </fieldset>
+      <div class="grid2">
+        <fieldset class="work">
+          <legend>نوع العمل <span class="req">*</span></legend>
+          <label class="chk"><input type="checkbox" id="wCover"> <span>تصميم الغلاف</span></label>
+          <label class="chk"><input type="checkbox" id="wTypeset"> <span>التنضيد الداخلي</span></label>
+        </fieldset>
+        <fieldset class="work vis">
+          <legend>الظهور في المعرض</legend>
+          <label class="chk"><input type="radio" name="vis" id="visOn" value="1" checked> <span>👁 ظاهر على الرفّ</span></label>
+          <label class="chk"><input type="radio" name="vis" id="visOff" value="0"> <span>🙈 مخفي (بانتظار النشر)</span></label>
+          <p class="muted vis-hint">الكتاب المخفي يبقى محفوظًا بصوره كاملة في اللوحة، ولا يراه زوّار المعرض حتى تُظهره.</p>
+        </fieldset>
+      </div>
 
       <!-- الغلاف -->
       <fieldset class="sec" id="secCover">
@@ -126,8 +134,8 @@
 </div>
 <div class="toast" id="toast" hidden></div>
 
-<script src="js/gh-api.js?v=2"></script>
-<script src="js/imgtools.js?v=2"></script>
-<script src="js/admin.js?v=2"></script>
+<script src="js/gh-api.js?v=4"></script>
+<script src="js/imgtools.js?v=4"></script>
+<script src="js/admin.js?v=4"></script>
 </body>
 </html>

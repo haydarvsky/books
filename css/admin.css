@@ -79,6 +79,13 @@ label input:focus{outline:2px solid rgba(15,76,58,.3);border-color:var(--green)}
 fieldset{border:1px solid var(--line);border-radius:12px;padding:12px 14px 14px}
 legend{padding:0 8px;font-weight:700;color:var(--green)}
 .work{display:flex;gap:18px;flex-wrap:wrap}
+.work.vis{flex-direction:column;gap:6px}
+.vis-hint{font-weight:400;font-size:.9rem}
+.chk input[type=radio]{width:18px;height:18px;accent-color:var(--green)}
+.item.is-hidden{background:repeating-linear-gradient(135deg,#fff 0 12px,#f6f1e6 12px 24px)}
+.item.is-hidden .thumb{filter:grayscale(.7);opacity:.75}
+.tag.t-hidden{background:#8a7a68}
+.item-b button.on{background:var(--green);color:#fff;border-color:var(--green)}
 .chk{flex-direction:row;align-items:center;gap:8px;font-size:1.05rem;cursor:pointer}
 .chk input{width:20px;height:20px;accent-color:var(--green)}
 .sec.off{display:none}

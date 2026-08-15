@@ -91,13 +91,14 @@
     $('#count').textContent = DB.books.length ? `(${arNum(DB.books.length)})` : '';
     $('#emptyList').hidden = DB.books.length > 0; $('#listHint').hidden = DB.books.length < 2;
     DB.books.forEach((b, i) => {
-      const it = document.createElement('div'); it.className = 'item'; it.draggable = true; it.dataset.i = i;
+      const it = document.createElement('div'); it.className = 'item' + (b.hidden ? ' is-hidden' : ''); it.draggable = true; it.dataset.i = i;
       const th = b.cover?.front ? `<img class="thumb" src="${esc(b.cover.front)}" alt="">` : `<div class="thumb txt" style="background:${esc(b.color || '#0F4C3A')}">${esc(b.title)}</div>`;
-      const tags = (b.work || []).map(w => `<span class="tag t-${w}">${workLabel[w]}</span>`).join('') + (b.pages?.length ? `<span class="tag t-pages">${arNum(b.pages.length)} فتحات</span>` : '');
+      const tags = (b.work || []).map(w => `<span class="tag t-${w}">${workLabel[w]}</span>`).join('') + (b.pages?.length ? `<span class="tag t-pages">${arNum(b.pages.length)} فتحات</span>` : '') + (b.hidden ? '<span class="tag t-hidden">🙈 مخفي</span>' : '');
       it.innerHTML = `<span class="grip" title="اسحب للترتيب">⋮⋮</span>${th}
         <div class="item-t"><b>${esc(b.title)}</b><small>${esc(b.author || '')}${b.year ? ' · ' + esc(b.year) : ''}</small><div class="tags">${tags}</div></div>
-        <div class="item-b"><button data-up title="أعلى">▲</button><button data-down title="أسفل">▼</button><button data-edit title="تعديل">✎</button></div>`;
+        <div class="item-b"><button data-vis title="${b.hidden ? 'إظهار في المعرض' : 'إخفاء من المعرض'}">${b.hidden ? '🙈' : '👁'}</button><button data-up title="أعلى">▲</button><button data-down title="أسفل">▼</button><button data-edit title="تعديل">✎</button></div>`;
       $('[data-edit]', it).addEventListener('click', () => openEditor(b));
+      $('[data-vis]', it).addEventListener('click', () => toggleVisible(b));
       $('[data-up]', it).addEventListener('click', () => moveBook(i, -1));
       $('[data-down]', it).addEventListener('click', () => moveBook(i, 1));
       it.addEventListener('dragstart', e => { it.classList.add('dragging'); e.dataTransfer.setData('text/plain', i); e.dataTransfer.effectAllowed = 'move'; });
@@ -107,6 +108,15 @@
       it.addEventListener('drop', e => { e.preventDefault(); it.classList.remove('over'); const from = +e.dataTransfer.getData('text/plain'); if (from !== i) { const [m] = DB.books.splice(from, 1); DB.books.splice(i, 0, m); orderChanged(); } });
       list.appendChild(it);
     });
+  }
+  async function toggleVisible(b) {
+    if (!canPublish()) return toast('أدخل رمز الوصول أولاً', 'err');
+    const hide = !b.hidden;
+    try {
+      showBusy(hide ? 'جارٍ إخفاء الكتاب…' : 'جارٍ إظهار الكتاب…');
+      await publish((hide ? 'إخفاء كتاب: ' : 'إظهار كتاب: ') + b.title, [], [], books => { const x = books.find(k => k.id === b.id); if (x) x.hidden = hide; return books; });
+      hideBusy(); toast(hide ? 'أُخفي الكتاب من المعرض (ما زال محفوظًا هنا)' : 'صار الكتاب ظاهرًا على الرفّ ✓', 'ok');
+    } catch (e) { hideBusy(); toast(errMsg(e), 'err'); }
   }
   function moveBook(i, d) { const j = i + d; if (j < 0 || j >= DB.books.length) return; [DB.books[i], DB.books[j]] = [DB.books[j], DB.books[i]]; orderChanged(); }
   function orderChanged() { DB.books.forEach((b, i) => b.order = i); ORDER_DIRTY = true; $('#btnSaveOrder').hidden = !canPublish(); renderList(); }
@@ -150,6 +160,7 @@
     F.title.value = b?.title || ''; F.author.value = b?.author || ''; F.year.value = b?.year || ''; F.note.value = b?.note || '';
     F.wCover.checked = b ? (b.work || []).includes('cover') : true; F.wTypeset.checked = b ? (b.work || []).includes('typeset') : false;
     F.thick.value = b?.thick || 3; $('#thickOut').textContent = arNum(F.thick.value);
+    $('#visOff').checked = !!b?.hidden; $('#visOn').checked = !b?.hidden;
     F.color.value = b?.color || '#0F4C3A';
     ['front', 'spine', 'back'].forEach(k => { ED.slots[k] = newSlot(b?.cover?.[k]); paintSlot($(`.dz[data-slot=${k}]`), ED.slots[k]); });
     ED.pairs = (b?.pages || []).map(p => ({ r: newSlot(p.r), l: newSlot(p.l) }));
@@ -268,7 +279,7 @@
       showBusy('جارٍ تجهيز الصور…');
       const ts = Date.now().toString(36);
       const files = [], deletes = new Set(ED.trash || []);
-      const b = { ...(ED.orig || {}), id: ED.id, title, author: F.author.value.trim(), year: F.year.value.trim(), note: F.note.value.trim(), work, thick: +F.thick.value, color: F.color.value };
+      const b = { ...(ED.orig || {}), id: ED.id, title, author: F.author.value.trim(), year: F.year.value.trim(), note: F.note.value.trim(), work, thick: +F.thick.value, color: F.color.value, hidden: $('#visOff').checked };
       // الغلاف
       const cover = {}; let ar = ED.orig?.ar || 0;
       let n = 0, total = ['front', 'spine', 'back'].filter(k => ED.slots[k].file).length + pairs.reduce((a, p) => a + (p.r.file ? 1 : 0) + (p.l.file ? 1 : 0), 0);
