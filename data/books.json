@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T11:29:22.429Z",
+  "updated": "2026-08-15T20:38:33.214Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -831,6 +831,64 @@
       "par": 0.697,
       "updatedAt": "2026-08-15T11:29:21.441Z",
       "order": 11
+    },
+    {
+      "id": "bmsuu4z0q",
+      "title": "آيات الهدى في مصابيح الدجى",
+      "author": "ليلى الحسن",
+      "year": "",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#b0ab69",
+      "hidden": false,
+      "sar": 0.027,
+      "cover": {
+        "front": "images/bmsuu4z0q/front-msuu915w.jpg",
+        "spine": "images/bmsuu4z0q/spine-msuu915w.jpg",
+        "back": "images/bmsuu4z0q/back-msuu915w.jpg"
+      },
+      "ar": 0.667,
+      "pages": [
+        {
+          "r": "images/bmsuu4z0q/p01-r-msuu915w.jpg",
+          "l": "images/bmsuu4z0q/p01-l-msuu915w.jpg"
+        },
+        {
+          "r": "images/bmsuu4z0q/p02-r-msuu915w.jpg",
+          "l": "images/bmsuu4z0q/p02-l-msuu915w.jpg"
+        },
+        {
+          "r": "images/bmsuu4z0q/p03-r-msuu915w.jpg",
+          "l": "images/bmsuu4z0q/p03-l-msuu915w.jpg"
+        },
+        {
+          "r": "images/bmsuu4z0q/p04-r-msuu915w.jpg",
+          "l": "images/bmsuu4z0q/p04-l-msuu915w.jpg"
+        },
+        {
+          "r": "images/bmsuu4z0q/p05-r-msuu915w.jpg",
+          "l": "images/bmsuu4z0q/p05-l-msuu915w.jpg"
+        },
+        {
+          "r": "images/bmsuu4z0q/p06-r-msuu915w.jpg",
+          "l": "images/bmsuu4z0q/p06-l-msuu915w.jpg"
+        },
+        {
+          "r": "images/bmsuu4z0q/p07-r-msuu915w.jpg",
+          "l": "images/bmsuu4z0q/p07-l-msuu915w.jpg"
+        },
+        {
+          "r": "images/bmsuu4z0q/p08-r-msuu915w.jpg",
+          "l": "images/bmsuu4z0q/p08-l-msuu915w.jpg"
+        }
+      ],
+      "par": 0.667,
+      "updatedAt": "2026-08-15T20:38:31.282Z",
+      "order": 12
     }
   ]
 }
