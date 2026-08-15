@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T20:52:45.931Z",
+  "updated": "2026-08-15T20:59:33.414Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1089,6 +1089,57 @@
       "par": 0.705,
       "updatedAt": "2026-08-15T20:52:44.915Z",
       "order": 16
+    },
+    {
+      "id": "bmsuuyinc",
+      "title": "ذكرى عالقة",
+      "author": "رباب غملوش",
+      "year": "٢٠٢٤م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#579bc1",
+      "hidden": false,
+      "featured": true,
+      "sar": 0.062,
+      "cover": {
+        "front": "images/bmsuuyinc/front-msuv02ah.jpg",
+        "spine": "images/bmsuuyinc/spine-msuv02ah.jpg",
+        "back": "images/bmsuuyinc/back-msuv02ah.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmsuuyinc/p01-r-msuv02ah.jpg",
+          "l": "images/bmsuuyinc/p01-l-msuv02ah.jpg"
+        },
+        {
+          "r": "images/bmsuuyinc/p02-r-msuv02ah.jpg",
+          "l": "images/bmsuuyinc/p02-l-msuv02ah.jpg"
+        },
+        {
+          "r": "images/bmsuuyinc/p03-r-msuv02ah.jpg",
+          "l": "images/bmsuuyinc/p03-l-msuv02ah.jpg"
+        },
+        {
+          "r": "images/bmsuuyinc/p04-r-msuv02ah.jpg",
+          "l": "images/bmsuuyinc/p04-l-msuv02ah.jpg"
+        },
+        {
+          "r": "images/bmsuuyinc/p05-r-msuv02ah.jpg",
+          "l": "images/bmsuuyinc/p05-l-msuv02ah.jpg"
+        },
+        {
+          "r": "images/bmsuuyinc/p06-r-msuv02ah.jpg",
+          "l": "images/bmsuuyinc/p06-l-msuv02ah.jpg"
+        }
+      ],
+      "par": 0.667,
+      "updatedAt": "2026-08-15T20:59:32.367Z",
+      "order": 17
     }
   ]
 }
