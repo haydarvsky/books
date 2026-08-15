@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T20:49:32.492Z",
+  "updated": "2026-08-15T20:52:45.931Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1043,6 +1043,52 @@
       "par": 0.667,
       "updatedAt": "2026-08-15T20:49:31.424Z",
       "order": 15
+    },
+    {
+      "id": "bmsuuorpu",
+      "title": "النية وأهميتها",
+      "author": "ليلى الحسن",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#dca93c",
+      "hidden": false,
+      "sar": 0.048,
+      "cover": {
+        "front": "images/bmsuuorpu/front-msuurbso.jpg",
+        "spine": "images/bmsuuorpu/spine-msuurbso.jpg",
+        "back": "images/bmsuuorpu/back-msuurbso.jpg"
+      },
+      "ar": 0.705,
+      "pages": [
+        {
+          "r": "images/bmsuuorpu/p01-r-msuurbso.jpg",
+          "l": "images/bmsuuorpu/p01-l-msuurbso.jpg"
+        },
+        {
+          "r": "images/bmsuuorpu/p02-r-msuurbso.jpg",
+          "l": "images/bmsuuorpu/p02-l-msuurbso.jpg"
+        },
+        {
+          "r": "images/bmsuuorpu/p03-r-msuurbso.jpg",
+          "l": "images/bmsuuorpu/p03-l-msuurbso.jpg"
+        },
+        {
+          "r": "images/bmsuuorpu/p04-r-msuurbso.jpg",
+          "l": "images/bmsuuorpu/p04-l-msuurbso.jpg"
+        },
+        {
+          "r": "images/bmsuuorpu/p05-r-msuurbso.jpg",
+          "l": "images/bmsuuorpu/p05-l-msuurbso.jpg"
+        }
+      ],
+      "par": 0.705,
+      "updatedAt": "2026-08-15T20:52:44.915Z",
+      "order": 16
     }
   ]
 }
