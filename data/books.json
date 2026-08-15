@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T10:05:26.829Z",
+  "updated": "2026-08-15T10:12:31.169Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -511,6 +511,84 @@
       "par": 0.664,
       "updatedAt": "2026-08-15T10:05:25.727Z",
       "order": 5
+    },
+    {
+      "id": "bmsu7sz3p",
+      "title": "صحوة الأقدمين",
+      "author": "حسين علي غلوم",
+      "year": "١٤٤٧ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#18192b",
+      "hidden": false,
+      "sar": 0.082,
+      "cover": {
+        "front": "images/bmsu7sz3p/front-msu7vymi.jpg",
+        "spine": "images/bmsu7sz3p/spine-msu7vymi.jpg",
+        "back": "images/bmsu7sz3p/back-msu7vymi.jpg"
+      },
+      "ar": 0.715,
+      "pages": [
+        {
+          "r": "images/bmsu7sz3p/p01-r-msu7vymi.jpg",
+          "l": "images/bmsu7sz3p/p01-l-msu7vymi.jpg"
+        },
+        {
+          "r": "images/bmsu7sz3p/p02-r-msu7vymi.jpg",
+          "l": "images/bmsu7sz3p/p02-l-msu7vymi.jpg"
+        },
+        {
+          "r": "images/bmsu7sz3p/p03-r-msu7vymi.jpg",
+          "l": "images/bmsu7sz3p/p03-l-msu7vymi.jpg"
+        },
+        {
+          "r": "images/bmsu7sz3p/p04-r-msu7vymi.jpg",
+          "l": "images/bmsu7sz3p/p04-l-msu7vymi.jpg"
+        },
+        {
+          "r": "images/bmsu7sz3p/p05-r-msu7vymi.jpg",
+          "l": "images/bmsu7sz3p/p05-l-msu7vymi.jpg"
+        },
+        {
+          "r": "images/bmsu7sz3p/p06-r-msu7vymi.jpg",
+          "l": "images/bmsu7sz3p/p06-l-msu7vymi.jpg"
+        },
+        {
+          "r": "images/bmsu7sz3p/p07-r-msu7vymi.jpg",
+          "l": "images/bmsu7sz3p/p07-l-msu7vymi.jpg"
+        },
+        {
+          "r": "images/bmsu7sz3p/p08-r-msu7vymi.jpg",
+          "l": "images/bmsu7sz3p/p08-l-msu7vymi.jpg"
+        },
+        {
+          "r": "images/bmsu7sz3p/p09-r-msu7vymi.jpg",
+          "l": "images/bmsu7sz3p/p09-l-msu7vymi.jpg"
+        },
+        {
+          "r": "images/bmsu7sz3p/p10-r-msu7vymi.jpg",
+          "l": "images/bmsu7sz3p/p10-l-msu7vymi.jpg"
+        },
+        {
+          "r": "images/bmsu7sz3p/p11-r-msu7vymi.jpg",
+          "l": "images/bmsu7sz3p/p11-l-msu7vymi.jpg"
+        },
+        {
+          "r": "images/bmsu7sz3p/p12-r-msu7vymi.jpg",
+          "l": "images/bmsu7sz3p/p12-l-msu7vymi.jpg"
+        },
+        {
+          "r": "images/bmsu7sz3p/p13-r-msu7vymi.jpg",
+          "l": "images/bmsu7sz3p/p13-l-msu7vymi.jpg"
+        }
+      ],
+      "par": 0.724,
+      "updatedAt": "2026-08-15T10:12:30.051Z",
+      "order": 6
     }
   ]
 }
