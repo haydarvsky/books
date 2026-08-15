@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T10:17:57.612Z",
+  "updated": "2026-08-15T11:11:19.716Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -591,6 +591,49 @@
       "updatedAt": "2026-08-15T10:16:29.882Z",
       "order": 6,
       "featured": true
+    },
+    {
+      "id": "bmsu9nl70",
+      "title": "مستحثات ملك جمال الكلمات",
+      "author": "هيثم البرغش",
+      "year": "١٤٤٧ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#d6ad74",
+      "hidden": false,
+      "featured": true,
+      "sar": 0.0655,
+      "cover": {
+        "front": "images/bmsu9nl70/front-msu9zl32.jpg",
+        "spine": "images/bmsu9nl70/spine-msu9zl32.jpg",
+        "back": "images/bmsu9nl70/back-msu9zl32.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmsu9nl70/p01-r-msu9zl32.jpg",
+          "l": "images/bmsu9nl70/p01-l-msu9zl32.jpg"
+        },
+        {
+          "r": "images/bmsu9nl70/p02-r-msu9zl32.jpg",
+          "l": "images/bmsu9nl70/p02-l-msu9zl32.jpg"
+        },
+        {
+          "r": "images/bmsu9nl70/p03-r-msu9zl32.jpg",
+          "l": "images/bmsu9nl70/p03-l-msu9zl32.jpg"
+        },
+        {
+          "r": "images/bmsu9nl70/p04-r-msu9zl32.jpg",
+          "l": "images/bmsu9nl70/p04-l-msu9zl32.jpg"
+        }
+      ],
+      "par": 0.667,
+      "updatedAt": "2026-08-15T11:11:18.040Z",
+      "order": 7
     }
   ]
 }
