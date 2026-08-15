@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T11:25:13.853Z",
+  "updated": "2026-08-15T11:29:22.429Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -769,6 +769,68 @@
       "par": 0.667,
       "updatedAt": "2026-08-15T11:25:12.897Z",
       "order": 10
+    },
+    {
+      "id": "bmsualqg6",
+      "title": "بين النور والظلام",
+      "author": "دلال الفهد",
+      "year": "١٤٤٧ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#9c957c",
+      "hidden": false,
+      "sar": 0.0738,
+      "cover": {
+        "front": "images/bmsualqg6/front-msuamsxq.jpg",
+        "spine": "images/bmsualqg6/spine-msuamsxq.jpg",
+        "back": "images/bmsualqg6/back-msuamsxq.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmsualqg6/p01-r-msuamsxq.jpg",
+          "l": "images/bmsualqg6/p01-l-msuamsxq.jpg"
+        },
+        {
+          "r": "images/bmsualqg6/p02-r-msuamsxq.jpg",
+          "l": "images/bmsualqg6/p02-l-msuamsxq.jpg"
+        },
+        {
+          "r": "images/bmsualqg6/p03-r-msuamsxq.jpg",
+          "l": "images/bmsualqg6/p03-l-msuamsxq.jpg"
+        },
+        {
+          "r": "images/bmsualqg6/p04-r-msuamsxq.jpg",
+          "l": "images/bmsualqg6/p04-l-msuamsxq.jpg"
+        },
+        {
+          "r": "images/bmsualqg6/p05-r-msuamsxq.jpg",
+          "l": "images/bmsualqg6/p05-l-msuamsxq.jpg"
+        },
+        {
+          "r": "images/bmsualqg6/p06-r-msuamsxq.jpg",
+          "l": "images/bmsualqg6/p06-l-msuamsxq.jpg"
+        },
+        {
+          "r": "images/bmsualqg6/p07-r-msuamsxq.jpg",
+          "l": "images/bmsualqg6/p07-l-msuamsxq.jpg"
+        },
+        {
+          "r": "images/bmsualqg6/p08-r-msuamsxq.jpg",
+          "l": "images/bmsualqg6/p08-l-msuamsxq.jpg"
+        },
+        {
+          "r": "images/bmsualqg6/p09-r-msuamsxq.jpg",
+          "l": "images/bmsualqg6/p09-l-msuamsxq.jpg"
+        }
+      ],
+      "par": 0.697,
+      "updatedAt": "2026-08-15T11:29:21.441Z",
+      "order": 11
     }
   ]
 }
