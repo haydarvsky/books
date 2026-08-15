@@ -244,7 +244,7 @@ img{display:block;max-width:100%}
 .cf-bottom{width:var(--cw);height:var(--ct);left:0;top:calc(50% - var(--ct)/2);transform:rotateX(-90deg) translateZ(calc(var(--ch)/2));background:#cfc6b1}
 .cf .noimg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;color:#fff;font-size:1.2rem;background:var(--c)}
 .cf-spine .noimg{writing-mode:vertical-rl;transform:rotate(180deg);font-size:1rem}
-.cover-flat{display:flex;gap:2px;align-items:stretch;justify-content:center;height:var(--ch);width:100%;padding:0 10px}
+.cover-flat{display:flex;gap:2px;align-items:stretch;justify-content:center;height:var(--ch);width:100%;padding:0 10px;transition:height .3s}
 .cover-flat img{height:100%;width:auto;object-fit:contain;box-shadow:0 20px 50px -20px rgba(0,0,0,.6);cursor:zoom-in;background:#fff}
 .cover-flat img[hidden]{display:none}
 .cover-ctl{display:flex;justify-content:center;gap:6px;margin-top:14px;flex-wrap:wrap}
@@ -309,6 +309,8 @@ img{display:block;max-width:100%}
   .book-open{height:min(360px,52vh)}
   .pg-nav{width:38px;height:38px;font-size:1.5rem}
   .hint{font-size:.9rem}
+  .shelf-row{gap:10px;padding:0 6px}
+  .slot:hover .book,.slot.is-peek .book{transform:translateZ(70px) translateY(-12px) rotateY(84deg)}
 }
 @media (hover:none){
   .hint{display:none}

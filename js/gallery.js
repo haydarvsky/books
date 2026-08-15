@@ -60,7 +60,7 @@
     const t = Math.round((18 + thick * 8) * (baseH / 230));
     return { h, w, t };
   }
-  function slotWidth(b) { const d = bookDims(b); return d.t + d.w * 0.34 + 16; }
+  function slotWidth(b) { const d = bookDims(b); return d.t + d.w * 0.34 + (innerWidth <= 820 ? 10 : 16); }
 
   function bookEl(b) {
     const d = bookDims(b);
@@ -100,7 +100,7 @@
       return;
     }
     emptyEl.hidden = true;
-    const avail = Math.max(320, bookcase.clientWidth - 60);
+    const avail = Math.max(280, bookcase.clientWidth - (innerWidth <= 820 ? 24 : 60));
     const rows = [];
     let row = [], wsum = 0;
     for (const b of list) {
@@ -204,15 +204,24 @@
     // المسطّح
     const setFlat = (id, src) => { const im = $(id); im.hidden = !src; if (src) im.src = src; };
     setFlat('#flatFront', b.cover?.front); setFlat('#flatSpine', b.cover?.spine); setFlat('#flatBack', b.cover?.back);
-    $('#flatSpine').style.height = '';
+    $$('img', coverFlat).forEach(im => { im.onload = fitFlat; });
     setView('front', true);
   }
+  function fitFlat() { // ملاءمة الغلاف المسطّح داخل المسرح
+    if (coverFlat.hidden) return;
+    const r = coverStage.getBoundingClientRect();
+    const imgs = $$('img', coverFlat).filter(i => !i.hidden && i.naturalWidth);
+    const sum = imgs.reduce((a, i) => a + i.naturalWidth / i.naturalHeight, 0) || 1;
+    const h = Math.max(120, Math.min(r.height - 40, (r.width - 40) / sum));
+    coverFlat.style.height = h + 'px';
+  }
+  addEventListener('resize', fitFlat);
   function applyRot() { cover3d.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`; }
   function setView(v, instant) {
     $$('.cover-ctl [data-view]').forEach(b => b.classList.toggle('is-on', b.dataset.view === v));
     const flat = v === 'flat';
     coverFlat.hidden = !flat; cover3d.hidden = flat;
-    if (flat) return;
+    if (flat) { fitFlat(); return; }
     rx = 0;
     if (v === 'front') ry = -22; else if (v === 'spine') ry = -90; else if (v === 'back') ry = -200;
     if (instant) { cover3d.classList.add('dragging'); applyRot(); void cover3d.offsetWidth; cover3d.classList.remove('dragging'); }
