@@ -15,7 +15,7 @@
   let BOOKS = [];
   let FILTER = 'all';
   const VIEWS = ['spine', 'cover', 'stack'];
-  let VIEW = VIEWS.includes(localStorage.getItem('bg_view')) ? localStorage.getItem('bg_view') : 'spine';
+  let VIEW = VIEWS.includes(localStorage.getItem('bg_view')) ? localStorage.getItem('bg_view') : 'cover';
   const featCase = $('#featCase'), featSec = $('#featured'), allTitle = $('#allTitle');
   const isTouch = matchMedia('(hover:none)').matches;
 
