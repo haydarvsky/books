@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T07:04:33.177Z",
+  "updated": "2026-08-16T07:34:03.717Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1230,6 +1230,48 @@
       "par": 0.762,
       "updatedAt": "2026-08-16T07:04:32.185Z",
       "order": 19
+    },
+    {
+      "id": "bmsvhkkgm",
+      "title": "كائناً ما تكون",
+      "author": "فاضل الجابر",
+      "year": "١٤٤٨ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#233651",
+      "hidden": false,
+      "sar": 0.0655,
+      "cover": {
+        "front": "images/bmsvhkkgm/front-msvho1le.jpg",
+        "spine": "images/bmsvhkkgm/spine-msvho1le.jpg",
+        "back": "images/bmsvhkkgm/back-msvho1le.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmsvhkkgm/p01-r-msvho1le.jpg",
+          "l": "images/bmsvhkkgm/p01-l-msvho1le.jpg"
+        },
+        {
+          "r": "images/bmsvhkkgm/p02-r-msvho1le.jpg",
+          "l": "images/bmsvhkkgm/p02-l-msvho1le.jpg"
+        },
+        {
+          "r": "images/bmsvhkkgm/p03-r-msvho1le.jpg",
+          "l": "images/bmsvhkkgm/p03-l-msvho1le.jpg"
+        },
+        {
+          "r": "images/bmsvhkkgm/p04-r-msvho1le.jpg",
+          "l": "images/bmsvhkkgm/p04-l-msvho1le.jpg"
+        }
+      ],
+      "par": 0.667,
+      "updatedAt": "2026-08-16T07:34:02.643Z",
+      "order": 20
     }
   ]
 }
