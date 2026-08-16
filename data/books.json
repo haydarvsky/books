@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T07:36:13.975Z",
+  "updated": "2026-08-16T07:43:30.193Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1318,6 +1318,48 @@
       "par": 0.667,
       "updatedAt": "2026-08-16T07:36:12.371Z",
       "order": 21
+    },
+    {
+      "id": "bmsvhwdqz",
+      "title": "إذا ضاقت",
+      "author": "هيثم يوسف",
+      "year": "١٤٤٧ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "typeset"
+      ],
+      "thick": 1,
+      "color": "#334c64",
+      "hidden": false,
+      "cover": {
+        "front": "images/bmsvhwdqz/front-msvi06v9.jpg"
+      },
+      "ar": 0.667,
+      "pages": [
+        {
+          "r": "images/bmsvhwdqz/p01-r-msvi06v9.jpg",
+          "l": "images/bmsvhwdqz/p01-l-msvi06v9.jpg"
+        },
+        {
+          "r": "images/bmsvhwdqz/p02-r-msvi06v9.jpg",
+          "l": "images/bmsvhwdqz/p02-l-msvi06v9.jpg"
+        },
+        {
+          "r": "images/bmsvhwdqz/p03-r-msvi06v9.jpg",
+          "l": "images/bmsvhwdqz/p03-l-msvi06v9.jpg"
+        },
+        {
+          "r": "images/bmsvhwdqz/p04-r-msvi06v9.jpg",
+          "l": "images/bmsvhwdqz/p04-l-msvi06v9.jpg"
+        },
+        {
+          "r": "images/bmsvhwdqz/p05-r-msvi06v9.jpg",
+          "l": "images/bmsvhwdqz/p05-l-msvi06v9.jpg"
+        }
+      ],
+      "par": 0.705,
+      "updatedAt": "2026-08-16T07:43:29.309Z",
+      "order": 22
     }
   ]
 }
