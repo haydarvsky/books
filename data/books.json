@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T07:34:03.717Z",
+  "updated": "2026-08-16T07:36:13.975Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1272,6 +1272,52 @@
       "par": 0.667,
       "updatedAt": "2026-08-16T07:34:02.643Z",
       "order": 20
+    },
+    {
+      "id": "bmsvhodqc",
+      "title": "الحمار والقطيع",
+      "author": "هاجر المطيري",
+      "year": "١٤٤٨ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#a89787",
+      "hidden": false,
+      "sar": 0.0675,
+      "cover": {
+        "front": "images/bmsvhodqc/front-msvhqtnq.jpg",
+        "spine": "images/bmsvhodqc/spine-msvhqtnq.jpg",
+        "back": "images/bmsvhodqc/back-msvhqtnq.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmsvhodqc/p01-r-msvhqtnq.jpg",
+          "l": "images/bmsvhodqc/p01-l-msvhqtnq.jpg"
+        },
+        {
+          "r": "images/bmsvhodqc/p02-r-msvhqtnq.jpg",
+          "l": "images/bmsvhodqc/p02-l-msvhqtnq.jpg"
+        },
+        {
+          "r": "images/bmsvhodqc/p03-r-msvhqtnq.jpg",
+          "l": "images/bmsvhodqc/p03-l-msvhqtnq.jpg"
+        },
+        {
+          "r": "images/bmsvhodqc/p04-r-msvhqtnq.jpg",
+          "l": "images/bmsvhodqc/p04-l-msvhqtnq.jpg"
+        },
+        {
+          "r": "images/bmsvhodqc/p05-r-msvhqtnq.jpg",
+          "l": "images/bmsvhodqc/p05-l-msvhqtnq.jpg"
+        }
+      ],
+      "par": 0.667,
+      "updatedAt": "2026-08-16T07:36:12.371Z",
+      "order": 21
     }
   ]
 }
