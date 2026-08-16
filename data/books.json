@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T08:00:10.388Z",
+  "updated": "2026-08-16T08:40:26.569Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1469,6 +1469,65 @@
       "updatedAt": "2026-08-16T08:00:09.384Z",
       "order": 24,
       "featured": true
+    },
+    {
+      "id": "bmsvjwrer",
+      "title": "Hijackers",
+      "author": "",
+      "year": "",
+      "note": "",
+      "work": [
+        "typeset"
+      ],
+      "thick": 1,
+      "color": "#7986a0",
+      "hidden": false,
+      "dir": "ltr",
+      "cover": {
+        "front": "images/bmsvjwrer/front-msvk1esn.jpg"
+      },
+      "ar": 0.638,
+      "pages": [
+        {
+          "r": "images/bmsvjwrer/p01-r-msvk1esn.jpg",
+          "l": "images/bmsvjwrer/p01-l-msvk1esn.jpg"
+        },
+        {
+          "r": "images/bmsvjwrer/p02-r-msvk1esn.jpg",
+          "l": "images/bmsvjwrer/p02-l-msvk1esn.jpg"
+        },
+        {
+          "r": "images/bmsvjwrer/p03-r-msvk1esn.jpg",
+          "l": "images/bmsvjwrer/p03-l-msvk1esn.jpg"
+        },
+        {
+          "r": "images/bmsvjwrer/p04-r-msvk1esn.jpg",
+          "l": "images/bmsvjwrer/p04-l-msvk1esn.jpg"
+        },
+        {
+          "r": "images/bmsvjwrer/p05-r-msvk1esn.jpg",
+          "l": "images/bmsvjwrer/p05-l-msvk1esn.jpg"
+        },
+        {
+          "r": "images/bmsvjwrer/p06-r-msvk1esn.jpg",
+          "l": "images/bmsvjwrer/p06-l-msvk1esn.jpg"
+        },
+        {
+          "r": "images/bmsvjwrer/p07-r-msvk1esn.jpg",
+          "l": "images/bmsvjwrer/p07-l-msvk1esn.jpg"
+        },
+        {
+          "r": "images/bmsvjwrer/p08-r-msvk1esn.jpg",
+          "l": "images/bmsvjwrer/p08-l-msvk1esn.jpg"
+        },
+        {
+          "r": "images/bmsvjwrer/p09-r-msvk1esn.jpg",
+          "l": "images/bmsvjwrer/p09-l-msvk1esn.jpg"
+        }
+      ],
+      "par": 0.667,
+      "updatedAt": "2026-08-16T08:40:25.712Z",
+      "order": 25
     }
   ]
 }
