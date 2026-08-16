@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T11:32:19.598Z",
+  "updated": "2026-08-16T11:35:33.823Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1274,7 +1274,7 @@
       ],
       "thick": 3,
       "color": "#a89787",
-      "hidden": true,
+      "hidden": false,
       "sar": 0.0675,
       "cover": {
         "front": "images/bmsvhodqc/front-msvhqtnq.jpg",
