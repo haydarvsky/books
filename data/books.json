@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T09:20:42.567Z",
+  "updated": "2026-08-16T09:32:28.201Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1474,8 +1474,8 @@
     {
       "id": "bmsvjwrer",
       "title": "Hijackers",
-      "author": "",
-      "year": "",
+      "author": "Dr. Mohammad Aljeemaz",
+      "year": "٢٠٢٦م",
       "note": "",
       "work": [
         "typeset"
@@ -1527,7 +1527,7 @@
         }
       ],
       "par": 0.667,
-      "updatedAt": "2026-08-16T08:40:25.712Z",
+      "updatedAt": "2026-08-16T09:32:26.945Z",
       "order": 25
     },
     {
