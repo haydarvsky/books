@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T12:41:40.312Z",
+  "updated": "2026-08-16T18:27:18.589Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1186,7 +1186,7 @@
       "work": [
         "typeset"
       ],
-      "thick": 2,
+      "thick": 1,
       "color": "#2f2a1e",
       "hidden": false,
       "featured": true,
@@ -1217,7 +1217,7 @@
         }
       ],
       "par": 0.762,
-      "updatedAt": "2026-08-16T07:04:32.185Z",
+      "updatedAt": "2026-08-16T18:27:16.299Z",
       "order": 19
     },
     {
