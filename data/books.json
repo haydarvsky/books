@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T07:50:13.896Z",
+  "updated": "2026-08-16T07:54:09.155Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -551,10 +551,6 @@
           "l": "images/bmsu7sz3p/p04-l-msu7vymi.jpg"
         },
         {
-          "r": "images/bmsu7sz3p/p05-r-msu7vymi.jpg",
-          "l": "images/bmsu7sz3p/p05-l-msu7vymi.jpg"
-        },
-        {
           "r": "images/bmsu7sz3p/p06-r-msu7vymi.jpg",
           "l": "images/bmsu7sz3p/p06-l-msu7vymi.jpg"
         },
@@ -567,28 +563,20 @@
           "l": "images/bmsu7sz3p/p08-l-msu7vymi.jpg"
         },
         {
-          "r": "images/bmsu7sz3p/p09-r-msu7vymi.jpg",
-          "l": "images/bmsu7sz3p/p09-l-msu7vymi.jpg"
-        },
-        {
-          "r": "images/bmsu7sz3p/p10-r-msu7vymi.jpg",
-          "l": "images/bmsu7sz3p/p10-l-msu7vymi.jpg"
-        },
-        {
-          "r": "images/bmsu7sz3p/p11-r-msu7vymi.jpg",
-          "l": "images/bmsu7sz3p/p11-l-msu7vymi.jpg"
-        },
-        {
           "r": "images/bmsu7sz3p/p12-r-msu7vymi.jpg",
           "l": "images/bmsu7sz3p/p12-l-msu7vymi.jpg"
         },
         {
-          "r": "images/bmsu7sz3p/p13-r-msu7vymi.jpg",
-          "l": "images/bmsu7sz3p/p13-l-msu7vymi.jpg"
+          "r": "images/bmsu7sz3p/p09-r-msvidvy5.jpg",
+          "l": "images/bmsu7sz3p/p09-l-msvidvy5.jpg"
+        },
+        {
+          "r": "images/bmsu7sz3p/p10-r-msvidvy5.jpg",
+          "l": "images/bmsu7sz3p/p10-l-msvidvy5.jpg"
         }
       ],
       "par": 0.724,
-      "updatedAt": "2026-08-15T10:16:29.882Z",
+      "updatedAt": "2026-08-16T07:54:08.142Z",
       "order": 6,
       "featured": true
     },
