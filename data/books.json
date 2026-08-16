@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T08:55:15.916Z",
+  "updated": "2026-08-16T09:20:42.567Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1576,6 +1576,61 @@
       "par": 0.667,
       "updatedAt": "2026-08-16T08:53:58.808Z",
       "order": 26
+    },
+    {
+      "id": "bmsvlcyza",
+      "title": "حوكمة هيئات الطيران المدني",
+      "author": "عبدالله عادل الملا",
+      "year": "١٤٤٨ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#a9967c",
+      "hidden": false,
+      "featured": true,
+      "sar": 0.0715,
+      "cover": {
+        "front": "images/bmsvlcyza/front-msvlh6dm.jpg",
+        "spine": "images/bmsvlcyza/spine-msvlh6dm.jpg",
+        "back": "images/bmsvlcyza/back-msvlh6dm.jpg"
+      },
+      "ar": 0.707,
+      "pages": [
+        {
+          "r": "images/bmsvlcyza/p01-r-msvlh6dm.jpg",
+          "l": "images/bmsvlcyza/p01-l-msvlh6dm.jpg"
+        },
+        {
+          "r": "images/bmsvlcyza/p02-r-msvlh6dm.jpg",
+          "l": "images/bmsvlcyza/p02-l-msvlh6dm.jpg"
+        },
+        {
+          "r": "images/bmsvlcyza/p03-r-msvlh6dm.jpg",
+          "l": "images/bmsvlcyza/p03-l-msvlh6dm.jpg"
+        },
+        {
+          "r": "images/bmsvlcyza/p04-r-msvlh6dm.jpg",
+          "l": "images/bmsvlcyza/p04-l-msvlh6dm.jpg"
+        },
+        {
+          "r": "images/bmsvlcyza/p05-r-msvlh6dm.jpg",
+          "l": "images/bmsvlcyza/p05-l-msvlh6dm.jpg"
+        },
+        {
+          "r": "images/bmsvlcyza/p06-r-msvlh6dm.jpg",
+          "l": "images/bmsvlcyza/p06-l-msvlh6dm.jpg"
+        },
+        {
+          "r": "images/bmsvlcyza/p07-r-msvlh6dm.jpg",
+          "l": "images/bmsvlcyza/p07-l-msvlh6dm.jpg"
+        }
+      ],
+      "par": 0.707,
+      "updatedAt": "2026-08-16T09:20:41.176Z",
+      "order": 27
     }
   ]
 }
