@@ -93,7 +93,7 @@
     DB.books.forEach((b, i) => {
       const it = document.createElement('div'); it.className = 'item' + (b.hidden ? ' is-hidden' : ''); it.draggable = true; it.dataset.i = i;
       const th = b.cover?.front ? `<img class="thumb" src="${esc(b.cover.front)}" alt="">` : `<div class="thumb txt" style="background:${esc(b.color || '#0F4C3A')}">${esc(b.title)}</div>`;
-      const tags = (b.work || []).map(w => `<span class="tag t-${w}">${workLabel[w]}</span>`).join('') + (b.pages?.length ? `<span class="tag t-pages">${arNum(b.pages.length)} فتحات</span>` : '') + (b.hidden ? '<span class="tag t-hidden">🙈 مخفي</span>' : '') + (b.featured ? '<span class="tag t-feat">✦ مميّز</span>' : '');
+      const tags = (b.work || []).map(w => `<span class="tag t-${w}">${workLabel[w]}</span>`).join('') + (b.pages?.length ? `<span class="tag t-pages">${arNum(b.pages.length)} فتحات</span>` : '') + (b.hidden ? '<span class="tag t-hidden">🙈 مخفي</span>' : '') + (b.featured ? '<span class="tag t-feat">✦ مميّز</span>' : '') + (b.dir === 'ltr' ? '<span class="tag t-en">EN</span>' : '');
       it.innerHTML = `<span class="grip" title="اسحب للترتيب">⋮⋮</span>${th}
         <div class="item-t"><b>${esc(b.title)}</b><small>${esc(b.author || '')}${b.year ? ' · ' + esc(b.year) : ''}</small><div class="tags">${tags}</div></div>
         <div class="item-b"><button data-vis title="${b.hidden ? 'إظهار في المعرض' : 'إخفاء من المعرض'}">${b.hidden ? '🙈' : '👁'}</button><button data-up title="أعلى">▲</button><button data-down title="أسفل">▼</button><button data-edit title="تعديل">✎</button></div>`;
@@ -162,6 +162,7 @@
     F.thick.value = b?.thick || 3; $('#thickOut').textContent = arNum(F.thick.value);
     $('#visOff').checked = !!b?.hidden; $('#visOn').checked = !b?.hidden;
     $('#fFeatured').checked = !!b?.featured; $('#fPhil').value = b?.philosophy || '';
+    $('#dirLtr').checked = b?.dir === 'ltr'; $('#dirRtl').checked = b?.dir !== 'ltr';
     ED.hotspots = (b?.hotspots || []).map(h => ({ x: +h.x, y: +h.y, t: h.t || '' }));
     F.color.value = b?.color || '#0F4C3A';
     ['front', 'spine', 'back'].forEach(k => { ED.slots[k] = newSlot(b?.cover?.[k]); paintSlot($(`.dz[data-slot=${k}]`), ED.slots[k]); });
@@ -326,6 +327,7 @@
       const files = [], deletes = new Set(ED.trash || []);
       const b = { ...(ED.orig || {}), id: ED.id, title, author: F.author.value.trim(), year: F.year.value.trim(), note: F.note.value.trim(), work, thick: +F.thick.value, color: F.color.value, hidden: $('#visOff').checked, featured: $('#fFeatured').checked, philosophy: $('#fPhil').value.trim(), hotspots: (ED.hotspots || []).filter(h => h.t && h.t.trim()).map(h => ({ x: +(+h.x).toFixed(4), y: +(+h.y).toFixed(4), t: h.t.trim() })) };
       if (!b.philosophy) delete b.philosophy; if (!b.hotspots.length) delete b.hotspots; if (!b.featured) delete b.featured;
+      if ($('#dirLtr').checked) b.dir = 'ltr'; else delete b.dir;
       // الغلاف
       const cover = {}; let ar = ED.orig?.ar || 0;
       let n = 0, total = ['front', 'spine', 'back'].filter(k => ED.slots[k].file).length + pairs.reduce((a, p) => a + (p.r.file ? 1 : 0) + (p.l.file ? 1 : 0), 0);

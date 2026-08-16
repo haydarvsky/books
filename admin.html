@@ -6,7 +6,7 @@
 <title>لوحة التحكم — معرض الكتب</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="img/logo-dark.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/admin.css?v=7">
+<link rel="stylesheet" href="css/admin.css?v=8">
 </head>
 <body>
 
@@ -88,6 +88,14 @@
           <label class="chk feat-chk"><input type="checkbox" id="fFeatured"> <span>✦ عرضه في «رفّ المميّز» أعلى الصفحة</span></label>
         </fieldset>
       </div>
+      <div class="grid2">
+        <fieldset class="work vis">
+          <legend>لغة الكتاب واتجاهه</legend>
+          <label class="chk"><input type="radio" name="bdir" id="dirRtl" value="rtl" checked> <span>عربي — يُفتح من اليمين (الكعب على يمين الغلاف)</span></label>
+          <label class="chk"><input type="radio" name="bdir" id="dirLtr" value="ltr"> <span>English — يُفتح من اليسار (الكعب على يسار الغلاف)</span></label>
+          <p class="muted vis-hint">يضبط جهة الكعب على الرفّ وفي المجسّم، واتجاه قلب الصفحات، ورمز الكعب النصّي.</p>
+        </fieldset>
+      </div>
 
       <!-- الغلاف -->
       <fieldset class="sec" id="secCover">
@@ -147,8 +155,8 @@
 </div>
 <div class="toast" id="toast" hidden></div>
 
-<script src="js/gh-api.js?v=7"></script>
-<script src="js/imgtools.js?v=7"></script>
-<script src="js/admin.js?v=7"></script>
+<script src="js/gh-api.js?v=8"></script>
+<script src="js/imgtools.js?v=8"></script>
+<script src="js/admin.js?v=8"></script>
 </body>
 </html>

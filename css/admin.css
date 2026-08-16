@@ -88,6 +88,7 @@ legend{padding:0 8px;font-weight:700;color:var(--green)}
 .item.is-hidden .thumb{filter:grayscale(.7);opacity:.75}
 .tag.t-hidden{background:#8a7a68}
 .tag.t-feat{background:var(--gold);color:var(--ink)}
+.tag.t-en{background:#1F3A5F}
 .item-b button.on{background:var(--green);color:#fff;border-color:var(--green)}
 .chk{flex-direction:row;align-items:center;gap:8px;font-size:1.05rem;cursor:pointer}
 .chk input{width:20px;height:20px;accent-color:var(--green)}

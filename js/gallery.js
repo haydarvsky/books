@@ -82,7 +82,7 @@
     const c = b.color || '#0F4C3A';
     const tc = textOn(c);
     const slot = document.createElement('div');
-    slot.className = 'slot';
+    slot.className = 'slot' + (b.dir === 'ltr' ? ' ltr' : '');
     slot.style.cssText = `--w:${d.w}px;--h:${d.h}px;--t:${d.t}px;--c:${c};--tc:${tc};--ex:0;--sw:${Math.max(d.t, 22)}px`;
     slot.dataset.id = b.id;
     const front = b.cover?.front, spine = b.cover?.spine, back = b.cover?.back;
@@ -228,7 +228,7 @@
     CUR = b;
     $('#mTitle').textContent = b.title;
     $('#mAuthor').textContent = b.author ? 'تأليف: ' + b.author + (b.year ? ' · ' + b.year : '') : (b.year || '');
-    $('#mBadges').innerHTML = (b.work || []).map(w => `<span class="tag t-${w}">${workLabel[w] || w}</span>`).join('');
+    $('#mBadges').innerHTML = (b.work || []).map(w => `<span class="tag t-${w}">${workLabel[w] || w}</span>`).join('') + (b.dir === 'ltr' ? '<span class="tag t-en">English</span>' : '');
     const note = $('#mNote'); note.hidden = !b.note; note.textContent = b.note || '';
     tabs.innerHTML = '';
     const list = [];
@@ -255,6 +255,7 @@
 
   /* ---------- الغلاف ثلاثي الأبعاد ---------- */
   const cover3d = $('#cover3d'), coverStage = $('#coverStage'), coverFlat = $('#coverFlat');
+  let LTR = false; // اتجاه الكتاب المفتوح حالياً
   let ry = -22, rx = 0, drag = null, moved = false;
   function setupCover(b) {
     const stageR = coverStage.getBoundingClientRect();
@@ -264,6 +265,7 @@
     const thick = Math.min(5, Math.max(1, +b.thick || 2));
     const ct = b.sar > 0 ? Math.max(4, Math.round(Math.min(ch * 0.45, ch * b.sar))) : Math.round((14 + thick * 7) * (ch / 230) * 0.9);
     cover3d.style.cssText = `--cw:${cw}px;--ch:${ch}px;--ct:${ct}px;--c:${b.color || '#0F4C3A'}`;
+    LTR = b.dir === 'ltr'; cover3d.classList.toggle('ltr', LTR); coverFlat.classList.toggle('ltr', LTR);
     const face = (id, src, txt) => { const el = $(id); el.innerHTML = src ? `<img src="${esc(src)}" alt="">` : `<div class="noimg">${esc(txt || '')}</div>`; el.dataset.src = src || ''; };
     face('#cfFront', b.cover?.front, b.title);
     face('#cfSpine', b.cover?.spine, b.title);
@@ -309,7 +311,8 @@
     if (notes) return;
     if (flat) { fitFlat(); return; }
     rx = 0;
-    if (v === 'front') ry = -22; else if (v === 'spine') ry = -90; else if (v === 'back') ry = -200;
+    const sg = LTR ? -1 : 1; // الكتاب الإنجليزي كعبه على اليسار
+    if (v === 'front') ry = -22 * sg; else if (v === 'spine') ry = -90 * sg; else if (v === 'back') ry = -200 * sg;
     if (instant) { cover3d.classList.add('dragging'); applyRot(); void cover3d.offsetWidth; cover3d.classList.remove('dragging'); }
     else applyRot();
   }
@@ -349,6 +352,8 @@
     SP = (b.pages || []).filter(p => p && (p.r || p.l));
     si = 0; flipping = false; flipTimers.forEach(clearTimeout); flipTimers = []; leaf.hidden = true;
     bookOpen.style.setProperty('--par', Math.min(0.9, Math.max(0.5, +b.par || 0.7)));
+    LTR = b.dir === 'ltr'; panePages.classList.toggle('ltr', LTR);
+    pgPrev.textContent = LTR ? '‹' : '›'; pgNext.textContent = LTR ? '›' : '‹';
     showSpread();
     // تحميل مسبق
     SP.forEach(p => { [p.r, p.l].forEach(s => { if (s) { const im = new Image(); im.src = s; } }); });
@@ -360,22 +365,23 @@
     pgPrev.disabled = si <= 0; pgNext.disabled = si >= SP.length - 1;
     pgCount.textContent = SP.length ? `الفتحة ${arNum(si + 1)} من ${arNum(SP.length)}` : 'لا صفحات بعد';
   }
-  function flip(dir) { // dir = +1 التالي (تُقلب الصفحة اليسرى إلى اليمين) / -1 السابق
+  function flip(dir) { // dir = +1 التالي / -1 السابق — في العربي «التالي» يقلب الصفحة اليسرى إلى اليمين، وفي الإنجليزي العكس
     if (flipping) return;
     const ni = si + dir; if (ni < 0 || ni >= SP.length) return;
     flipping = true;
     const cur = SP[si], nxt = SP[ni];
-    leaf.className = 'leaf ' + (dir > 0 ? 'from-left' : 'from-right');
-    leafF.src = (dir > 0 ? cur.l : cur.r) || ''; leafB.src = (dir > 0 ? nxt.r : nxt.l) || '';
+    const leftLeaf = (dir > 0) !== LTR; // الورقة التي تُقلب هي اليسرى؟
+    leaf.className = 'leaf ' + (leftLeaf ? 'from-left' : 'from-right');
+    leafF.src = (leftLeaf ? cur.l : cur.r) || ''; leafB.src = (leftLeaf ? nxt.r : nxt.l) || '';
     leaf.style.transition = 'none'; leaf.style.transform = 'rotateY(0deg)'; leaf.hidden = false;
     // ما تحت الورقة يتغيّر فوراً في الجهة التي تُغادرها الورقة
-    if (dir > 0) { pgL.src = nxt.l || ''; pgL.parentElement.style.visibility = nxt.l ? '' : 'hidden'; }
+    if (leftLeaf) { pgL.src = nxt.l || ''; pgL.parentElement.style.visibility = nxt.l ? '' : 'hidden'; }
     else { pgR.src = nxt.r || ''; pgR.parentElement.style.visibility = nxt.r ? '' : 'hidden'; }
     void leaf.offsetWidth;
-    leaf.style.transition = ''; leaf.style.transform = `rotateY(${dir > 0 ? 180 : -180}deg)`;
+    leaf.style.transition = ''; leaf.style.transform = `rotateY(${leftLeaf ? 180 : -180}deg)`;
     flipTimers = [
       setTimeout(() => { // منتصف القلبة: الجهة الأخرى
-        if (dir > 0) { pgR.src = nxt.r || ''; pgR.parentElement.style.visibility = nxt.r ? '' : 'hidden'; }
+        if (leftLeaf) { pgR.src = nxt.r || ''; pgR.parentElement.style.visibility = nxt.r ? '' : 'hidden'; }
         else { pgL.src = nxt.l || ''; pgL.parentElement.style.visibility = nxt.l ? '' : 'hidden'; }
       }, 420),
       setTimeout(() => { si = ni; leaf.hidden = true; flipping = false; showSpread(); }, 880)
@@ -426,8 +432,8 @@
     if (modal.hidden) return;
     if (e.key === 'Escape') closeModal();
     if (!panePages.hidden) {
-      if (e.key === 'ArrowLeft') { stopAutoplay(); flip(1); }
-      if (e.key === 'ArrowRight') { stopAutoplay(); flip(-1); }
+      if (e.key === 'ArrowLeft') { stopAutoplay(); flip(LTR ? -1 : 1); }
+      if (e.key === 'ArrowRight') { stopAutoplay(); flip(LTR ? 1 : -1); }
     } else if (!paneCover.hidden && !cover3d.hidden) {
       if (e.key === 'ArrowLeft') { ry -= 30; applyRot(); }
       if (e.key === 'ArrowRight') { ry += 30; applyRot(); }

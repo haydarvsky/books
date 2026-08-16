@@ -440,3 +440,23 @@ img{display:block;max-width:100%}
 @keyframes apbar{to{width:100%}}
 .book-open{transition:transform .9s cubic-bezier(.4,.05,.3,1),opacity .9s}
 .book-open.closing{transform:rotateY(-80deg) translateX(-20%) scale(.72);opacity:0}
+
+/* ===== الكتاب الإنجليزي (يسار↔يمين): الكعب على اليسار حين يواجهك الغلاف ===== */
+.slot.ltr .f-front{transform:rotateY(90deg) translateZ(calc(var(--t)/2))}
+.slot.ltr .f-back{transform:rotateY(-90deg) translateZ(calc(var(--t)/2))}
+.slot.ltr .spine-txt{transform:translate(-50%,-50%) rotate(90deg);direction:ltr}
+.slot.ltr .f-front .noimg,.slot.ltr .f-back .noimg{direction:ltr}
+.slot.ltr:hover .book,.slot.ltr.is-peek .book,.slot.ltr .book:focus-visible{transform:translateZ(110px) translateY(-18px) rotateY(-84deg)}
+.mode-cover .slot.ltr .book{transform:rotateY(-90deg)}
+.mode-cover .slot.ltr:hover .book,.mode-cover .slot.ltr.is-peek .book,.mode-cover .slot.ltr .book:focus-visible{transform:translateZ(46px) translateY(-14px) rotateY(-90deg)}
+.pile .slot.ltr .book{transform:rotateZ(-90deg)}
+.pile .slot.ltr:hover .book,.pile .slot.ltr.is-peek .book,.pile .slot.ltr .book:focus-visible{transform:translateZ(70px) translateX(10px) rotateZ(-90deg)}
+@media (max-width:820px){.slot.ltr:hover .book,.slot.ltr.is-peek .book{transform:translateZ(70px) translateY(-12px) rotateY(-84deg)}}
+.tag.t-en{background:#1F3A5F}
+/* المجسّم في النافذة */
+.cover3d.ltr .cf-spine{transform:rotateY(-90deg) translateZ(calc(var(--cw)/2))}
+.cover3d.ltr .cf-pages{transform:rotateY(90deg) translateZ(calc(var(--cw)/2))}
+.cover3d.ltr .cf-spine .noimg{writing-mode:vertical-rl;transform:none;direction:ltr}
+.cover-flat.ltr{direction:ltr}
+/* الكتاب المفتوح الإنجليزي: زر «التالي» على اليمين */
+.pane-pages.ltr .book-open-wrap{direction:ltr}

@@ -44,8 +44,8 @@ window.DEMO_BOOKS = async function () {
     ctx.fillStyle = b.color; ctx.fillRect(0, 0, W, H);
     const g = ctx.createLinearGradient(0, 0, W, 0); g.addColorStop(0, 'rgba(0,0,0,.35)'); g.addColorStop(.5, 'rgba(255,255,255,.1)'); g.addColorStop(1, 'rgba(0,0,0,.35)'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
     ctx.fillStyle = b.accent; ctx.fillRect(20, 60, 50, 3); ctx.fillRect(20, H - 120, 50, 3);
-    ctx.save(); ctx.translate(W / 2, H / 2); ctx.rotate(-Math.PI / 2);
-    ctx.direction = 'rtl'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = '#FAF6EF'; ctx.font = `700 40px ${F}`;
+    ctx.save(); ctx.translate(W / 2, H / 2); ctx.rotate(b.dir === 'ltr' ? Math.PI / 2 : -Math.PI / 2);
+    ctx.direction = b.dir === 'ltr' ? 'ltr' : 'rtl'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = '#FAF6EF'; ctx.font = `700 40px ${F}`;
     ctx.fillText(b.title, 0, -6); ctx.restore();
     ctx.save(); ctx.translate(W / 2, H - 80); ctx.rotate(-Math.PI / 2); ctx.direction = 'rtl'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
     ctx.fillStyle = b.accent; ctx.font = `400 22px ${F}`; ctx.fillText(b.author.split(' ').slice(-1)[0], 0, 0); ctx.restore();
@@ -86,6 +86,7 @@ window.DEMO_BOOKS = async function () {
     { title: 'معجمُ البحر', author: 'مجموعة باحثين', kind: 'معجم', color: '#12384F', accent: '#8FCDE0', work: ['typeset'], thick: 5, chapter: 'باب الألف' },
     { title: 'خطواتٌ على الرمل', author: 'لطيفة الشمري', kind: 'خواطر', color: '#C2780A', accent: '#2A1A0F', work: ['cover', 'typeset'], thick: 1, chapter: 'الخطوة الأولى' },
     { title: 'أنوارُ الطريق', author: 'الشيخ محمد الحسن', kind: 'تربية', color: '#3B2F2F', accent: '#D9A441', work: ['cover'], thick: 4 },
+    { title: 'The Silent Coast', author: 'A. R. Whitfield', kind: 'Novel', color: '#1F3A5F', accent: '#E8DFCC', work: ['cover', 'typeset'], thick: 3, chapter: 'Chapter One', dir: 'ltr' },
   ];
   return seeds.map((s, i) => {
     const b = { ...s, seed: i * 17 + 5, id: 'demo' + i, order: i, ar: 0.7, par: 0.7, year: (1440 + i % 7) + 'هـ' };
