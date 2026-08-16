@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T12:09:32.585Z",
+  "updated": "2026-08-16T12:16:38.443Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1760,6 +1760,60 @@
       "par": 0.709,
       "updatedAt": "2026-08-16T12:02:36.653Z",
       "order": 30
+    },
+    {
+      "id": "bmsvrntdh",
+      "title": "الأرض المستوية",
+      "author": "محمد العتيبي",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#e3b435",
+      "hidden": false,
+      "sar": 0.048,
+      "cover": {
+        "front": "images/bmsvrntdh/front-msvrrfrn.jpg",
+        "spine": "images/bmsvrntdh/spine-msvrrfrn.jpg",
+        "back": "images/bmsvrntdh/back-msvrrfrn.jpg"
+      },
+      "ar": 0.705,
+      "pages": [
+        {
+          "r": "images/bmsvrntdh/p01-r-msvrrfrn.jpg",
+          "l": "images/bmsvrntdh/p01-l-msvrrfrn.jpg"
+        },
+        {
+          "r": "images/bmsvrntdh/p02-r-msvrrfrn.jpg",
+          "l": "images/bmsvrntdh/p02-l-msvrrfrn.jpg"
+        },
+        {
+          "r": "images/bmsvrntdh/p03-r-msvrrfrn.jpg",
+          "l": "images/bmsvrntdh/p03-l-msvrrfrn.jpg"
+        },
+        {
+          "r": "images/bmsvrntdh/p04-r-msvrrfrn.jpg",
+          "l": "images/bmsvrntdh/p04-l-msvrrfrn.jpg"
+        },
+        {
+          "r": "images/bmsvrntdh/p05-r-msvrrfrn.jpg",
+          "l": "images/bmsvrntdh/p05-l-msvrrfrn.jpg"
+        },
+        {
+          "r": "images/bmsvrntdh/p06-r-msvrrfrn.jpg",
+          "l": "images/bmsvrntdh/p06-l-msvrrfrn.jpg"
+        },
+        {
+          "r": "images/bmsvrntdh/p07-r-msvrrfrn.jpg",
+          "l": "images/bmsvrntdh/p07-l-msvrrfrn.jpg"
+        }
+      ],
+      "par": 0.705,
+      "updatedAt": "2026-08-16T12:16:37.348Z",
+      "order": 31
     }
   ]
 }
