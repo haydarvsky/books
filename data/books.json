@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T06:48:11.179Z",
+  "updated": "2026-08-16T06:57:34.558Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1187,6 +1187,49 @@
       "par": 0.705,
       "updatedAt": "2026-08-16T06:48:09.650Z",
       "order": 18
+    },
+    {
+      "id": "bmsvg9mcy",
+      "title": "أصداء الكينونة",
+      "author": "علي الحبيب العنزي",
+      "year": "٢٠٢٥م٢",
+      "note": "",
+      "work": [
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#2f2a1e",
+      "hidden": false,
+      "featured": true,
+      "cover": {
+        "front": "images/bmsvg9mcy/front-msvgd4kj.jpg"
+      },
+      "ar": 0.665,
+      "pages": [
+        {
+          "r": "images/bmsvg9mcy/p01-r-msvgd4kj.jpg",
+          "l": "images/bmsvg9mcy/p01-l-msvgd4kj.jpg"
+        },
+        {
+          "r": "images/bmsvg9mcy/p02-r-msvgd4kj.jpg",
+          "l": "images/bmsvg9mcy/p02-l-msvgd4kj.jpg"
+        },
+        {
+          "r": "images/bmsvg9mcy/p03-r-msvgd4kj.jpg",
+          "l": "images/bmsvg9mcy/p03-l-msvgd4kj.jpg"
+        },
+        {
+          "r": "images/bmsvg9mcy/p04-r-msvgd4kj.jpg",
+          "l": "images/bmsvg9mcy/p04-l-msvgd4kj.jpg"
+        },
+        {
+          "r": "images/bmsvg9mcy/p05-r-msvgd4kj.jpg",
+          "l": "images/bmsvg9mcy/p05-l-msvgd4kj.jpg"
+        }
+      ],
+      "par": 0.762,
+      "updatedAt": "2026-08-16T06:57:33.666Z",
+      "order": 19
     }
   ]
 }
