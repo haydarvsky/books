@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T08:40:26.569Z",
+  "updated": "2026-08-16T08:54:00.104Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1528,6 +1528,53 @@
       "par": 0.667,
       "updatedAt": "2026-08-16T08:40:25.712Z",
       "order": 25
+    },
+    {
+      "id": "bmsvk5sz4",
+      "title": "حكاية عبدالرحمن الرابع",
+      "author": "عمر الجضعي",
+      "year": "١٤٤٨ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#ccbe6b",
+      "hidden": true,
+      "featured": true,
+      "sar": 0.105,
+      "cover": {
+        "front": "images/bmsvk5sz4/front-msvkiubt.jpg",
+        "spine": "images/bmsvk5sz4/spine-msvkiubt.jpg",
+        "back": "images/bmsvk5sz4/back-msvkiubt.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmsvk5sz4/p01-r-msvkiubt.jpg",
+          "l": "images/bmsvk5sz4/p01-l-msvkiubt.jpg"
+        },
+        {
+          "r": "images/bmsvk5sz4/p02-r-msvkiubt.jpg",
+          "l": "images/bmsvk5sz4/p02-l-msvkiubt.jpg"
+        },
+        {
+          "r": "images/bmsvk5sz4/p03-r-msvkiubt.jpg",
+          "l": "images/bmsvk5sz4/p03-l-msvkiubt.jpg"
+        },
+        {
+          "r": "images/bmsvk5sz4/p04-r-msvkiubt.jpg",
+          "l": "images/bmsvk5sz4/p04-l-msvkiubt.jpg"
+        },
+        {
+          "r": "images/bmsvk5sz4/p05-r-msvkiubt.jpg",
+          "l": "images/bmsvk5sz4/p05-l-msvkiubt.jpg"
+        }
+      ],
+      "par": 0.667,
+      "updatedAt": "2026-08-16T08:53:58.808Z",
+      "order": 26
     }
   ]
 }
