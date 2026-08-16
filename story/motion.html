@@ -76,8 +76,9 @@ h1{font-size:70px;font-weight:700;color:var(--paper);text-shadow:0 4px 20px rgba
 .fly-in{position:relative;width:100%;height:100%;transform-style:preserve-3d}
 .fly-in img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:2px;
   box-shadow:0 50px 90px -30px rgba(0,0,0,.85)}
-.fly-sp{position:absolute;top:0;right:100%;width:27px;height:100%;transform-origin:100% 50%;
-  transform:rotateY(72deg)}
+/* الكتاب عربيّ: الكعب على يمين الغلاف ينثني إلى الخلف، والفتح من اليمين إلى اليسار */
+.fly-sp{position:absolute;top:0;left:100%;width:27px;height:100%;transform-origin:0% 50%;
+  transform:rotateY(80deg);box-shadow:inset 6px 0 14px rgba(0,0,0,.35)}
 
 /* التنضيد */
 .spread{position:absolute;left:50%;top:1196px;width:680px;opacity:0;z-index:38;
