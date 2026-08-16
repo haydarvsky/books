@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T08:54:00.104Z",
+  "updated": "2026-08-16T08:55:15.916Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -979,8 +979,9 @@
         }
       ],
       "par": 0.705,
-      "updatedAt": "2026-08-15T20:46:01.652Z",
-      "order": 14
+      "updatedAt": "2026-08-16T08:55:14.638Z",
+      "order": 14,
+      "featured": true
     },
     {
       "id": "bmsuujzro",
