@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T07:43:30.193Z",
+  "updated": "2026-08-16T07:50:13.896Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1360,6 +1360,60 @@
       "par": 0.705,
       "updatedAt": "2026-08-16T07:43:29.309Z",
       "order": 22
+    },
+    {
+      "id": "bmsvi4u1n",
+      "title": "على أعتاب النجف",
+      "author": "",
+      "year": "١٤٤٨ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "typeset"
+      ],
+      "thick": 2,
+      "color": "#4d3c26",
+      "hidden": false,
+      "cover": {
+        "front": "images/bmsvi4u1n/front-msvi8u2v.jpg"
+      },
+      "ar": 0.705,
+      "pages": [
+        {
+          "r": "images/bmsvi4u1n/p01-r-msvi8u2v.jpg",
+          "l": "images/bmsvi4u1n/p01-l-msvi8u2v.jpg"
+        },
+        {
+          "r": "images/bmsvi4u1n/p02-r-msvi8u2v.jpg",
+          "l": "images/bmsvi4u1n/p02-l-msvi8u2v.jpg"
+        },
+        {
+          "r": "images/bmsvi4u1n/p03-r-msvi8u2v.jpg",
+          "l": "images/bmsvi4u1n/p03-l-msvi8u2v.jpg"
+        },
+        {
+          "r": "images/bmsvi4u1n/p04-r-msvi8u2v.jpg",
+          "l": "images/bmsvi4u1n/p04-l-msvi8u2v.jpg"
+        },
+        {
+          "r": "images/bmsvi4u1n/p05-r-msvi8u2v.jpg",
+          "l": "images/bmsvi4u1n/p05-l-msvi8u2v.jpg"
+        },
+        {
+          "r": "images/bmsvi4u1n/p06-r-msvi8u2v.jpg",
+          "l": "images/bmsvi4u1n/p06-l-msvi8u2v.jpg"
+        },
+        {
+          "r": "images/bmsvi4u1n/p07-r-msvi8u2v.jpg",
+          "l": "images/bmsvi4u1n/p07-l-msvi8u2v.jpg"
+        },
+        {
+          "r": "images/bmsvi4u1n/p08-r-msvi8u2v.jpg",
+          "l": "images/bmsvi4u1n/p08-l-msvi8u2v.jpg"
+        }
+      ],
+      "par": 0.664,
+      "updatedAt": "2026-08-16T07:50:12.908Z",
+      "order": 23
     }
   ]
 }
