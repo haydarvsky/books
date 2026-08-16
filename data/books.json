@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T20:59:33.414Z",
+  "updated": "2026-08-16T06:48:11.179Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1140,6 +1140,53 @@
       "par": 0.667,
       "updatedAt": "2026-08-15T20:59:32.367Z",
       "order": 17
+    },
+    {
+      "id": "bmsvfxmlc",
+      "title": "التمهيد للمعارف الإلهية",
+      "author": "الشيخ فاضل الصفار",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#453a2c",
+      "hidden": false,
+      "featured": true,
+      "sar": 0.0625,
+      "cover": {
+        "front": "images/bmsvfxmlc/front-msvg11b3.jpg",
+        "spine": "images/bmsvfxmlc/spine-msvg11b3.jpg",
+        "back": "images/bmsvfxmlc/back-msvg11b3.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmsvfxmlc/p01-r-msvg11b3.jpg",
+          "l": "images/bmsvfxmlc/p01-l-msvg11b3.jpg"
+        },
+        {
+          "r": "images/bmsvfxmlc/p02-r-msvg11b3.jpg",
+          "l": "images/bmsvfxmlc/p02-l-msvg11b3.jpg"
+        },
+        {
+          "r": "images/bmsvfxmlc/p03-r-msvg11b3.jpg",
+          "l": "images/bmsvfxmlc/p03-l-msvg11b3.jpg"
+        },
+        {
+          "r": "images/bmsvfxmlc/p04-r-msvg11b3.jpg",
+          "l": "images/bmsvfxmlc/p04-l-msvg11b3.jpg"
+        },
+        {
+          "r": "images/bmsvfxmlc/p05-r-msvg11b3.jpg",
+          "l": "images/bmsvfxmlc/p05-l-msvg11b3.jpg"
+        }
+      ],
+      "par": 0.705,
+      "updatedAt": "2026-08-16T06:48:09.650Z",
+      "order": 18
     }
   ]
 }
