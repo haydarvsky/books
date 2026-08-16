@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T07:54:09.155Z",
+  "updated": "2026-08-16T07:58:42.804Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1402,6 +1402,72 @@
       "par": 0.664,
       "updatedAt": "2026-08-16T07:50:12.908Z",
       "order": 23
+    },
+    {
+      "id": "bmsviek27",
+      "title": "أثر القرآن في الشعر الكويتي",
+      "author": "د. عبدالله القتم",
+      "year": "١٤٤٨ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#9b1d0e",
+      "hidden": false,
+      "sar": 0.064,
+      "cover": {
+        "front": "images/bmsviek27/front-msvijq9m.jpg",
+        "spine": "images/bmsviek27/spine-msvijq9m.jpg",
+        "back": "images/bmsviek27/back-msvijq9m.jpg"
+      },
+      "ar": 0.709,
+      "pages": [
+        {
+          "r": "images/bmsviek27/p01-r-msvijq9m.jpg",
+          "l": "images/bmsviek27/p01-l-msvijq9m.jpg"
+        },
+        {
+          "r": "images/bmsviek27/p02-r-msvijq9m.jpg",
+          "l": "images/bmsviek27/p02-l-msvijq9m.jpg"
+        },
+        {
+          "r": "images/bmsviek27/p03-r-msvijq9m.jpg",
+          "l": "images/bmsviek27/p03-l-msvijq9m.jpg"
+        },
+        {
+          "r": "images/bmsviek27/p04-r-msvijq9m.jpg",
+          "l": "images/bmsviek27/p04-l-msvijq9m.jpg"
+        },
+        {
+          "r": "images/bmsviek27/p05-r-msvijq9m.jpg",
+          "l": "images/bmsviek27/p05-l-msvijq9m.jpg"
+        },
+        {
+          "r": "images/bmsviek27/p06-r-msvijq9m.jpg",
+          "l": "images/bmsviek27/p06-l-msvijq9m.jpg"
+        },
+        {
+          "r": "images/bmsviek27/p07-r-msvijq9m.jpg",
+          "l": "images/bmsviek27/p07-l-msvijq9m.jpg"
+        },
+        {
+          "r": "images/bmsviek27/p08-r-msvijq9m.jpg",
+          "l": "images/bmsviek27/p08-l-msvijq9m.jpg"
+        },
+        {
+          "r": "images/bmsviek27/p09-r-msvijq9m.jpg",
+          "l": "images/bmsviek27/p09-l-msvijq9m.jpg"
+        },
+        {
+          "r": "images/bmsviek27/p10-r-msvijq9m.jpg",
+          "l": "images/bmsviek27/p10-l-msvijq9m.jpg"
+        }
+      ],
+      "par": 0.709,
+      "updatedAt": "2026-08-16T07:58:41.381Z",
+      "order": 24
     }
   ]
 }
