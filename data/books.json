@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T09:32:28.201Z",
+  "updated": "2026-08-16T09:37:47.955Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1631,6 +1631,58 @@
       "par": 0.707,
       "updatedAt": "2026-08-16T09:20:41.176Z",
       "order": 27
+    },
+    {
+      "id": "bmsvlyxou",
+      "title": "Sailed",
+      "author": "Reem AlKuwaiti",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#7589a4",
+      "hidden": false,
+      "featured": true,
+      "dir": "ltr",
+      "sar": 0.0758,
+      "cover": {
+        "front": "images/bmsvlyxou/front-msvm365u.jpg",
+        "spine": "images/bmsvlyxou/spine-msvm365u.jpg",
+        "back": "images/bmsvlyxou/back-msvm365u.jpg"
+      },
+      "ar": 0.651,
+      "pages": [
+        {
+          "r": "images/bmsvlyxou/p01-r-msvm365u.jpg",
+          "l": "images/bmsvlyxou/p01-l-msvm365u.jpg"
+        },
+        {
+          "r": "images/bmsvlyxou/p02-r-msvm365u.jpg",
+          "l": "images/bmsvlyxou/p02-l-msvm365u.jpg"
+        },
+        {
+          "r": "images/bmsvlyxou/p03-r-msvm365u.jpg",
+          "l": "images/bmsvlyxou/p03-l-msvm365u.jpg"
+        },
+        {
+          "r": "images/bmsvlyxou/p04-r-msvm365u.jpg",
+          "l": "images/bmsvlyxou/p04-l-msvm365u.jpg"
+        },
+        {
+          "r": "images/bmsvlyxou/p05-r-msvm365u.jpg",
+          "l": "images/bmsvlyxou/p05-l-msvm365u.jpg"
+        },
+        {
+          "r": "images/bmsvlyxou/p06-r-msvm365u.jpg",
+          "l": "images/bmsvlyxou/p06-l-msvm365u.jpg"
+        }
+      ],
+      "par": 0.856,
+      "updatedAt": "2026-08-16T09:37:46.943Z",
+      "order": 28
     }
   ]
 }
