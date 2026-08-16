@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T11:51:59.528Z",
+  "updated": "2026-08-16T11:56:11.660Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1683,6 +1683,29 @@
       "par": 0.856,
       "updatedAt": "2026-08-16T09:37:46.943Z",
       "order": 28
+    },
+    {
+      "id": "bmsvqyqnf",
+      "title": "أطياف من حياة مي",
+      "author": "طاهر الطناجي",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover"
+      ],
+      "thick": 3,
+      "color": "#1f4b50",
+      "hidden": false,
+      "sar": 0.043,
+      "cover": {
+        "front": "images/bmsvqyqnf/front-msvr15c8.jpg",
+        "spine": "images/bmsvqyqnf/spine-msvr15c8.jpg",
+        "back": "images/bmsvqyqnf/back-msvr15c8.jpg"
+      },
+      "ar": 0.705,
+      "pages": [],
+      "updatedAt": "2026-08-16T11:56:10.399Z",
+      "order": 29
     }
   ]
 }
