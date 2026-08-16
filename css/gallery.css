@@ -362,7 +362,9 @@ img{display:block;max-width:100%}
 .feat-cap{position:absolute;top:calc(100% + 26px);left:50%;transform:translateX(-50%);width:max-content;max-width:calc(var(--w) + 60px);text-align:center;color:var(--cream);font-size:.95rem;line-height:1.3;pointer-events:none}
 .feat-cap b{display:block;color:var(--paper);font-size:1.02rem}
 .feat-cap small{color:rgba(232,223,204,.7)}
-.scene-f .shelf{height:calc(var(--book-h) + 82px)}
+.scene-f .mode-cover .shelf{height:calc(var(--book-h) + 82px)}
+.bookcase:not(.mode-cover) .feat-cap{display:none}
+.mode-stack .feat-star{top:auto;bottom:calc(100% + 2px);left:8px;transform:none;font-size:.9rem}
 
 /* فلسفة الغلاف */
 .cover-notes{display:flex;gap:22px;width:100%;height:100%;padding:12px;align-items:stretch}

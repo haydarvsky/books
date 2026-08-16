@@ -135,7 +135,7 @@
         let y = 0; const nodes = [];
         p.forEach((b, j) => {
           const d = bookDims(b, 'stack');
-          const slot = bookEl(b, false, 'stack');
+          const slot = bookEl(b, feat, 'stack');
           const jx = ((hash(b.id) % 21) - 10) * 0.6; // إزاحة أفقية طفيفة
           slot.style.setProperty('--y', y + 'px'); slot.style.setProperty('--jx', jx + 'px');
           slot.style.animationDelay = (i++ * 45) + 'ms';
@@ -161,7 +161,7 @@
     // رفّ المميّز (أغلفة أمامية دائماً)
     const feats = BOOKS.filter(b => b.featured);
     featSec.hidden = !feats.length;
-    if (feats.length) buildShelves(featCase, feats, { mode: 'cover', feat: true });
+    if (feats.length) buildShelves(featCase, feats, { mode: VIEW, feat: true });
     // كل الأعمال
     const list = BOOKS.filter(b => FILTER === 'all' || hasWork(b, FILTER));
     allTitle.hidden = !(feats.length && list.length);
@@ -180,7 +180,7 @@
   function setView(v, save = true) {
     VIEW = v; if (save) localStorage.setItem('bg_view', v);
     $$('button', viewsNav).forEach(b => b.classList.toggle('is-on', b.dataset.v === v));
-    baseX = v === 'stack' ? 14 : 0; kick();
+    baseX = v === 'stack' ? -14 : 0; kick();
     render();
   }
   viewsNav.addEventListener('click', e => { const b = e.target.closest('button[data-v]'); if (b) setView(b.dataset.v); });
@@ -191,11 +191,11 @@
   addEventListener('resize', () => { if (innerWidth === lastW) return; clearTimeout(rt); rt = setTimeout(() => { if (innerWidth !== lastW) { lastW = innerWidth; render(); } }, 250); });
 
   /* ---------- حركة الرفّ مع الفأرة ---------- */
-  let tx = 0, ty = 0, cx = 0, cy = 0, raf = null, baseX = VIEW === 'stack' ? 14 : 0, cbx = 0;
+  let tx = 0, ty = 0, cx = 0, cy = 0, raf = null, baseX = VIEW === 'stack' ? -14 : 0, cbx = 0;
   function tick() {
     cx += (tx - cx) * 0.08; cy += (ty - cy) * 0.08; cbx += (baseX - cbx) * 0.08;
     bookcase.style.transform = `rotateX(${cy + cbx}deg) rotateY(${cx}deg)`;
-    featCase.style.transform = `rotateX(${cy}deg) rotateY(${cx}deg)`;
+    featCase.style.transform = `rotateX(${cy + cbx}deg) rotateY(${cx}deg)`;
     if (Math.abs(tx - cx) > 0.01 || Math.abs(ty - cy) > 0.01 || Math.abs(baseX - cbx) > 0.01) raf = requestAnimationFrame(tick); else raf = null;
   }
   function kick() { if (!raf) raf = requestAnimationFrame(tick); }
