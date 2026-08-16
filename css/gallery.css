@@ -460,3 +460,4 @@ img{display:block;max-width:100%}
 .cover-flat.ltr{direction:ltr}
 /* الكتاب المفتوح الإنجليزي: زر «التالي» على اليمين */
 .pane-pages.ltr .book-open-wrap{direction:ltr}
+.pane-pages.ltr .book-open{direction:rtl} /* الصفحتان تبقيان بمكانهما الطبيعي (اليمنى يميناً)؛ الأزرار وحدها تنعكس */
