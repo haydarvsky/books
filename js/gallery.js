@@ -247,9 +247,10 @@
   function showTab(k) {
     $$('button', tabs).forEach(b => b.classList.toggle('is-on', b.dataset.tab === k));
     paneCover.hidden = k !== 'cover'; panePages.hidden = k !== 'pages';
-    if (k === 'cover') setupCover(CUR); else setupPages(CUR);
+    stopAutoplay();
+    if (k === 'cover') setupCover(CUR); else { setupPages(CUR); startAutoplay(); }
   }
-  function closeModal() { modal.hidden = true; document.body.style.overflow = ''; }
+  function closeModal() { stopAutoplay(); modal.hidden = true; document.body.style.overflow = ''; }
   $$('[data-close]', modal).forEach(el => el.addEventListener('click', closeModal));
 
   /* ---------- الغلاف ثلاثي الأبعاد ---------- */
@@ -380,8 +381,34 @@
       setTimeout(() => { si = ni; leaf.hidden = true; flipping = false; showSpread(); }, 880)
     ];
   }
-  pgNext.addEventListener('click', () => flip(1));
-  pgPrev.addEventListener('click', () => flip(-1));
+  /* ---------- تجربة: قلب آلي سريع ثم إغلاق الكتاب والعودة للمكتبة ---------- */
+  const AUTOPLAY = params.get('auto') !== '0';
+  const pgAuto = $('#pgAuto');
+  let apTimer = null, apActive = false;
+  function startAutoplay() {
+    if (!AUTOPLAY || SP.length < 1 || panePages.hidden) return;
+    stopAutoplay(); apActive = true; pgAuto.hidden = false; pgAuto.classList.remove('is-done');
+    const n = SP.length;
+    // مدة العرض الكلية ≈ ٢٨ ثانية كحدٍّ أقصى: توقّف على كل فتحة + زمن القلبة (٨٨٠م.ث) + إغلاق (٩٠٠م.ث)
+    const dwell = Math.max(700, Math.min(2600, (27100 - (n - 1) * 880) / (n + 1)));
+    pgAuto.style.setProperty('--dur', (dwell + (n - 1) * (880 + dwell) + dwell) + 'ms');
+    const step = () => {
+      if (!apActive) return;
+      if (si < n - 1) { flip(1); apTimer = setTimeout(step, 880 + dwell); }
+      else apTimer = setTimeout(closeBookAuto, dwell);
+    };
+    apTimer = setTimeout(step, dwell);
+  }
+  function stopAutoplay() { apActive = false; clearTimeout(apTimer); apTimer = null; if (pgAuto) pgAuto.hidden = true; }
+  function closeBookAuto() {
+    if (!apActive) return;
+    pgAuto.classList.add('is-done');
+    bookOpen.classList.add('closing');
+    setTimeout(() => { bookOpen.classList.remove('closing'); if (apActive) closeModal(); }, 950);
+  }
+  pgAuto?.addEventListener('click', stopAutoplay);
+  pgNext.addEventListener('click', () => { stopAutoplay(); flip(1); });
+  pgPrev.addEventListener('click', () => { stopAutoplay(); flip(-1); });
   $('#pgR').addEventListener('click', () => { if (pgR.src) openZoom(pgR.src); });
   $('#pgL').addEventListener('click', () => { if (pgL.src) openZoom(pgL.src); });
   $('.pg-ctl [data-zoom-page]').addEventListener('click', () => { const s = pgR.src || pgL.src; if (s) openZoom(s); });
@@ -390,7 +417,7 @@
   bookOpen.addEventListener('pointerdown', e => { sw = { x: e.clientX, t: Date.now() }; });
   bookOpen.addEventListener('pointerup', e => {
     if (!sw) return; const dx = e.clientX - sw.x; sw = null;
-    if (Math.abs(dx) > 50) { flip(dx < 0 ? 1 : -1); e.preventDefault(); }
+    if (Math.abs(dx) > 50) { stopAutoplay(); flip(dx < 0 ? 1 : -1); e.preventDefault(); }
   });
 
   /* ---------- لوحة المفاتيح ---------- */
@@ -399,8 +426,8 @@
     if (modal.hidden) return;
     if (e.key === 'Escape') closeModal();
     if (!panePages.hidden) {
-      if (e.key === 'ArrowLeft') flip(1);
-      if (e.key === 'ArrowRight') flip(-1);
+      if (e.key === 'ArrowLeft') { stopAutoplay(); flip(1); }
+      if (e.key === 'ArrowRight') { stopAutoplay(); flip(-1); }
     } else if (!paneCover.hidden && !cover3d.hidden) {
       if (e.key === 'ArrowLeft') { ry -= 30; applyRot(); }
       if (e.key === 'ArrowRight') { ry += 30; applyRot(); }
@@ -411,6 +438,7 @@
   const zoom = $('#zoom'), zView = $('#zView'), zImg = $('#zImg'), zPct = $('#zPct');
   let Z = { s: 1, x: 0, y: 0, fit: 1, nw: 0, nh: 0 }, zdrag = null;
   function openZoom(src) {
+    stopAutoplay();
     zoom.hidden = false;
     zImg.onload = () => { Z.nw = zImg.naturalWidth; Z.nh = zImg.naturalHeight; zFit(); };
     zImg.src = src; if (zImg.complete && zImg.naturalWidth) zImg.onload();
