@@ -336,6 +336,9 @@ img{display:block;max-width:100%}
 .views button.is-on{background:var(--gold);color:var(--ink);font-weight:700}
 .views button.is-on svg{opacity:1}
 
+/* المكتبة: الكتب متلاصقة */
+.mode-spine .shelf-row{gap:1px}
+.mode-spine .slot{width:var(--t)}
 /* الأغلفة الأمامية */
 .mode-cover .slot{width:var(--w)}
 .mode-cover .book{transform:rotateY(90deg)}

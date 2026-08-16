@@ -83,7 +83,7 @@
     const tc = textOn(c);
     const slot = document.createElement('div');
     slot.className = 'slot' + (b.dir === 'ltr' ? ' ltr' : '');
-    slot.style.cssText = `--w:${d.w}px;--h:${d.h}px;--t:${d.t}px;--c:${c};--tc:${tc};--ex:0;--sw:${Math.max(d.t, 22)}px`;
+    slot.style.cssText = `--w:${d.w}px;--h:${d.h}px;--t:${d.t}px;--c:${c};--tc:${tc};--ex:0;--sw:${d.t}px`;
     slot.dataset.id = b.id;
     const front = b.cover?.front, spine = b.cover?.spine, back = b.cover?.back;
     const tags = (b.work || []).map(w => `<span class="tag t-${w}">${workLabel[w] || w}</span>`).join('');
@@ -111,7 +111,7 @@
   function slotW(b, mode = VIEW) {
     const d = bookDims(b, mode);
     if (mode === 'cover') return d.w + (MOB() ? 10 : 18);
-    return Math.max(d.t, 22) + (MOB() ? 8 : 12);
+    return d.t + 1; // المكتبة: الكعب ملاصق للكعب كالرفّ الحقيقي
   }
   /* يبني صفوف رفوف من قائمة كتب داخل حاوية */
   function buildShelves(container, list, { mode = VIEW, feat = false } = {}) {
