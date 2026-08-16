@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T11:56:11.660Z",
+  "updated": "2026-08-16T12:02:37.948Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1706,6 +1706,60 @@
       "pages": [],
       "updatedAt": "2026-08-16T11:56:10.399Z",
       "order": 29
+    },
+    {
+      "id": "bmsvr6042",
+      "title": "مقدمة تفسير القرآن",
+      "author": "الشيخ يعقوب المنصوري",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#23474d",
+      "hidden": false,
+      "sar": 0.1035,
+      "cover": {
+        "front": "images/bmsvr6042/front-msvr9f2w.jpg",
+        "spine": "images/bmsvr6042/spine-msvr9f2w.jpg",
+        "back": "images/bmsvr6042/back-msvr9f2w.jpg"
+      },
+      "ar": 0.709,
+      "pages": [
+        {
+          "r": "images/bmsvr6042/p01-r-msvr9f2w.jpg",
+          "l": "images/bmsvr6042/p01-l-msvr9f2w.jpg"
+        },
+        {
+          "r": "images/bmsvr6042/p02-r-msvr9f2w.jpg",
+          "l": "images/bmsvr6042/p02-l-msvr9f2w.jpg"
+        },
+        {
+          "r": "images/bmsvr6042/p03-r-msvr9f2w.jpg",
+          "l": "images/bmsvr6042/p03-l-msvr9f2w.jpg"
+        },
+        {
+          "r": "images/bmsvr6042/p04-r-msvr9f2w.jpg",
+          "l": "images/bmsvr6042/p04-l-msvr9f2w.jpg"
+        },
+        {
+          "r": "images/bmsvr6042/p05-r-msvr9f2w.jpg",
+          "l": "images/bmsvr6042/p05-l-msvr9f2w.jpg"
+        },
+        {
+          "r": "images/bmsvr6042/p06-r-msvr9f2w.jpg",
+          "l": "images/bmsvr6042/p06-l-msvr9f2w.jpg"
+        },
+        {
+          "r": "images/bmsvr6042/p07-r-msvr9f2w.jpg",
+          "l": "images/bmsvr6042/p07-l-msvr9f2w.jpg"
+        }
+      ],
+      "par": 0.709,
+      "updatedAt": "2026-08-16T12:02:36.653Z",
+      "order": 30
     }
   ]
 }
