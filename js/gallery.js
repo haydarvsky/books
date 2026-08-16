@@ -390,7 +390,7 @@
     stopAutoplay(); apActive = true; pgAuto.hidden = false; pgAuto.classList.remove('is-done');
     const n = SP.length;
     // مدة العرض الكلية ≈ ٢٨ ثانية كحدٍّ أقصى: توقّف على كل فتحة + زمن القلبة (٨٨٠م.ث) + إغلاق (٩٠٠م.ث)
-    const dwell = Math.max(700, Math.min(2600, (27100 - (n - 1) * 880) / (n + 1)));
+    const dwell = Math.max(450, Math.min(1500, (20000 - (n - 1) * 880) / (n + 1)));
     pgAuto.style.setProperty('--dur', (dwell + (n - 1) * (880 + dwell) + dwell) + 'ms');
     const step = () => {
       if (!apActive) return;
