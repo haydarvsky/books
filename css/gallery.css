@@ -5,7 +5,8 @@
 :root{
   --green:#0F4C3A; --green-2:#1B6B52; --amber:#C2780A; --gold:#D9A441;
   --cream:#E8DFCC; --paper:#FAF6EF; --ink:#2A1A0F;
-  --bg:#171410; --bg-2:#221c15; --wood:#5a3b1e; --wood-d:#33200f; --wood-l:#8a5a2b;
+  --bg:#171410; --bg-2:#221c15; --glow:#2b3a2f; --muted:rgba(232,223,204,.7); --muted-2:rgba(232,223,204,.5); --line-c:rgba(217,164,65,.25);
+  --wood:#5a3b1e; --wood-d:#33200f; --wood-l:#8a5a2b;
   --shadow:0 30px 60px -20px rgba(0,0,0,.7);
   --book-h:230px;
   --wa:#25D366;
@@ -14,7 +15,7 @@
 html{scroll-behavior:smooth}
 body{
   font-family:"Sakkal Saad",system-ui,sans-serif;color:var(--cream);
-  background:radial-gradient(1200px 700px at 50% -10%,#2b3a2f 0%,var(--bg-2) 45%,var(--bg) 100%) fixed;
+  background:radial-gradient(1200px 700px at 50% -10%,var(--glow) 0%,var(--bg-2) 45%,var(--bg) 100%) fixed;
   min-height:100vh;line-height:1.5;overflow-x:hidden;
 }
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
@@ -39,7 +40,7 @@ img{display:block;max-width:100%}
 
 /* ---------- المسرح ---------- */
 .stage{position:relative;max-width:1400px;margin:0 auto;padding:6px 24px 30px;min-height:420px}
-.hint{text-align:center;color:rgba(232,223,204,.65);font-size:1rem;margin-bottom:14px}
+.hint{text-align:center;color:var(--muted);font-size:1rem;margin-bottom:14px}
 .scene{perspective:1600px;perspective-origin:50% 35%;padding:30px 0 10px}
 .bookcase{
   transform-style:preserve-3d;transition:transform .12s linear;
@@ -176,7 +177,7 @@ img{display:block;max-width:100%}
 /* ---------- الدعوة للتواصل ---------- */
 .cta{
   text-align:center;padding:48px 20px 40px;margin:20px auto 0;max-width:820px;
-  border-top:1px solid rgba(217,164,65,.25);
+  border-top:1px solid var(--line-c);
 }
 .cta-t{font-size:1.7rem;font-weight:700;color:var(--paper);margin-bottom:16px}
 .wa{
@@ -186,10 +187,10 @@ img{display:block;max-width:100%}
 }
 .wa:hover{transform:translateY(-2px);box-shadow:0 18px 36px -8px rgba(37,211,102,.75)}
 .wa svg{width:32px;height:32px}
-.cta-s{margin-top:16px;color:rgba(232,223,204,.7)}
+.cta-s{margin-top:16px;color:var(--muted)}
 .ftr{
   display:flex;justify-content:center;align-items:center;max-width:1400px;margin:0 auto;
-  padding:14px 24px 26px;color:rgba(232,223,204,.5);font-size:.95rem
+  padding:14px 24px 26px;color:var(--muted-2);font-size:.95rem
 }
 
 /* ---------- النافذة ---------- */
@@ -358,8 +359,8 @@ img{display:block;max-width:100%}
 .featured{max-width:1400px;margin:0 auto 6px;padding:0 24px}
 .sec-t{text-align:center;color:var(--gold);font-size:1.5rem;font-weight:700;margin:6px 0 2px}
 .sec-t span{opacity:.7;font-size:1rem;vertical-align:middle;margin:0 6px}
-.sec-s{text-align:center;color:rgba(232,223,204,.7);font-size:1rem;margin-bottom:8px}
-.sec-all{margin-top:26px;font-size:1.25rem;color:rgba(232,223,204,.75)}
+.sec-s{text-align:center;color:var(--muted);font-size:1rem;margin-bottom:8px}
+.sec-all{margin-top:26px;font-size:1.25rem;color:var(--muted)}
 .scene-f{padding-top:34px}
 .scene-f .bookcase{--book-h:250px}
 .feat-star{position:absolute;top:-10px;left:50%;transform:translate(-50%,0) translateZ(60px);color:var(--gold);font-size:1.1rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,.6));pointer-events:none}
@@ -464,3 +465,29 @@ img{display:block;max-width:100%}
 /* الكتاب المفتوح الإنجليزي: زر «التالي» على اليمين */
 .pane-pages.ltr .book-open-wrap{direction:ltr}
 .pane-pages.ltr .book-open{direction:rtl} /* الصفحتان تبقيان بمكانهما الطبيعي (اليمنى يميناً)؛ الأزرار وحدها تنعكس */
+
+/* ===== سمات لونية للتجربة: ?theme=emerald | navy | light | plum (الافتراضي الحالي بلا سمة) ===== */
+html[data-theme="emerald"]{--bg:#0b2a21;--bg-2:#0F4C3A;--glow:#1f7a5c;--wood:#6b4a22;--wood-d:#3d2a10;--wood-l:#9a6a30}
+html[data-theme="navy"]{--bg:#0b1a2b;--bg-2:#12384F;--glow:#1e5f7a;--wood:#5a3b1e;--wood-d:#33200f;--wood-l:#8a5a2b}
+html[data-theme="plum"]{--bg:#2a1330;--bg-2:#4A2C5A;--glow:#7a4a8a;--wood:#5a3b1e;--wood-d:#33200f;--wood-l:#8a5a2b}
+html[data-theme="light"]{
+  --bg:#EFE4CC;--bg-2:#F7EFDF;--glow:#FFF9EC;--cream:#4a3a2a;--paper:#2A1A0F;--muted:rgba(74,58,42,.75);--muted-2:rgba(74,58,42,.55);--line-c:rgba(194,120,10,.35);
+  --wood:#8a5a2b;--wood-d:#5a3b1e;--wood-l:#c9902f;
+}
+html[data-theme="light"] .brand-logo{content:url("../img/logo-dark.svg");filter:none}
+html[data-theme="light"] .chip{background:rgba(255,255,255,.5);color:var(--ink);border-color:rgba(194,120,10,.5)}
+html[data-theme="light"] .chip.is-on{background:var(--green);color:#fff;border-color:var(--green)}
+html[data-theme="light"] .views{background:rgba(255,255,255,.55);border-color:rgba(194,120,10,.45)}
+html[data-theme="light"] .views button{color:var(--ink)}
+html[data-theme="light"] .views button.is-on{background:var(--green);color:#fff}
+html[data-theme="light"] .hdr p{color:var(--amber)}
+html[data-theme="light"] .featured{background:radial-gradient(900px 260px at 50% 0%,rgba(15,76,58,.18),transparent 70%),linear-gradient(180deg,#e9f1ea 0%,#dbe8dc 60%,#cfe0d1 100%);box-shadow:0 30px 70px -30px rgba(15,76,58,.5),inset 0 1px 0 rgba(255,255,255,.8),0 0 0 1px rgba(15,76,58,.35)}
+html[data-theme="light"] .featured .plank::before{background:linear-gradient(to bottom,#3d8a6a 0%,#1B6B52 55%,#0F4C3A 100%)}
+html[data-theme="light"] .featured .plank::after{background:linear-gradient(to bottom,#2f8a68,#0F4C3A 70%,#0a3428)}
+html[data-theme="light"] .book-shadow{background:radial-gradient(ellipse at center,rgba(60,40,10,.4),transparent 70%)}
+html[data-theme="light"] .tip{background:var(--green);color:#FAF6EF}
+html[data-theme="light"] .tip::after{border-top-color:var(--green)}
+html[data-theme="light"] .tip small{color:rgba(250,246,239,.75)}
+html[data-theme="light"] .empty-logo{content:url("../img/logo-dark.svg")}
+html[data-theme="light"] .sec-t{color:var(--green)}
+html[data-theme="light"] .cta-t{color:var(--green)}

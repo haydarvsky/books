@@ -5,6 +5,7 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const params = new URLSearchParams(location.search);
   const DEMO = params.get('demo') === '1';
+  { const th = params.get('theme') || localStorage.getItem('bg_theme') || ''; if (th) document.documentElement.dataset.theme = th; if (params.has('theme')) localStorage.setItem('bg_theme', th); }
 
   const bookcase = $('#bookcase');
   const stage = $('#stage');
