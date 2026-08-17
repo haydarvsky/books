@@ -348,7 +348,7 @@
   /* ---------- الكتاب المفتوح (التنضيد) ---------- */
   const pgR = $('#pgR img'), pgL = $('#pgL img'), leaf = $('#leaf'), leafF = $('.leaf-f img', leaf), leafB = $('.leaf-b img', leaf);
   const bookOpen = $('#bookOpen'), pgPrev = $('#pgPrev'), pgNext = $('#pgNext'), pgCount = $('#pgCount');
-  let SP = [], si = 0, flipping = false, flipTimers = [];
+  let SP = [], si = 0, flipping = false, flipTimers = [], parToken = 0;
   function setupPages(b) {
     SP = (b.pages || []).filter(p => p && (p.r || p.l));
     si = 0; flipping = false; flipTimers.forEach(clearTimeout); flipTimers = []; leaf.hidden = true;
@@ -357,7 +357,10 @@
     pgPrev.textContent = LTR ? '‹' : '›'; pgNext.textContent = LTR ? '›' : '‹';
     showSpread();
     // تحميل مسبق
-    SP.forEach(p => { [p.r, p.l].forEach(s => { if (s) { const im = new Image(); im.src = s; } }); });
+    // تحميل مسبق + قياس النسبة الحقيقية للصفحات (الوسيط) لأن النسبة المحفوظة قد تكون من صفحةٍ شاذّة الحجم
+    const token = ++parToken; const ars = [];
+    const done = () => { if (token !== parToken || !ars.length) return; const a = ars.slice().sort((x, y) => x - y); const med = a[Math.floor(a.length / 2)]; bookOpen.style.setProperty('--par', Math.min(0.95, Math.max(0.5, med))); };
+    SP.forEach(p => { [p.r, p.l].forEach(src => { if (!src) return; const im = new Image(); im.onload = () => { if (im.naturalHeight) { ars.push(im.naturalWidth / im.naturalHeight); done(); } }; im.src = src; }); });
   }
   function showSpread() {
     const s = SP[si] || {};

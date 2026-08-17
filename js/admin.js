@@ -351,16 +351,17 @@
       if (cover.spine && !b.sar) { try { const im = new Image(); await new Promise((res, rej) => { im.onload = res; im.onerror = rej; im.src = cover.spine; }); if (im.naturalHeight) b.sar = +(im.naturalWidth / im.naturalHeight).toFixed(4); } catch { } }
       b.cover = cover; if (ar) b.ar = ar;
       // الصفحات
-      const pages = []; let par = ED.orig?.par || 0;
+      const pages = []; let par = ED.orig?.par || 0; const pars = [];
       if (work.includes('typeset')) {
         for (let i = 0; i < pairs.length; i++) {
           const nn = String(i + 1).padStart(2, '0');
           const r = await prep(pairs[i].r, `images/${ED.id}/p${nn}-r-${ts}.jpg`, { maxEdge: 1600, quality: .85 });
           const l = await prep(pairs[i].l, `images/${ED.id}/p${nn}-l-${ts}.jpg`, { maxEdge: 1600, quality: .85 });
-          if (r && r.w && !par) par = +(r.w / r.h).toFixed(3);
+          if (r && r.w) pars.push(r.w / r.h); if (l && l.w) pars.push(l.w / l.h);
           pages.push({ r: r?.path || null, l: l?.path || null });
         }
       } else { (ED.orig?.pages || []).forEach(p => { if (p.r) deletes.add(p.r); if (p.l) deletes.add(p.l); }); }
+      if (pars.length) { const a = pars.sort((x, y) => x - y); par = +a[Math.floor(a.length / 2)].toFixed(3); } // وسيط نسب الصفحات
       b.pages = pages; if (par) b.par = par;
       b.updatedAt = new Date().toISOString();
       // لا تحذف ما أُعيد استعماله
