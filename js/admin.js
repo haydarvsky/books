@@ -275,8 +275,9 @@
           <div class="dz" data-side="r"><input type="file" accept="image/*"><div class="dz-in"><span class="dz-ico">📄</span><b>يمين</b></div><img class="dz-prev" alt=""><button type="button" class="dz-x">✕</button></div>
           <div class="dz" data-side="l"><input type="file" accept="image/*"><div class="dz-in"><span class="dz-ico">📄</span><b>يسار</b></div><img class="dz-prev" alt=""><button type="button" class="dz-x">✕</button></div>
         </div>
-        <div class="pair-b"><button type="button" data-up title="أعلى">▲</button><button type="button" data-down title="أسفل">▼</button><button type="button" data-del title="حذف الفتحة">🗑</button></div>`;
+        <div class="pair-b"><button type="button" data-swap title="تبديل اليمين واليسار">⇄</button><button type="button" data-up title="أعلى">▲</button><button type="button" data-down title="أسفل">▼</button><button type="button" data-del title="حذف الفتحة">🗑</button></div>`;
       ['r', 'l'].forEach(side => { const dz = $(`.dz[data-side=${side}]`, row); paintSlot(dz, p[side]); bindDz(dz, () => p[side]); });
+      $('[data-swap]', row).addEventListener('click', () => { const t = p.r; p.r = p.l; p.l = t; renderPairs(); });
       $('[data-up]', row).addEventListener('click', () => { if (i > 0) { [ED.pairs[i - 1], ED.pairs[i]] = [ED.pairs[i], ED.pairs[i - 1]]; renderPairs(); } });
       $('[data-down]', row).addEventListener('click', () => { if (i < ED.pairs.length - 1) { [ED.pairs[i + 1], ED.pairs[i]] = [ED.pairs[i], ED.pairs[i + 1]]; renderPairs(); } });
       $('[data-del]', row).addEventListener('click', () => { const pr = ED.pairs[i]; ['r', 'l'].forEach(s => { if (pr[s].path) { pr[s].removed = true; ED.trash = (ED.trash || []).concat(pr[s].path); } }); ED.pairs.splice(i, 1); renderPairs(); });
@@ -291,11 +292,11 @@
     const imgs = [...files].filter(f => f.type.startsWith('image/')).sort(natural);
     if (!imgs.length) return;
     let cur = ED.pairs.find(p => !p.r.file && !p.r.path && !p.l.file && !p.l.path) || null;
+    const order = $('#dirLtr').checked ? ['l', 'r'] : ['r', 'l']; // ترتيب القراءة: العربي يمين ثم يسار، والإنجليزي يسار ثم يمين
     for (const f of imgs) {
-      // ابحث عن أول خانة فارغة (يمين ثم يسار) وإلا فتحة جديدة
       let placed = false;
-      for (const p of ED.pairs) { for (const s of ['r', 'l']) { const sl = p[s]; if (!sl.file && (!sl.path || sl.removed)) { await assignFile(sl, f); placed = true; break; } } if (placed) break; }
-      if (!placed) { const p = { r: newSlot(), l: newSlot() }; await assignFile(p.r, f); ED.pairs.push(p); }
+      for (const p of ED.pairs) { for (const s of order) { const sl = p[s]; if (!sl.file && (!sl.path || sl.removed)) { await assignFile(sl, f); placed = true; break; } } if (placed) break; }
+      if (!placed) { const p = { r: newSlot(), l: newSlot() }; await assignFile(p[order[0]], f); ED.pairs.push(p); }
     }
     renderPairs();
     if (imgs.length % 2) toast('العدد فردي — أكمل الصفحة اليسرى للفتحة الأخيرة', 'err');
