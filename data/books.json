@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T15:00:48.276Z",
+  "updated": "2026-08-21T15:05:17.262Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -2096,6 +2096,60 @@
       "par": 0.705,
       "updatedAt": "2026-08-21T15:00:47.212Z",
       "order": 36
+    },
+    {
+      "id": "bmt32y6ve",
+      "title": "شاعر ملك",
+      "author": "علي الجارم",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#d9b264",
+      "hidden": false,
+      "sar": 0.048,
+      "cover": {
+        "front": "images/bmt32y6ve/front-mt32zk1x.jpg",
+        "spine": "images/bmt32y6ve/spine-mt32zk1x.jpg",
+        "back": "images/bmt32y6ve/back-mt32zk1x.jpg"
+      },
+      "ar": 0.705,
+      "pages": [
+        {
+          "r": "images/bmt32y6ve/p01-r-mt32zk1x.jpg",
+          "l": "images/bmt32y6ve/p01-l-mt32zk1x.jpg"
+        },
+        {
+          "r": "images/bmt32y6ve/p02-r-mt32zk1x.jpg",
+          "l": "images/bmt32y6ve/p02-l-mt32zk1x.jpg"
+        },
+        {
+          "r": "images/bmt32y6ve/p03-r-mt32zk1x.jpg",
+          "l": "images/bmt32y6ve/p03-l-mt32zk1x.jpg"
+        },
+        {
+          "r": "images/bmt32y6ve/p04-r-mt32zk1x.jpg",
+          "l": "images/bmt32y6ve/p04-l-mt32zk1x.jpg"
+        },
+        {
+          "r": "images/bmt32y6ve/p05-r-mt32zk1x.jpg",
+          "l": "images/bmt32y6ve/p05-l-mt32zk1x.jpg"
+        },
+        {
+          "r": "images/bmt32y6ve/p06-r-mt32zk1x.jpg",
+          "l": "images/bmt32y6ve/p06-l-mt32zk1x.jpg"
+        },
+        {
+          "r": "images/bmt32y6ve/p07-r-mt32zk1x.jpg",
+          "l": "images/bmt32y6ve/p07-l-mt32zk1x.jpg"
+        }
+      ],
+      "par": 0.705,
+      "updatedAt": "2026-08-21T15:05:15.183Z",
+      "order": 37
     }
   ]
 }
