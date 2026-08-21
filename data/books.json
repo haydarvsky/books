@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T15:10:13.391Z",
+  "updated": "2026-08-21T15:12:28.414Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -2286,6 +2286,65 @@
       "par": 0.705,
       "updatedAt": "2026-08-21T15:10:12.419Z",
       "order": 39
+    },
+    {
+      "id": "bmt336b7r",
+      "title": "الململ",
+      "author": "خالد سالم السدّاني",
+      "year": "١٤٤٧ه - ٢٠٢٦م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#b1a068",
+      "hidden": false,
+      "featured": true,
+      "sar": 0.0365,
+      "cover": {
+        "front": "images/bmt336b7r/front-mt338th9.jpg",
+        "spine": "images/bmt336b7r/spine-mt338th9.jpg",
+        "back": "images/bmt336b7r/back-mt338th9.jpg"
+      },
+      "ar": 0.666,
+      "pages": [
+        {
+          "r": "images/bmt336b7r/p01-r-mt338th9.jpg",
+          "l": "images/bmt336b7r/p01-l-mt338th9.jpg"
+        },
+        {
+          "r": "images/bmt336b7r/p02-r-mt338th9.jpg",
+          "l": "images/bmt336b7r/p02-l-mt338th9.jpg"
+        },
+        {
+          "r": "images/bmt336b7r/p03-r-mt338th9.jpg",
+          "l": "images/bmt336b7r/p03-l-mt338th9.jpg"
+        },
+        {
+          "r": "images/bmt336b7r/p04-r-mt338th9.jpg",
+          "l": "images/bmt336b7r/p04-l-mt338th9.jpg"
+        },
+        {
+          "r": "images/bmt336b7r/p05-r-mt338th9.jpg",
+          "l": "images/bmt336b7r/p05-l-mt338th9.jpg"
+        },
+        {
+          "r": "images/bmt336b7r/p06-r-mt338th9.jpg",
+          "l": "images/bmt336b7r/p06-l-mt338th9.jpg"
+        },
+        {
+          "r": "images/bmt336b7r/p07-r-mt338th9.jpg",
+          "l": "images/bmt336b7r/p07-l-mt338th9.jpg"
+        },
+        {
+          "r": "images/bmt336b7r/p08-r-mt338th9.jpg",
+          "l": "images/bmt336b7r/p08-l-mt338th9.jpg"
+        }
+      ],
+      "par": 0.667,
+      "updatedAt": "2026-08-21T15:12:27.346Z",
+      "order": 40
     }
   ]
 }
