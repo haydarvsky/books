@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T14:52:53.668Z",
+  "updated": "2026-08-21T14:55:10.595Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1910,6 +1910,72 @@
       "par": 0.705,
       "updatedAt": "2026-08-21T14:52:51.746Z",
       "order": 33
+    },
+    {
+      "id": "bmt32k3an",
+      "title": "فكتوريا",
+      "author": "يعقوب صروف",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#734d33",
+      "hidden": false,
+      "sar": 0.048,
+      "cover": {
+        "front": "images/bmt32k3an/front-mt32mjzy.jpg",
+        "spine": "images/bmt32k3an/spine-mt32mjzy.jpg",
+        "back": "images/bmt32k3an/back-mt32mjzy.jpg"
+      },
+      "ar": 0.705,
+      "pages": [
+        {
+          "r": "images/bmt32k3an/p01-r-mt32mjzy.jpg",
+          "l": "images/bmt32k3an/p01-l-mt32mjzy.jpg"
+        },
+        {
+          "r": "images/bmt32k3an/p02-r-mt32mjzy.jpg",
+          "l": "images/bmt32k3an/p02-l-mt32mjzy.jpg"
+        },
+        {
+          "r": "images/bmt32k3an/p03-r-mt32mjzy.jpg",
+          "l": "images/bmt32k3an/p03-l-mt32mjzy.jpg"
+        },
+        {
+          "r": "images/bmt32k3an/p04-r-mt32mjzy.jpg",
+          "l": "images/bmt32k3an/p04-l-mt32mjzy.jpg"
+        },
+        {
+          "r": "images/bmt32k3an/p05-r-mt32mjzy.jpg",
+          "l": "images/bmt32k3an/p05-l-mt32mjzy.jpg"
+        },
+        {
+          "r": "images/bmt32k3an/p06-r-mt32mjzy.jpg",
+          "l": "images/bmt32k3an/p06-l-mt32mjzy.jpg"
+        },
+        {
+          "r": "images/bmt32k3an/p07-r-mt32mjzy.jpg",
+          "l": "images/bmt32k3an/p07-l-mt32mjzy.jpg"
+        },
+        {
+          "r": "images/bmt32k3an/p08-r-mt32mjzy.jpg",
+          "l": "images/bmt32k3an/p08-l-mt32mjzy.jpg"
+        },
+        {
+          "r": "images/bmt32k3an/p09-r-mt32mjzy.jpg",
+          "l": "images/bmt32k3an/p09-l-mt32mjzy.jpg"
+        },
+        {
+          "r": "images/bmt32k3an/p10-r-mt32mjzy.jpg",
+          "l": "images/bmt32k3an/p10-l-mt32mjzy.jpg"
+        }
+      ],
+      "par": 0.705,
+      "updatedAt": "2026-08-21T14:55:08.875Z",
+      "order": 34
     }
   ]
 }
