@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T15:08:41.631Z",
+  "updated": "2026-08-21T15:10:13.391Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -2208,6 +2208,84 @@
       "par": 0.705,
       "updatedAt": "2026-08-21T15:08:40.277Z",
       "order": 38
+    },
+    {
+      "id": "bmt334goe",
+      "title": "هاتف من الأندلس",
+      "author": "علي الجارم",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#ac802f",
+      "hidden": false,
+      "sar": 0.024,
+      "cover": {
+        "front": "images/bmt334goe/front-mt335x6e.jpg",
+        "spine": "images/bmt334goe/spine-mt335x6e.jpg",
+        "back": "images/bmt334goe/back-mt335x6e.jpg"
+      },
+      "ar": 0.705,
+      "pages": [
+        {
+          "r": "images/bmt334goe/p01-r-mt335x6e.jpg",
+          "l": "images/bmt334goe/p01-l-mt335x6e.jpg"
+        },
+        {
+          "r": "images/bmt334goe/p02-r-mt335x6e.jpg",
+          "l": "images/bmt334goe/p02-l-mt335x6e.jpg"
+        },
+        {
+          "r": "images/bmt334goe/p03-r-mt335x6e.jpg",
+          "l": "images/bmt334goe/p03-l-mt335x6e.jpg"
+        },
+        {
+          "r": "images/bmt334goe/p04-r-mt335x6e.jpg",
+          "l": "images/bmt334goe/p04-l-mt335x6e.jpg"
+        },
+        {
+          "r": "images/bmt334goe/p05-r-mt335x6e.jpg",
+          "l": "images/bmt334goe/p05-l-mt335x6e.jpg"
+        },
+        {
+          "r": "images/bmt334goe/p06-r-mt335x6e.jpg",
+          "l": "images/bmt334goe/p06-l-mt335x6e.jpg"
+        },
+        {
+          "r": "images/bmt334goe/p07-r-mt335x6e.jpg",
+          "l": "images/bmt334goe/p07-l-mt335x6e.jpg"
+        },
+        {
+          "r": "images/bmt334goe/p08-r-mt335x6e.jpg",
+          "l": "images/bmt334goe/p08-l-mt335x6e.jpg"
+        },
+        {
+          "r": "images/bmt334goe/p09-r-mt335x6e.jpg",
+          "l": "images/bmt334goe/p09-l-mt335x6e.jpg"
+        },
+        {
+          "r": "images/bmt334goe/p10-r-mt335x6e.jpg",
+          "l": "images/bmt334goe/p10-l-mt335x6e.jpg"
+        },
+        {
+          "r": "images/bmt334goe/p11-r-mt335x6e.jpg",
+          "l": "images/bmt334goe/p11-l-mt335x6e.jpg"
+        },
+        {
+          "r": "images/bmt334goe/p12-r-mt335x6e.jpg",
+          "l": "images/bmt334goe/p12-l-mt335x6e.jpg"
+        },
+        {
+          "r": "images/bmt334goe/p13-r-mt335x6e.jpg",
+          "l": "images/bmt334goe/p13-l-mt335x6e.jpg"
+        }
+      ],
+      "par": 0.705,
+      "updatedAt": "2026-08-21T15:10:12.419Z",
+      "order": 39
     }
   ]
 }
