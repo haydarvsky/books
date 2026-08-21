@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T14:55:10.595Z",
+  "updated": "2026-08-21T14:58:46.516Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1976,6 +1976,68 @@
       "par": 0.705,
       "updatedAt": "2026-08-21T14:55:08.875Z",
       "order": 34
+    },
+    {
+      "id": "bmt32ph6b",
+      "title": "في سبيل التاج",
+      "author": "مصطفى لطفي المنفلوطي",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#605941",
+      "hidden": false,
+      "sar": 0.048,
+      "cover": {
+        "front": "images/bmt32ph6b/front-mt32r6yg.jpg",
+        "spine": "images/bmt32ph6b/spine-mt32r6yg.jpg",
+        "back": "images/bmt32ph6b/back-mt32r6yg.jpg"
+      },
+      "ar": 0.705,
+      "pages": [
+        {
+          "r": "images/bmt32ph6b/p01-r-mt32r6yg.jpg",
+          "l": "images/bmt32ph6b/p01-l-mt32r6yg.jpg"
+        },
+        {
+          "r": "images/bmt32ph6b/p02-r-mt32r6yg.jpg",
+          "l": "images/bmt32ph6b/p02-l-mt32r6yg.jpg"
+        },
+        {
+          "r": "images/bmt32ph6b/p03-r-mt32r6yg.jpg",
+          "l": "images/bmt32ph6b/p03-l-mt32r6yg.jpg"
+        },
+        {
+          "r": "images/bmt32ph6b/p04-r-mt32r6yg.jpg",
+          "l": "images/bmt32ph6b/p04-l-mt32r6yg.jpg"
+        },
+        {
+          "r": "images/bmt32ph6b/p05-r-mt32r6yg.jpg",
+          "l": "images/bmt32ph6b/p05-l-mt32r6yg.jpg"
+        },
+        {
+          "r": "images/bmt32ph6b/p06-r-mt32r6yg.jpg",
+          "l": "images/bmt32ph6b/p06-l-mt32r6yg.jpg"
+        },
+        {
+          "r": "images/bmt32ph6b/p07-r-mt32r6yg.jpg",
+          "l": "images/bmt32ph6b/p07-l-mt32r6yg.jpg"
+        },
+        {
+          "r": "images/bmt32ph6b/p08-r-mt32r6yg.jpg",
+          "l": "images/bmt32ph6b/p08-l-mt32r6yg.jpg"
+        },
+        {
+          "r": "images/bmt32ph6b/p09-r-mt32r6yg.jpg",
+          "l": "images/bmt32ph6b/p09-l-mt32r6yg.jpg"
+        }
+      ],
+      "par": 0.705,
+      "updatedAt": "2026-08-21T14:58:45.064Z",
+      "order": 35
     }
   ]
 }
