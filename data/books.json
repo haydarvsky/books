@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T14:50:53.140Z",
+  "updated": "2026-08-21T14:52:53.668Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1868,6 +1868,48 @@
       "par": 0.705,
       "updatedAt": "2026-08-21T14:50:51.029Z",
       "order": 32
+    },
+    {
+      "id": "bmt32hrog",
+      "title": "خاتمة المطاف",
+      "author": "علي الجارم",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#676f43",
+      "hidden": false,
+      "sar": 0.024,
+      "cover": {
+        "front": "images/bmt32hrog/front-mt32jmj1.jpg",
+        "spine": "images/bmt32hrog/spine-mt32jmj1.jpg",
+        "back": "images/bmt32hrog/back-mt32jmj1.jpg"
+      },
+      "ar": 0.705,
+      "pages": [
+        {
+          "r": "images/bmt32hrog/p01-r-mt32jmj1.jpg",
+          "l": "images/bmt32hrog/p01-l-mt32jmj1.jpg"
+        },
+        {
+          "r": "images/bmt32hrog/p02-r-mt32jmj1.jpg",
+          "l": "images/bmt32hrog/p02-l-mt32jmj1.jpg"
+        },
+        {
+          "r": "images/bmt32hrog/p03-r-mt32jmj1.jpg",
+          "l": "images/bmt32hrog/p03-l-mt32jmj1.jpg"
+        },
+        {
+          "r": "images/bmt32hrog/p04-r-mt32jmj1.jpg",
+          "l": "images/bmt32hrog/p04-l-mt32jmj1.jpg"
+        }
+      ],
+      "par": 0.705,
+      "updatedAt": "2026-08-21T14:52:51.746Z",
+      "order": 33
     }
   ]
 }
