@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T14:58:46.516Z",
+  "updated": "2026-08-21T15:00:48.276Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -2038,6 +2038,64 @@
       "par": 0.705,
       "updatedAt": "2026-08-21T14:58:45.064Z",
       "order": 35
+    },
+    {
+      "id": "bmt32sqz1",
+      "title": "فارس بني حمدان",
+      "author": "علي الجارم",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#e99f0d",
+      "hidden": false,
+      "sar": 0.048,
+      "cover": {
+        "front": "images/bmt32sqz1/front-mt32tt9s.jpg",
+        "spine": "images/bmt32sqz1/spine-mt32tt9s.jpg",
+        "back": "images/bmt32sqz1/back-mt32tt9s.jpg"
+      },
+      "ar": 0.705,
+      "pages": [
+        {
+          "r": "images/bmt32sqz1/p01-r-mt32tt9s.jpg",
+          "l": "images/bmt32sqz1/p01-l-mt32tt9s.jpg"
+        },
+        {
+          "r": "images/bmt32sqz1/p02-r-mt32tt9s.jpg",
+          "l": "images/bmt32sqz1/p02-l-mt32tt9s.jpg"
+        },
+        {
+          "r": "images/bmt32sqz1/p03-r-mt32tt9s.jpg",
+          "l": "images/bmt32sqz1/p03-l-mt32tt9s.jpg"
+        },
+        {
+          "r": "images/bmt32sqz1/p04-r-mt32tt9s.jpg",
+          "l": "images/bmt32sqz1/p04-l-mt32tt9s.jpg"
+        },
+        {
+          "r": "images/bmt32sqz1/p05-r-mt32tt9s.jpg",
+          "l": "images/bmt32sqz1/p05-l-mt32tt9s.jpg"
+        },
+        {
+          "r": "images/bmt32sqz1/p06-r-mt32tt9s.jpg",
+          "l": "images/bmt32sqz1/p06-l-mt32tt9s.jpg"
+        },
+        {
+          "r": "images/bmt32sqz1/p07-r-mt32tt9s.jpg",
+          "l": "images/bmt32sqz1/p07-l-mt32tt9s.jpg"
+        },
+        {
+          "r": "images/bmt32sqz1/p08-r-mt32tt9s.jpg",
+          "l": "images/bmt32sqz1/p08-l-mt32tt9s.jpg"
+        }
+      ],
+      "par": 0.705,
+      "updatedAt": "2026-08-21T15:00:47.212Z",
+      "order": 36
     }
   ]
 }
