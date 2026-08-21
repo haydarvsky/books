@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-16T18:27:18.589Z",
+  "updated": "2026-08-21T14:50:53.140Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1814,6 +1814,60 @@
       "par": 0.705,
       "updatedAt": "2026-08-16T12:16:37.348Z",
       "order": 31
+    },
+    {
+      "id": "bmt328k1m",
+      "title": "ماجدولين",
+      "author": "مصطفى لطفي المنفلوطي",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#3b3020",
+      "hidden": false,
+      "sar": 0.0705,
+      "cover": {
+        "front": "images/bmt328k1m/front-mt32h0ya.jpg",
+        "spine": "images/bmt328k1m/spine-mt32h0ya.jpg",
+        "back": "images/bmt328k1m/back-mt32h0ya.jpg"
+      },
+      "ar": 0.705,
+      "pages": [
+        {
+          "r": "images/bmt328k1m/p01-r-mt32h0ya.jpg",
+          "l": "images/bmt328k1m/p01-l-mt32h0ya.jpg"
+        },
+        {
+          "r": "images/bmt328k1m/p02-r-mt32h0ya.jpg",
+          "l": "images/bmt328k1m/p02-l-mt32h0ya.jpg"
+        },
+        {
+          "r": "images/bmt328k1m/p03-r-mt32h0ya.jpg",
+          "l": "images/bmt328k1m/p03-l-mt32h0ya.jpg"
+        },
+        {
+          "r": "images/bmt328k1m/p04-r-mt32h0ya.jpg",
+          "l": "images/bmt328k1m/p04-l-mt32h0ya.jpg"
+        },
+        {
+          "r": "images/bmt328k1m/p05-r-mt32h0ya.jpg",
+          "l": "images/bmt328k1m/p05-l-mt32h0ya.jpg"
+        },
+        {
+          "r": "images/bmt328k1m/p06-r-mt32h0ya.jpg",
+          "l": "images/bmt328k1m/p06-l-mt32h0ya.jpg"
+        },
+        {
+          "r": "images/bmt328k1m/p07-r-mt32h0ya.jpg",
+          "l": "images/bmt328k1m/p07-l-mt32h0ya.jpg"
+        }
+      ],
+      "par": 0.705,
+      "updatedAt": "2026-08-21T14:50:51.029Z",
+      "order": 32
     }
   ]
 }
