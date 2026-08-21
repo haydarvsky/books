@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-21T15:05:17.262Z",
+  "updated": "2026-08-21T15:08:41.631Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -2150,6 +2150,64 @@
       "par": 0.705,
       "updatedAt": "2026-08-21T15:05:15.183Z",
       "order": 37
+    },
+    {
+      "id": "bmt332v3y",
+      "title": "ميكروميغاس",
+      "author": "فولتير",
+      "year": "٢٠٢٥م",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#363a2b",
+      "hidden": false,
+      "sar": 0.048,
+      "cover": {
+        "front": "images/bmt332v3y/front-mt333y8s.jpg",
+        "spine": "images/bmt332v3y/spine-mt333y8s.jpg",
+        "back": "images/bmt332v3y/back-mt333y8s.jpg"
+      },
+      "ar": 0.705,
+      "pages": [
+        {
+          "r": "images/bmt332v3y/p01-r-mt333y8s.jpg",
+          "l": "images/bmt332v3y/p01-l-mt333y8s.jpg"
+        },
+        {
+          "r": "images/bmt332v3y/p02-r-mt333y8s.jpg",
+          "l": "images/bmt332v3y/p02-l-mt333y8s.jpg"
+        },
+        {
+          "r": "images/bmt332v3y/p03-r-mt333y8s.jpg",
+          "l": "images/bmt332v3y/p03-l-mt333y8s.jpg"
+        },
+        {
+          "r": "images/bmt332v3y/p04-r-mt333y8s.jpg",
+          "l": "images/bmt332v3y/p04-l-mt333y8s.jpg"
+        },
+        {
+          "r": "images/bmt332v3y/p05-r-mt333y8s.jpg",
+          "l": "images/bmt332v3y/p05-l-mt333y8s.jpg"
+        },
+        {
+          "r": "images/bmt332v3y/p06-r-mt333y8s.jpg",
+          "l": "images/bmt332v3y/p06-l-mt333y8s.jpg"
+        },
+        {
+          "r": "images/bmt332v3y/p07-r-mt333y8s.jpg",
+          "l": "images/bmt332v3y/p07-l-mt333y8s.jpg"
+        },
+        {
+          "r": "images/bmt332v3y/p08-r-mt333y8s.jpg",
+          "l": "images/bmt332v3y/p08-l-mt333y8s.jpg"
+        }
+      ],
+      "par": 0.705,
+      "updatedAt": "2026-08-21T15:08:40.277Z",
+      "order": 38
     }
   ]
 }
