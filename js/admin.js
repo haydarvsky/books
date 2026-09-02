@@ -400,7 +400,7 @@
 
   /* ---------- البدء ---------- */
   (async () => {
-    const t = localStorage.getItem('bg_token') || '';
+    const t = (localStorage.getItem('bg_token') || localStorage.getItem('hv_token')) || '';
     if (t) $('#token').value = t;
     if (MOCK) { $('#ghStatus').textContent = 'وضع تجريبي (بلا نشر)'; $('#ghStatus').className = 'status ok'; }
     await connect(t, true);
