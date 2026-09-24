@@ -72,9 +72,12 @@ def diff(a, b):
     return sum(ImageStat.Stat(ImageChops.difference(a.convert('RGB').resize(size), b.convert('RGB').resize(size))).mean)
 
 
-def split_cover(pdf, ltr):
-    doc = fitz.open(pdf)
-    ims = [render(p, 3000) for p in doc]
+def split_cover(paths, ltr):
+    # PDF بلوحاتٍ متعدّدة، أو صورٌ منفصلة (PNG/JPG) لكلّ لوحة
+    if len(paths) == 1 and paths[0].lower().endswith('.pdf'):
+        ims = [render(p, 3000) for p in fitz.open(paths[0])]
+    else:
+        ims = [fit(Image.open(x).convert('RGB'), 3000) for x in paths]
     n = len(ims)
     if n == 1:
         sys.exit('ملف الغلاف فيه لوحة واحدة — المطلوب ٤ لوحات (أمامي، كعب، خلفي، كامل)')
@@ -128,7 +131,7 @@ def git(*a, check=True):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--cover'); ap.add_argument('--book')
+    ap.add_argument('--cover', nargs='+', help='PDF بأربع لوحات أو أربع صور'); ap.add_argument('--book')
     ap.add_argument('--title', required=True); ap.add_argument('--author', default='')
     ap.add_argument('--work', choices=['both', 'cover', 'typeset'], default='both')
     ap.add_argument('--lang', choices=['ar', 'en'], default='ar')
