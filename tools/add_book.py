@@ -111,8 +111,10 @@ def pick_spreads(doc, count, seed):
     rnd = random.Random(seed)
     rnd.shuffle(pool)
     chosen = []
+    gap = max(2, N // (count * 3))  # تباعدٌ أدنى كي لا تتلاصق الفتحات
     for e, o in pool:
         if len(chosen) >= count - 1: break
+        if any(abs(e - c) < gap for c, _ in chosen + [(2, 3)]): continue
         if blank(e) or blank(o): continue
         chosen.append((e, o))
     return [(2, 3)] + sorted(chosen)
