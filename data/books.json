@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14T13:16:41.066Z",
+  "updated": "2026-09-24T20:55:53.766Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -2345,6 +2345,65 @@
       "par": 0.667,
       "updatedAt": "2026-08-21T15:12:27.346Z",
       "order": 40
+    },
+    {
+      "id": "bmug0h9oc",
+      "title": "حكم المتهم",
+      "author": "عبدالعزيز الرشيد",
+      "year": "١٤٤٨ه - ٢٠٢٦م",
+      "note": "رواية",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#30251b",
+      "hidden": false,
+      "ar": 0.666,
+      "sar": 0.101,
+      "cover": {
+        "front": "images/bmug0h9oc/front-mug0h9oj.jpg",
+        "spine": "images/bmug0h9oc/spine-mug0h9oj.jpg",
+        "back": "images/bmug0h9oc/back-mug0h9oj.jpg"
+      },
+      "par": 0.667,
+      "pageCount": 736,
+      "pages": [
+        {
+          "r": "images/bmug0h9oc/p01-r-mug0h9oj.jpg",
+          "l": "images/bmug0h9oc/p01-l-mug0h9oj.jpg"
+        },
+        {
+          "r": "images/bmug0h9oc/p02-r-mug0h9oj.jpg",
+          "l": "images/bmug0h9oc/p02-l-mug0h9oj.jpg"
+        },
+        {
+          "r": "images/bmug0h9oc/p03-r-mug0h9oj.jpg",
+          "l": "images/bmug0h9oc/p03-l-mug0h9oj.jpg"
+        },
+        {
+          "r": "images/bmug0h9oc/p04-r-mug0h9oj.jpg",
+          "l": "images/bmug0h9oc/p04-l-mug0h9oj.jpg"
+        },
+        {
+          "r": "images/bmug0h9oc/p05-r-mug0h9oj.jpg",
+          "l": "images/bmug0h9oc/p05-l-mug0h9oj.jpg"
+        },
+        {
+          "r": "images/bmug0h9oc/p06-r-mug0h9oj.jpg",
+          "l": "images/bmug0h9oc/p06-l-mug0h9oj.jpg"
+        },
+        {
+          "r": "images/bmug0h9oc/p07-r-mug0h9oj.jpg",
+          "l": "images/bmug0h9oc/p07-l-mug0h9oj.jpg"
+        },
+        {
+          "r": "images/bmug0h9oc/p08-r-mug0h9oj.jpg",
+          "l": "images/bmug0h9oc/p08-l-mug0h9oj.jpg"
+        }
+      ],
+      "updatedAt": "2026-09-24T20:55:53.766Z",
+      "order": 41
     }
   ]
 }
