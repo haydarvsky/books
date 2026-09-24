@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T21:13:50.111Z",
+  "updated": "2026-09-24T21:14:01.296Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -2463,6 +2463,65 @@
       ],
       "updatedAt": "2026-09-24T21:13:50.111Z",
       "order": 42
+    },
+    {
+      "id": "bmug14o79",
+      "title": "عقل لا يهدأ",
+      "author": "منال الجيماز",
+      "year": "",
+      "note": "عندما يكون شريكك مصاباً بـ ADHD",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#a9a070",
+      "hidden": false,
+      "ar": 0.666,
+      "sar": 0.0725,
+      "cover": {
+        "front": "images/bmug14o79/front-mug14o7g.jpg",
+        "spine": "images/bmug14o79/spine-mug14o7g.jpg",
+        "back": "images/bmug14o79/back-mug14o7g.jpg"
+      },
+      "par": 0.667,
+      "pageCount": 150,
+      "pages": [
+        {
+          "r": "images/bmug14o79/p01-r-mug14o7g.jpg",
+          "l": "images/bmug14o79/p01-l-mug14o7g.jpg"
+        },
+        {
+          "r": "images/bmug14o79/p02-r-mug14o7g.jpg",
+          "l": "images/bmug14o79/p02-l-mug14o7g.jpg"
+        },
+        {
+          "r": "images/bmug14o79/p03-r-mug14o7g.jpg",
+          "l": "images/bmug14o79/p03-l-mug14o7g.jpg"
+        },
+        {
+          "r": "images/bmug14o79/p04-r-mug14o7g.jpg",
+          "l": "images/bmug14o79/p04-l-mug14o7g.jpg"
+        },
+        {
+          "r": "images/bmug14o79/p05-r-mug14o7g.jpg",
+          "l": "images/bmug14o79/p05-l-mug14o7g.jpg"
+        },
+        {
+          "r": "images/bmug14o79/p06-r-mug14o7g.jpg",
+          "l": "images/bmug14o79/p06-l-mug14o7g.jpg"
+        },
+        {
+          "r": "images/bmug14o79/p07-r-mug14o7g.jpg",
+          "l": "images/bmug14o79/p07-l-mug14o7g.jpg"
+        },
+        {
+          "r": "images/bmug14o79/p08-r-mug14o7g.jpg",
+          "l": "images/bmug14o79/p08-l-mug14o7g.jpg"
+        }
+      ],
+      "updatedAt": "2026-09-24T21:14:01.296Z",
+      "order": 43
     }
   ]
 }
