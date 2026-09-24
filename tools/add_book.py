@@ -119,6 +119,8 @@ def pick_spreads(doc, count, seed):
 
 
 def git(*a, check=True):
+    # قرص exFAT يزرع ملفات ._* داخل .git فتُفسد الفهرس (non-monotonic index)
+    subprocess.run(['find', str(REPO / '.git'), '-name', '._*', '-delete'], capture_output=True)
     return subprocess.run(['git', '-C', str(REPO), *a], check=check, capture_output=True, text=True).stdout.strip()
 
 
