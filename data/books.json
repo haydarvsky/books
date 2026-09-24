@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T20:55:53.766Z",
+  "updated": "2026-09-24T21:13:50.111Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -2404,6 +2404,65 @@
       ],
       "updatedAt": "2026-09-24T20:55:53.766Z",
       "order": 41
+    },
+    {
+      "id": "bmug14frq",
+      "title": "أبحرت في سفينة الحياة",
+      "author": "علي جعفر مكّي",
+      "year": "",
+      "note": "مذكرات",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#8693bf",
+      "hidden": false,
+      "ar": 0.666,
+      "sar": 0.0365,
+      "cover": {
+        "front": "images/bmug14frq/front-mug14frx.jpg",
+        "spine": "images/bmug14frq/spine-mug14frx.jpg",
+        "back": "images/bmug14frq/back-mug14frx.jpg"
+      },
+      "par": 0.667,
+      "pageCount": 142,
+      "pages": [
+        {
+          "r": "images/bmug14frq/p01-r-mug14frx.jpg",
+          "l": "images/bmug14frq/p01-l-mug14frx.jpg"
+        },
+        {
+          "r": "images/bmug14frq/p02-r-mug14frx.jpg",
+          "l": "images/bmug14frq/p02-l-mug14frx.jpg"
+        },
+        {
+          "r": "images/bmug14frq/p03-r-mug14frx.jpg",
+          "l": "images/bmug14frq/p03-l-mug14frx.jpg"
+        },
+        {
+          "r": "images/bmug14frq/p04-r-mug14frx.jpg",
+          "l": "images/bmug14frq/p04-l-mug14frx.jpg"
+        },
+        {
+          "r": "images/bmug14frq/p05-r-mug14frx.jpg",
+          "l": "images/bmug14frq/p05-l-mug14frx.jpg"
+        },
+        {
+          "r": "images/bmug14frq/p06-r-mug14frx.jpg",
+          "l": "images/bmug14frq/p06-l-mug14frx.jpg"
+        },
+        {
+          "r": "images/bmug14frq/p07-r-mug14frx.jpg",
+          "l": "images/bmug14frq/p07-l-mug14frx.jpg"
+        },
+        {
+          "r": "images/bmug14frq/p08-r-mug14frx.jpg",
+          "l": "images/bmug14frq/p08-l-mug14frx.jpg"
+        }
+      ],
+      "updatedAt": "2026-09-24T21:13:50.111Z",
+      "order": 42
     }
   ]
 }
