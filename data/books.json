@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29T17:00:32.000Z",
+  "updated": "2026-09-29T17:07:11.000Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -1490,45 +1490,42 @@
       "ar": 0.638,
       "pages": [
         {
-          "r": "images/bmsvjwrer/p01-l-msvk1esn.jpg",
-          "l": "images/bmsvjwrer/p01-r-msvk1esn.jpg"
+          "r": "images/bmsvjwrer/p01-r-mumxikr3.jpg",
+          "l": "images/bmsvjwrer/p01-l-mumxikr3.jpg"
         },
         {
-          "r": "images/bmsvjwrer/p02-l-msvk1esn.jpg",
-          "l": "images/bmsvjwrer/p02-r-msvk1esn.jpg"
+          "r": "images/bmsvjwrer/p02-r-mumxikr3.jpg",
+          "l": "images/bmsvjwrer/p02-l-mumxikr3.jpg"
         },
         {
-          "r": "images/bmsvjwrer/p03-l-msvk1esn.jpg",
-          "l": "images/bmsvjwrer/p03-r-msvk1esn.jpg"
+          "r": "images/bmsvjwrer/p03-r-mumxikr3.jpg",
+          "l": "images/bmsvjwrer/p03-l-mumxikr3.jpg"
         },
         {
-          "r": "images/bmsvjwrer/p04-l-msvk1esn.jpg",
-          "l": "images/bmsvjwrer/p04-r-msvk1esn.jpg"
+          "r": "images/bmsvjwrer/p04-r-mumxikr3.jpg",
+          "l": "images/bmsvjwrer/p04-l-mumxikr3.jpg"
         },
         {
-          "r": "images/bmsvjwrer/p05-l-msvk1esn.jpg",
-          "l": "images/bmsvjwrer/p05-r-msvk1esn.jpg"
+          "r": "images/bmsvjwrer/p05-r-mumxikr3.jpg",
+          "l": "images/bmsvjwrer/p05-l-mumxikr3.jpg"
         },
         {
-          "r": "images/bmsvjwrer/p06-l-msvk1esn.jpg",
-          "l": "images/bmsvjwrer/p06-r-msvk1esn.jpg"
+          "r": "images/bmsvjwrer/p06-r-mumxikr3.jpg",
+          "l": "images/bmsvjwrer/p06-l-mumxikr3.jpg"
         },
         {
-          "r": "images/bmsvjwrer/p07-l-msvk1esn.jpg",
-          "l": "images/bmsvjwrer/p07-r-msvk1esn.jpg"
+          "r": "images/bmsvjwrer/p07-r-mumxikr3.jpg",
+          "l": "images/bmsvjwrer/p07-l-mumxikr3.jpg"
         },
         {
-          "r": "images/bmsvjwrer/p08-l-msvk1esn.jpg",
-          "l": "images/bmsvjwrer/p08-r-msvk1esn.jpg"
-        },
-        {
-          "r": "images/bmsvjwrer/p09-l-msvk1esn.jpg",
-          "l": "images/bmsvjwrer/p09-r-msvk1esn.jpg"
+          "r": "images/bmsvjwrer/p08-r-mumxikr3.jpg",
+          "l": "images/bmsvjwrer/p08-l-mumxikr3.jpg"
         }
       ],
       "par": 0.667,
-      "updatedAt": "2026-08-16T09:32:26.945Z",
-      "order": 25
+      "updatedAt": "2026-09-29T17:07:11.000Z",
+      "order": 25,
+      "pageCount": 158
     },
     {
       "id": "bmsvk5sz4",
@@ -1656,33 +1653,42 @@
       "ar": 0.651,
       "pages": [
         {
-          "r": "images/bmsvlyxou/p01-l-msvm365u.jpg",
-          "l": "images/bmsvlyxou/p01-r-msvm365u.jpg"
+          "r": "images/bmsvlyxou/p01-r-mumxhjgs.jpg",
+          "l": "images/bmsvlyxou/p01-l-mumxhjgs.jpg"
         },
         {
-          "r": "images/bmsvlyxou/p02-l-msvm365u.jpg",
-          "l": "images/bmsvlyxou/p02-r-msvm365u.jpg"
+          "r": "images/bmsvlyxou/p02-r-mumxhjgs.jpg",
+          "l": "images/bmsvlyxou/p02-l-mumxhjgs.jpg"
         },
         {
-          "r": "images/bmsvlyxou/p03-l-msvm365u.jpg",
-          "l": "images/bmsvlyxou/p03-r-msvm365u.jpg"
+          "r": "images/bmsvlyxou/p03-r-mumxhjgs.jpg",
+          "l": "images/bmsvlyxou/p03-l-mumxhjgs.jpg"
         },
         {
-          "r": "images/bmsvlyxou/p04-l-msvm365u.jpg",
-          "l": "images/bmsvlyxou/p04-r-msvm365u.jpg"
+          "r": "images/bmsvlyxou/p04-r-mumxhjgs.jpg",
+          "l": "images/bmsvlyxou/p04-l-mumxhjgs.jpg"
         },
         {
-          "r": "images/bmsvlyxou/p05-l-msvm365u.jpg",
-          "l": "images/bmsvlyxou/p05-r-msvm365u.jpg"
+          "r": "images/bmsvlyxou/p05-r-mumxhjgs.jpg",
+          "l": "images/bmsvlyxou/p05-l-mumxhjgs.jpg"
         },
         {
-          "r": "images/bmsvlyxou/p06-l-msvm365u.jpg",
-          "l": "images/bmsvlyxou/p06-r-msvm365u.jpg"
+          "r": "images/bmsvlyxou/p06-r-mumxhjgs.jpg",
+          "l": "images/bmsvlyxou/p06-l-mumxhjgs.jpg"
+        },
+        {
+          "r": "images/bmsvlyxou/p07-r-mumxhjgs.jpg",
+          "l": "images/bmsvlyxou/p07-l-mumxhjgs.jpg"
+        },
+        {
+          "r": "images/bmsvlyxou/p08-r-mumxhjgs.jpg",
+          "l": "images/bmsvlyxou/p08-l-mumxhjgs.jpg"
         }
       ],
-      "par": 0.856,
-      "updatedAt": "2026-08-16T09:37:46.943Z",
-      "order": 28
+      "par": 0.65,
+      "updatedAt": "2026-09-29T17:06:23.000Z",
+      "order": 28,
+      "pageCount": 154
     },
     {
       "id": "bmsvqyqnf",
