@@ -268,12 +268,14 @@
   const pairsEl = $('#pairs');
   function renderPairs() {
     pairsEl.innerHTML = '';
+    const ltr = $('#dirLtr').checked;
+    pairsEl.classList.toggle('ltr', ltr);
     ED.pairs.forEach((p, i) => {
       const row = document.createElement('div'); row.className = 'pair';
       row.innerHTML = `<span class="n">${arNum(i + 1)}</span>
         <div class="spread">
-          <div class="dz" data-side="r"><input type="file" accept="image/*"><div class="dz-in"><span class="dz-ico">📄</span><b>يمين</b></div><img class="dz-prev" alt=""><button type="button" class="dz-x">✕</button></div>
-          <div class="dz" data-side="l"><input type="file" accept="image/*"><div class="dz-in"><span class="dz-ico">📄</span><b>يسار</b></div><img class="dz-prev" alt=""><button type="button" class="dz-x">✕</button></div>
+          <div class="dz" data-side="r"><input type="file" accept="image/*"><div class="dz-in"><span class="dz-ico">📄</span><b>يمين</b></div><img class="dz-prev" alt=""><em class="dz-ord">${ltr ? '٢' : '١'}</em><button type="button" class="dz-x">✕</button></div>
+          <div class="dz" data-side="l"><input type="file" accept="image/*"><div class="dz-in"><span class="dz-ico">📄</span><b>يسار</b></div><img class="dz-prev" alt=""><em class="dz-ord">${ltr ? '١' : '٢'}</em><button type="button" class="dz-x">✕</button></div>
         </div>
         <div class="pair-b"><button type="button" data-swap title="تبديل اليمين واليسار">⇄</button><button type="button" data-up title="أعلى">▲</button><button type="button" data-down title="أسفل">▼</button><button type="button" data-del title="حذف الفتحة">🗑</button></div>`;
       ['r', 'l'].forEach(side => { const dz = $(`.dz[data-side=${side}]`, row); paintSlot(dz, p[side]); bindDz(dz, () => p[side]); });
@@ -283,7 +285,34 @@
       $('[data-del]', row).addEventListener('click', () => { const pr = ED.pairs[i]; ['r', 'l'].forEach(s => { if (pr[s].path) { pr[s].removed = true; ED.trash = (ED.trash || []).concat(pr[s].path); } }); ED.pairs.splice(i, 1); renderPairs(); });
       pairsEl.appendChild(row);
     });
+    checkPageSizes();
   }
+  /* تنبيه: صفحة مقاسها يخالف بقية الصفحات (مقصوصة أو ناقصة) — تُقاس نسبتها بعد تحميل المعاينة */
+  function checkPageSizes() {
+    const ims = $$('.dz.has .dz-prev', pairsEl);
+    Promise.all(ims.map(im => im.complete && im.naturalWidth ? null : new Promise(r => { im.onload = im.onerror = r; }))).then(() => {
+      const ars = ims.filter(im => im.naturalWidth).map(im => im.naturalWidth / im.naturalHeight);
+      if (ars.length < 3) return;
+      const med = ars.slice().sort((a, b) => a - b)[Math.floor(ars.length / 2)];
+      let bad = 0;
+      ims.forEach(im => {
+        const dz = im.closest('.dz'), ar = im.naturalWidth / im.naturalHeight;
+        const off = im.naturalWidth && Math.abs(ar - med) / med > 0.06;
+        dz.classList.toggle('odd-size', !!off); if (off) { bad++; dz.title = 'مقاس هذه الصفحة يخالف بقية الصفحات — ربما مقصوصة أو ناقصة'; } else dz.removeAttribute('title');
+      });
+      const w = $('#pagesWarn'); w.hidden = !bad;
+      if (bad) w.textContent = `⚠ ${arNum(bad)} من الصفحات مقاسها مختلف عن البقية (مؤشَّرة بالأحمر) — صدّرها من ملف الكتاب نفسه بمقاسٍ واحد لتظهر كاملة`;
+    });
+  }
+  // قلب جهتَي كل الفتحات دفعةً واحدة
+  function flipAllPairs() { ED.pairs.forEach(p => { const t = p.r; p.r = p.l; p.l = t; }); renderPairs(); }
+  $('#btnFlipAll').addEventListener('click', () => { if (ED?.pairs.length) { flipAllPairs(); toast('قُلبت كل الفتحات'); } });
+  // تغيير اتجاه الكتاب بعد رفع الصفحات يعرض قلبها لتوافق ترتيب القراءة الجديد
+  ['#dirLtr', '#dirRtl'].forEach(id => $(id).addEventListener('change', () => {
+    if (!ED) return;
+    const filled = ED.pairs.some(p => slotHas(p.r) || slotHas(p.l));
+    if (filled && confirm('غيّرتَ اتجاه الكتاب والصفحات مرفوعة مسبقاً.\nهل تقلب يمين ويسار كل الفتحات لتوافق ترتيب القراءة الجديد؟')) flipAllPairs(); else renderPairs();
+  }));
   $('#btnAddPair').addEventListener('click', () => { ED.pairs.push({ r: newSlot(), l: newSlot() }); renderPairs(); });
   // الرفع الجماعي
   const multi = $('#dzMulti');

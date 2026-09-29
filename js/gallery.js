@@ -495,7 +495,8 @@
   bookOpen.addEventListener('pointerdown', e => { sw = { x: e.clientX, t: Date.now() }; });
   bookOpen.addEventListener('pointerup', e => {
     if (!sw) return; const dx = e.clientX - sw.x; sw = null;
-    if (Math.abs(dx) > 50) { stopAutoplay(); flip(dx < 0 ? 1 : -1); e.preventDefault(); }
+    // العربي: السحب نحو اليمين يقلب إلى التالي (كقلب الورقة اليسرى)، والإنجليزي بالعكس
+    if (Math.abs(dx) > 50) { stopAutoplay(); flip((dx > 0) !== LTR ? 1 : -1); e.preventDefault(); }
   });
 
   /* ---------- لوحة المفاتيح ---------- */
