@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>معرض أعمالي في الكتب — حيدر</title>
-<meta name="description" content="معرض أعمال حيدر في تصميم أغلفة الكتب والتنضيد الداخلي — رفّ كتب تفاعلي.">
+<title>معرض أعمالي في الكتب — حيدر المعاتيق</title>
+<meta name="description" content="معرض أعمال حيدر المعاتيق في تصميم أغلفة الكتب والتنضيد الداخلي — رفّ كتب تفاعلي.">
 <link rel="icon" href="img/logo-cream.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/gallery.css?v=25">
+<link rel="stylesheet" href="css/gallery.css?v=26">
 
 <script src="https://haydarvsky.github.io/nav/nav.js" defer></script>
 </head>
@@ -14,36 +14,51 @@
 
 <header class="hdr">
   <div class="hdr-in">
-    <a class="brand" href="./" aria-label="حيدر">
-      <img src="img/logo-cream.svg" alt="حيدر" class="brand-logo">
+    <a class="brand" href="./" aria-label="حيدر المعاتيق">
+      <img src="img/logo-cream.svg" alt="حيدر المعاتيق" class="brand-logo">
     </a>
     <div class="hdr-txt">
+      <p class="eyebrow">حيدر المعاتيق · مصمّم ومُخرج كتب</p>
       <h1>معرض أعمالي في الكتب</h1>
-      <p>تصميم الأغلفة · التنضيد الداخلي · إخراج الكتاب من الفكرة إلى المطبعة</p>
+      <p class="lede">تصميم الأغلفة · التنضيد الداخلي · إخراج الكتاب من الفكرة إلى المطبعة</p>
+      <ul class="stats" id="stats" aria-label="أرقام المعرض"></ul>
     </div>
-    <div class="ctrls">
-      <nav class="filters" id="filters" aria-label="تصفية الأعمال">
-        <button class="chip is-on" data-f="all">الكل</button>
-        <button class="chip" data-f="cover">أغلفة</button>
-        <button class="chip" data-f="typeset">تنضيد</button>
-      </nav>
-      <nav class="views" id="views" aria-label="طريقة العرض">
-        <button data-v="spine" title="الكتب مرصوفة على الرفّ"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="3.5" height="16" rx=".6"/><rect x="9" y="6" width="3" height="14" rx=".6"/><rect x="13.5" y="3" width="4" height="17" rx=".6"/><rect x="19" y="7" width="2.5" height="13" rx=".6"/></svg><span>مكتبة</span></button>
-        <button data-v="cover" class="is-on" title="الأغلفة الأمامية"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/></svg><span>أغلفة</span></button>
-        <button data-v="stack" title="أكداس الكتب"><svg viewBox="0 0 24 24"><rect x="4" y="16" width="16" height="3.5" rx=".6"/><rect x="5" y="11.5" width="14" height="3.5" rx=".6"/><rect x="6" y="7" width="12" height="3.5" rx=".6"/><rect x="7" y="3" width="10" height="3" rx=".6"/></svg><span>أكداس</span></button>
-      </nav>
-    </div>
+    <a class="hdr-cta" href="https://wa.me/966567565937" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h12v15H6.5A2.5 2.5 0 0 0 4 20.5 2.5 2.5 0 0 0 6.5 23H20v-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8h6M9 11h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>اطلب إخراج كتابك</span>
+    </a>
   </div>
 </header>
 
+<div class="bar" id="bar">
+  <div class="bar-in">
+    <nav class="filters" id="filters" aria-label="تصفية الأعمال">
+      <button class="chip is-on" data-f="all" aria-pressed="true">الكل <i data-n="all"></i></button>
+      <button class="chip" data-f="cover" aria-pressed="false">أغلفة <i data-n="cover"></i></button>
+      <button class="chip" data-f="typeset" aria-pressed="false">تنضيد <i data-n="typeset"></i></button>
+    </nav>
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input type="search" id="q" placeholder="ابحث بعنوان الكتاب أو اسم المؤلف" aria-label="بحث في الأعمال" autocomplete="off">
+      <button type="button" class="q-clear" id="qClear" aria-label="مسح البحث" hidden>✕</button>
+    </label>
+    <nav class="views" id="views" aria-label="طريقة العرض">
+      <button data-v="spine" title="الكتب مرصوفة على الرفّ"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="3.5" height="16" rx=".6"/><rect x="9" y="6" width="3" height="14" rx=".6"/><rect x="13.5" y="3" width="4" height="17" rx=".6"/><rect x="19" y="7" width="2.5" height="13" rx=".6"/></svg><span>مكتبة</span></button>
+      <button data-v="cover" class="is-on" title="الأغلفة الأمامية"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/></svg><span>أغلفة</span></button>
+      <button data-v="stack" title="أكداس الكتب"><svg viewBox="0 0 24 24"><rect x="4" y="16" width="16" height="3.5" rx=".6"/><rect x="5" y="11.5" width="14" height="3.5" rx=".6"/><rect x="6" y="7" width="12" height="3.5" rx=".6"/><rect x="7" y="3" width="10" height="3" rx=".6"/></svg><span>أكداس</span></button>
+    </nav>
+  </div>
+</div>
+
 <main class="stage" id="stage">
-  <p class="hint" id="hint">حرّك الفأرة فوق الرفّ · قِف على كتابٍ لتقرأ عنوانه · اضغطه لتتأمّل العمل عن قرب</p>
+  <p class="hint" id="hint">قِف على كتابٍ لتقرأ عنوانه · اضغطه لتتأمّل غلافه وصفحاته عن قرب</p>
   <section class="featured" id="featured" hidden>
-    <h2 class="sec-t"><span>✦</span> مميّز الأعمال <span>✦</span></h2>
+    <h2 class="sec-t"><span>✦</span> مختارات <span>✦</span></h2>
     <p class="sec-s">أعمالٌ أعتزّ بها — اضغط الكتاب لتقرأ فلسفة غلافه وتفاصيله</p>
     <div class="scene scene-f"><div class="bookcase" id="featCase"></div></div>
+    <p class="swipe-cue">اسحب يميناً ويساراً لتتصفّح المختارات</p>
   </section>
-  <h2 class="sec-t sec-all" id="allTitle" hidden>كلّ الأعمال</h2>
+  <h2 class="sec-t sec-all" id="allTitle" hidden><span class="sa-t" id="allLabel">كلّ الأعمال</span> <small id="allCount"></small></h2>
   <div class="scene" id="scene">
     <div class="bookcase" id="bookcase" aria-live="polite"></div>
   </div>
@@ -51,22 +66,25 @@
     <img src="img/logo-cream.svg" alt="" class="empty-logo">
     <h2>الرفّ بانتظار أول كتاب</h2>
     <p>الأعمال في طريقها إلى الرفّ.</p>
+    <p class="empty-reset" hidden><button type="button" id="resetAll">عرض كل الأعمال</button></p>
     <p class="empty-demo"><a href="?demo=1">أو شاهد نموذجاً تجريبيًّا للرفّ</a></p>
   </div>
   <div class="loading" id="loading"><span></span> جارٍ ترتيب الرفّ…</div>
 </main>
 
 <section class="cta" id="cta">
-  <p class="cta-t">للاستفسار والطلبات الجديدة</p>
+  <p class="cta-k">لديك كتابٌ ينتظر الإخراج؟</p>
+  <p class="cta-t">من المخطوطة إلى المطبعة — غلافاً وتنضيداً</p>
   <a class="wa" href="https://wa.me/966567565937" target="_blank" rel="noopener">
     <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C9.4 3 4 8.36 4 14.96c0 2.6.83 5.02 2.25 7l-1.48 5.4 5.56-1.45a12.1 12.1 0 0 0 5.71 1.44C22.68 27.35 28 22 28 15.4 28 8.36 22.68 3 16.04 3zm0 21.86c-1.83 0-3.6-.5-5.14-1.42l-.37-.22-3.3.86.88-3.2-.24-.34a9.86 9.86 0 0 1-1.86-5.78c0-5.46 4.5-9.9 10.03-9.9 5.52 0 9.94 4.44 9.94 9.9 0 5.5-4.42 10.1-9.94 10.1zm5.5-7.4c-.3-.15-1.78-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.95 1.17-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5a9 9 0 0 1-1.67-2.07c-.18-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.25-.6-.5-.5-.68-.51h-.58c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.48.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z"/></svg>
     <span>تواصل معي على واتساب</span>
   </a>
-  <p class="cta-s">حيدر — أبو إيليا · تصميم أغلفة الكتب والتنضيد الداخلي</p>
+  <p class="cta-s">حيدر المعاتيق (أبو إيليا) · تصميم أغلفة الكتب والتنضيد الداخلي</p>
 </section>
 
 <footer class="ftr">
-  <span>© <span id="year"></span> حيدر</span>
+  <span>© <span id="year"></span> حيدر المعاتيق</span>
+  <a href="https://www.instagram.com/haydar.almaateeq/" target="_blank" rel="noopener" dir="ltr">@haydar.almaateeq</a>
 </footer>
 
 <!-- نافذة الكتاب -->
@@ -79,7 +97,14 @@
         <h2 id="mTitle"></h2>
         <p id="mAuthor"></p>
       </div>
-      <div class="m-badges" id="mBadges"></div>
+      <div class="m-side">
+        <div class="m-badges" id="mBadges"></div>
+        <div class="m-step" dir="ltr">
+          <button id="mNext" aria-label="الكتاب التالي" title="الكتاب التالي">‹</button>
+          <span id="mPos"></span>
+          <button id="mPrev" aria-label="الكتاب السابق" title="الكتاب السابق">›</button>
+        </div>
+      </div>
     </header>
     <p class="m-note" id="mNote" hidden></p>
     <nav class="m-tabs" id="mTabs"></nav>
@@ -160,7 +185,7 @@
   <p class="z-hint">عجلة الفأرة للتكبير · اسحب للتنقّل · نقرتان للتبديل</p>
 </div>
 
-<script src="js/demo.js?v=25"></script>
-<script src="js/gallery.js?v=25"></script>
+<script src="js/demo.js?v=26"></script>
+<script src="js/gallery.js?v=26"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
   $('#year').textContent = new Intl.NumberFormat('ar-EG', { useGrouping: false }).format(new Date().getFullYear());
 
   let BOOKS = [];
-  let FILTER = 'all';
+  let FILTER = 'all', QUERY = '', LIST = [];
   const VIEWS = ['spine', 'cover', 'stack'];
   let VIEW = VIEWS.includes(localStorage.getItem('bg_view')) ? localStorage.getItem('bg_view') : 'cover';
   const featCase = $('#featCase'), featSec = $('#featured'), allTitle = $('#allTitle');
@@ -34,6 +34,10 @@
   const hasWork = (b, w) => Array.isArray(b.work) && b.work.includes(w);
   const MOB = () => innerWidth <= 820;
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  /* تطبيع عربي للبحث: بلا تشكيل ولا تطويل، والألف والياء والتاء المربوطة موحّدة */
+  const norm = s => String(s ?? '').toLowerCase().replace(/[\u064B-\u065F\u0670\u0640]/g, '')
+    .replace(/[أإآٱ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه').replace(/ؤ/g, 'و').replace(/ئ/g, 'ي').replace(/\s+/g, ' ').trim();
+  const plural = (n, one, two, few, many) => n === 1 ? one : n === 2 ? two : (n % 100 >= 3 && n % 100 <= 10) ? arNum(n) + ' ' + few : arNum(n) + ' ' + many;
 
   /* ---------- تحميل البيانات ---------- */
   async function load() {
@@ -52,7 +56,18 @@
     }
     await measureSpines();
     loadingEl.hidden = true;
+    fillStats();
     render(); if (VIEW === 'stack') kick();
+    openFromHash();
+  }
+  /* أرقام المعرض وعدّادات التصفية */
+  function fillStats() {
+    const n = { all: BOOKS.length, cover: BOOKS.filter(b => hasWork(b, 'cover')).length, typeset: BOOKS.filter(b => hasWork(b, 'typeset')).length };
+    $$('#filters i[data-n]').forEach(i => { i.textContent = n[i.dataset.n] ? arNum(n[i.dataset.n]) : ''; });
+    const authors = new Set(BOOKS.map(b => (b.author || '').trim()).filter(Boolean)).size;
+    const st = $('#stats'); if (!st || !BOOKS.length) return;
+    st.innerHTML = [[n.all, 'كتاباً'], [n.cover, 'غلافاً'], [n.typeset, 'كتاباً منضّداً'], [authors, 'مؤلّفاً']]
+      .filter(([v]) => v).map(([v, l]) => `<li><b>${arNum(v)}</b><span>${l}</span></li>`).join('');
   }
   /* يقيس نسبة عرض الكعب إلى ارتفاعه من صورته إن لم تكن محفوظة في البيانات */
   function measureSpines() {
@@ -115,12 +130,16 @@
     return d.t + 1; // المكتبة: الكعب ملاصق للكعب كالرفّ الحقيقي
   }
   /* يبني صفوف رفوف من قائمة كتب داخل حاوية */
-  function buildShelves(container, list, { mode = VIEW, feat = false } = {}) {
+  function buildShelves(container, list, { mode = VIEW, feat = false, oneRow = false } = {}) {
     container.innerHTML = '';
-    container.className = 'bookcase mode-' + mode;
-    const avail = Math.max(280, container.clientWidth - (MOB() ? 24 : 60));
+    container.className = 'bookcase mode-' + mode + (oneRow ? ' one-row' : '');
+    container.style.width = '';
+    // رفّ واحد يُسحب أفقياً (المختارات على الجوال)
+    const avail = oneRow ? 1e9 : Math.max(280, container.clientWidth - (MOB() ? 24 : 60));
+    const fitRow = w => { if (oneRow) container.style.width = Math.ceil(w) + 'px'; };
     let i = 0;
-    const mkShelf = () => { const shelf = document.createElement('div'); shelf.className = 'shelf'; const sr = document.createElement('div'); sr.className = 'shelf-row'; const plank = document.createElement('div'); plank.className = 'plank'; shelf.append(sr, plank); container.appendChild(shelf); return sr; };
+    // كل رفّ له منظوره الخاص فتبدو الرفوف كلها من الزاوية نفسها مهما طالت الصفحة
+    const mkShelf = () => { const shelf = document.createElement('div'); shelf.className = 'shelf'; const inr = document.createElement('div'); inr.className = 'shelf-in'; const sr = document.createElement('div'); sr.className = 'shelf-row'; const plank = document.createElement('div'); plank.className = 'plank'; inr.append(sr, plank); shelf.appendChild(inr); container.appendChild(shelf); return sr; };
     if (mode === 'stack') {
       // أكداس: كل كدس ٣–٦ كتب مستلقية
       const sizes = [4, 5, 3, 6, 4];
@@ -147,6 +166,7 @@
         row.appendChild(pile);
       });
       $$('.shelf', container).forEach(sh => { const maxH = Math.max(...$$('.pile', sh).map(p => parseFloat(p.style.getPropertyValue('--ph')))); sh.style.height = (maxH + 40) + 'px'; $('.shelf-row', sh).style.height = maxH + 'px'; $('.plank', sh).style.top = maxH + 'px'; });
+      fitRow(wsum + 40);
       return;
     }
     let row = null, wsum = 0;
@@ -156,33 +176,44 @@
       wsum += sw;
       const slot = bookEl(b, feat, mode); slot.style.animationDelay = (i++ * 45) + 'ms'; row.appendChild(slot);
     });
+    fitRow(wsum + (list.length - 1) * (MOB() ? 8 : 12) + 40);
   }
 
+  const matches = b => !QUERY || norm([b.title, b.author, b.note].join(' ')).includes(QUERY);
   function render() {
-    // رفّ المميّز (أغلفة أمامية دائماً)
-    const feats = BOOKS.filter(b => b.featured);
+    const narrowed = FILTER !== 'all' || !!QUERY;
+    // المختارات تظهر في العرض الكامل فقط؛ مع البحث أو التصفية تتقدّم النتائج
+    const feats = narrowed ? [] : BOOKS.filter(b => b.featured);
     featSec.hidden = !feats.length;
-    if (feats.length) buildShelves(featCase, feats, { mode: VIEW, feat: true });
+    if (feats.length) buildShelves(featCase, feats, { mode: VIEW, feat: true, oneRow: MOB() }); else featCase.innerHTML = '';
     // كل الأعمال
-    const list = BOOKS.filter(b => FILTER === 'all' || hasWork(b, FILTER));
-    allTitle.hidden = !(feats.length && list.length);
+    const list = BOOKS.filter(b => (FILTER === 'all' || hasWork(b, FILTER)) && matches(b));
+    LIST = list;
+    allTitle.hidden = !list.length || !BOOKS.length;
+    $('#allLabel').textContent = QUERY ? 'نتائج البحث' : FILTER === 'cover' ? 'أعمال تصميم الأغلفة' : FILTER === 'typeset' ? 'أعمال التنضيد الداخلي' : 'كلّ الأعمال';
+    $('#allCount').textContent = plural(list.length, 'كتابٌ واحد', 'كتابان', 'كتب', 'كتاباً');
     bookcase.innerHTML = '';
+    tickTargets = null;
+    document.body.dataset.view = VIEW;
     if (!list.length) {
       emptyEl.hidden = false;
-      if (BOOKS.length) { $('h2', emptyEl).textContent = 'لا كتب في هذا التصنيف بعد'; $('.empty-demo', emptyEl).hidden = true; }
+      if (BOOKS.length) {
+        $('h2', emptyEl).textContent = QUERY ? 'لا نتائج مطابقة' : 'لا كتب في هذا التصنيف بعد';
+        $$('p', emptyEl).forEach(p => p.hidden = !p.classList.contains('empty-reset'));
+        if (QUERY) { const p = $('p:not(.empty-reset):not(.empty-demo)', emptyEl); p.hidden = false; p.textContent = 'جرّب كلمةً أخرى من العنوان أو اسم المؤلف.'; }
+      }
       return;
     }
     emptyEl.hidden = true;
     buildShelves(bookcase, list, { mode: VIEW });
-    document.body.dataset.view = VIEW;
   }
   /* مبدّل طريقة العرض */
   const viewsNav = $('#views');
   function setView(v, save = true) {
     VIEW = v; if (save) localStorage.setItem('bg_view', v);
     $$('button', viewsNav).forEach(b => b.classList.toggle('is-on', b.dataset.v === v));
-    baseX = v === 'stack' ? -14 : 0; kick();
-    render();
+    baseX = v === 'stack' ? -14 : 0;
+    render(); kick();
   }
   viewsNav.addEventListener('click', e => { const b = e.target.closest('button[data-v]'); if (b) setView(b.dataset.v); });
   $$('button', viewsNav).forEach(b => b.classList.toggle('is-on', b.dataset.v === VIEW));
@@ -192,11 +223,12 @@
   addEventListener('resize', () => { if (innerWidth === lastW) return; clearTimeout(rt); rt = setTimeout(() => { if (innerWidth !== lastW) { lastW = innerWidth; render(); } }, 250); });
 
   /* ---------- حركة الرفّ مع الفأرة ---------- */
-  let tx = 0, ty = 0, cx = 0, cy = 0, raf = null, baseX = VIEW === 'stack' ? -14 : 0, cbx = 0;
+  let tx = 0, ty = 0, cx = 0, cy = 0, raf = null, baseX = VIEW === 'stack' ? -14 : 0, cbx = 0, tickTargets = null;
   function tick() {
     cx += (tx - cx) * 0.08; cy += (ty - cy) * 0.08; cbx += (baseX - cbx) * 0.08;
-    bookcase.style.transform = `rotateX(${cy + cbx}deg) rotateY(${cx}deg)`;
-    featCase.style.transform = `rotateX(${cy + cbx}deg) rotateY(${cx}deg)`;
+    if (!tickTargets) tickTargets = $$('.shelf-in');
+    const tf = `rotateX(${cy + cbx}deg) rotateY(${cx}deg)`;
+    for (const el of tickTargets) el.style.transform = tf;
     if (Math.abs(tx - cx) > 0.01 || Math.abs(ty - cy) > 0.01 || Math.abs(baseX - cbx) > 0.01) raf = requestAnimationFrame(tick); else raf = null;
   }
   function kick() { if (!raf) raf = requestAnimationFrame(tick); }
@@ -215,18 +247,39 @@
     }, { passive: true });
   }
 
-  /* ---------- التصفية ---------- */
+  /* ---------- التصفية والبحث ---------- */
+  function setFilter(f) {
+    FILTER = f;
+    $$('#filters .chip').forEach(c => { const on = c.dataset.f === f; c.classList.toggle('is-on', on); c.setAttribute('aria-pressed', on); });
+  }
+  const afterNarrow = () => { render(); kick(); const top = allTitle.hidden ? stage : allTitle; if (top.getBoundingClientRect().top < 0) scrollTo({ top: scrollY + top.getBoundingClientRect().top - 140, behavior: 'smooth' }); };
   $('#filters').addEventListener('click', e => {
     const btn = e.target.closest('.chip'); if (!btn) return;
-    $$('.chip').forEach(c => c.classList.toggle('is-on', c === btn));
-    FILTER = btn.dataset.f; render();
+    setFilter(btn.dataset.f); afterNarrow();
   });
+  const qIn = $('#q'), qClear = $('#qClear');
+  let qt;
+  qIn.addEventListener('input', () => {
+    qClear.hidden = !qIn.value;
+    clearTimeout(qt); qt = setTimeout(() => { QUERY = norm(qIn.value); afterNarrow(); }, 180);
+  });
+  qIn.addEventListener('keydown', e => { if (e.key === 'Escape' && qIn.value) { e.stopPropagation(); clearQuery(); } });
+  function clearQuery() { qIn.value = ''; qClear.hidden = true; QUERY = ''; render(); kick(); }
+  qClear.addEventListener('click', () => { clearQuery(); qIn.focus(); });
+  $('#resetAll').addEventListener('click', () => { qIn.value = ''; qClear.hidden = true; QUERY = ''; setFilter('all'); render(); kick(); });
+  // «/» يفتح البحث مباشرة
+  addEventListener('keydown', e => { if (e.key === '/' && modal.hidden && document.activeElement !== qIn) { e.preventDefault(); qIn.focus(); } });
 
   /* ---------- النافذة ---------- */
   const modal = $('#modal'), paneCover = $('#paneCover'), panePages = $('#panePages'), tabs = $('#mTabs');
   let CUR = null;
   function openBook(b) {
     CUR = b;
+    const seq = LIST.includes(b) ? LIST : BOOKS, k = seq.indexOf(b);
+    $('#mPos').textContent = seq.length > 1 ? `${arNum(k + 1)} / ${arNum(seq.length)}` : '';
+    $('#mPrev').disabled = k <= 0; $('#mNext').disabled = k < 0 || k >= seq.length - 1;
+    $('.m-step').hidden = seq.length < 2;
+    if (b.id && location.hash !== '#' + b.id) history.replaceState(null, '', '#' + b.id);
     $('#mTitle').textContent = b.title;
     $('#mAuthor').textContent = b.author ? 'تأليف: ' + b.author + (b.year ? ' · ' + b.year : '') : (b.year || '');
     $('#mBadges').innerHTML = (b.work || []).map(w => `<span class="tag t-${w}">${workLabel[w] || w}</span>`).join('') + (b.dir === 'ltr' ? '<span class="tag t-en">English</span>' : '');
@@ -241,7 +294,9 @@
       bt.classList.toggle('is-on', i === 0); bt.addEventListener('click', () => showTab(k)); tabs.appendChild(bt);
     });
     tabs.hidden = list.length < 2;
+    const wasOpen = !modal.hidden;
     modal.hidden = false; document.body.style.overflow = 'hidden';
+    if (wasOpen) { const mb = $('.modal-box', modal); mb.scrollTop = 0; mb.classList.remove('swap'); void mb.offsetWidth; mb.classList.add('swap'); }
     showTab(list[0][0]);
     setTimeout(() => $('.m-close').focus(), 50);
   }
@@ -251,8 +306,21 @@
     stopAutoplay();
     if (k === 'cover') setupCover(CUR); else { setupPages(CUR); startAutoplay(); }
   }
-  function closeModal() { stopAutoplay(); modal.hidden = true; document.body.style.overflow = ''; }
+  function closeModal() { stopAutoplay(); modal.hidden = true; document.body.style.overflow = ''; if (location.hash) history.replaceState(null, '', location.pathname + location.search); }
   $$('[data-close]', modal).forEach(el => el.addEventListener('click', closeModal));
+  function stepBook(d) {
+    if (!CUR) return;
+    const seq = LIST.includes(CUR) ? LIST : BOOKS, n = seq[seq.indexOf(CUR) + d];
+    if (n) openBook(n);
+  }
+  $('#mPrev').addEventListener('click', () => stepBook(-1));
+  $('#mNext').addEventListener('click', () => stepBook(1));
+  /* رابط مباشر لكل كتاب: books/#<المعرّف> يفتحه فور التحميل */
+  function openFromHash() {
+    const id = decodeURIComponent(location.hash.slice(1)); if (!id) return;
+    const b = BOOKS.find(x => String(x.id) === id); if (b) openBook(b);
+  }
+  addEventListener('hashchange', openFromHash);
 
   /* ---------- الغلاف ثلاثي الأبعاد ---------- */
   const cover3d = $('#cover3d'), coverStage = $('#coverStage'), coverFlat = $('#coverFlat');
@@ -435,6 +503,8 @@
     if (!zoom.hidden) { if (e.key === 'Escape') closeZoom(); return; }
     if (modal.hidden) return;
     if (e.key === 'Escape') closeModal();
+    if (e.key === 'PageDown') { e.preventDefault(); stepBook(1); return; }
+    if (e.key === 'PageUp') { e.preventDefault(); stepBook(-1); return; }
     if (!panePages.hidden) {
       if (e.key === 'ArrowLeft') { stopAutoplay(); flip(LTR ? -1 : 1); }
       if (e.key === 'ArrowRight') { stopAutoplay(); flip(LTR ? 1 : -1); }
