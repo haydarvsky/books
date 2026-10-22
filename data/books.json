@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29T17:07:11.000Z",
+  "updated": "2026-10-22T18:12:08.898Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -2528,6 +2528,65 @@
       ],
       "updatedAt": "2026-09-24T21:14:01.296Z",
       "order": 43
+    },
+    {
+      "id": "bmvjuynt2",
+      "title": "مسألة الذنب الألماني",
+      "author": "كارل ياسبرز",
+      "year": "٢٠٢٦م",
+      "note": "ترجمة: علي حسن الحبيب العنزي",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#a1958c",
+      "hidden": false,
+      "ar": 0.666,
+      "sar": 0.071,
+      "cover": {
+        "front": "images/bmvjuynt2/front-mvjuynt9.jpg",
+        "spine": "images/bmvjuynt2/spine-mvjuynt9.jpg",
+        "back": "images/bmvjuynt2/back-mvjuynt9.jpg"
+      },
+      "par": 0.667,
+      "pageCount": 374,
+      "pages": [
+        {
+          "r": "images/bmvjuynt2/p01-r-mvjuynt9.jpg",
+          "l": "images/bmvjuynt2/p01-l-mvjuynt9.jpg"
+        },
+        {
+          "r": "images/bmvjuynt2/p02-r-mvjuynt9.jpg",
+          "l": "images/bmvjuynt2/p02-l-mvjuynt9.jpg"
+        },
+        {
+          "r": "images/bmvjuynt2/p03-r-mvjuynt9.jpg",
+          "l": "images/bmvjuynt2/p03-l-mvjuynt9.jpg"
+        },
+        {
+          "r": "images/bmvjuynt2/p04-r-mvjuynt9.jpg",
+          "l": "images/bmvjuynt2/p04-l-mvjuynt9.jpg"
+        },
+        {
+          "r": "images/bmvjuynt2/p05-r-mvjuynt9.jpg",
+          "l": "images/bmvjuynt2/p05-l-mvjuynt9.jpg"
+        },
+        {
+          "r": "images/bmvjuynt2/p06-r-mvjuynt9.jpg",
+          "l": "images/bmvjuynt2/p06-l-mvjuynt9.jpg"
+        },
+        {
+          "r": "images/bmvjuynt2/p07-r-mvjuynt9.jpg",
+          "l": "images/bmvjuynt2/p07-l-mvjuynt9.jpg"
+        },
+        {
+          "r": "images/bmvjuynt2/p08-r-mvjuynt9.jpg",
+          "l": "images/bmvjuynt2/p08-l-mvjuynt9.jpg"
+        }
+      ],
+      "updatedAt": "2026-10-22T18:12:08.898Z",
+      "order": 44
     }
   ]
 }
