@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T08:29:36.022Z",
+  "updated": "2026-10-23T16:34:20.326Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -2823,6 +2823,65 @@
       ],
       "updatedAt": "2026-10-23T08:29:36.022Z",
       "order": 48
+    },
+    {
+      "id": "bmvl6wpja",
+      "title": "حين تلمع نفسك",
+      "author": "محمد الراشد",
+      "year": "٢٠٢٦م",
+      "note": "تأتي الفرص تحت قدميك",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#554843",
+      "hidden": false,
+      "ar": 0.666,
+      "sar": 0.0725,
+      "cover": {
+        "front": "images/bmvl6wpja/front-mvl6wpjh.jpg",
+        "spine": "images/bmvl6wpja/spine-mvl6wpjh.jpg",
+        "back": "images/bmvl6wpja/back-mvl6wpjh.jpg"
+      },
+      "par": 0.667,
+      "pageCount": 270,
+      "pages": [
+        {
+          "r": "images/bmvl6wpja/p01-r-mvl6wpjh.jpg",
+          "l": "images/bmvl6wpja/p01-l-mvl6wpjh.jpg"
+        },
+        {
+          "r": "images/bmvl6wpja/p02-r-mvl6wpjh.jpg",
+          "l": "images/bmvl6wpja/p02-l-mvl6wpjh.jpg"
+        },
+        {
+          "r": "images/bmvl6wpja/p03-r-mvl6wpjh.jpg",
+          "l": "images/bmvl6wpja/p03-l-mvl6wpjh.jpg"
+        },
+        {
+          "r": "images/bmvl6wpja/p04-r-mvl6wpjh.jpg",
+          "l": "images/bmvl6wpja/p04-l-mvl6wpjh.jpg"
+        },
+        {
+          "r": "images/bmvl6wpja/p05-r-mvl6wpjh.jpg",
+          "l": "images/bmvl6wpja/p05-l-mvl6wpjh.jpg"
+        },
+        {
+          "r": "images/bmvl6wpja/p06-r-mvl6wpjh.jpg",
+          "l": "images/bmvl6wpja/p06-l-mvl6wpjh.jpg"
+        },
+        {
+          "r": "images/bmvl6wpja/p07-r-mvl6wpjh.jpg",
+          "l": "images/bmvl6wpja/p07-l-mvl6wpjh.jpg"
+        },
+        {
+          "r": "images/bmvl6wpja/p08-r-mvl6wpjh.jpg",
+          "l": "images/bmvl6wpja/p08-l-mvl6wpjh.jpg"
+        }
+      ],
+      "updatedAt": "2026-10-23T16:34:20.326Z",
+      "order": 49
     }
   ]
 }
