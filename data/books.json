@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T07:35:51.365Z",
+  "updated": "2026-10-23T07:36:00.112Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -2705,6 +2705,65 @@
       ],
       "updatedAt": "2026-10-23T07:35:51.365Z",
       "order": 46
+    },
+    {
+      "id": "bmvknof88",
+      "title": "حين تأخر المفتاح",
+      "author": "أمل محمد",
+      "year": "١٤٤٨ه - ٢٠٢٦م",
+      "note": "حكايات واقعية عن حلم البيت وانتظاراته",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#1b2e3f",
+      "hidden": false,
+      "ar": 0.666,
+      "sar": 0.0725,
+      "cover": {
+        "front": "images/bmvknof88/front-mvknof8f.jpg",
+        "spine": "images/bmvknof88/spine-mvknof8f.jpg",
+        "back": "images/bmvknof88/back-mvknof8f.jpg"
+      },
+      "par": 0.667,
+      "pageCount": 120,
+      "pages": [
+        {
+          "r": "images/bmvknof88/p01-r-mvknof8f.jpg",
+          "l": "images/bmvknof88/p01-l-mvknof8f.jpg"
+        },
+        {
+          "r": "images/bmvknof88/p02-r-mvknof8f.jpg",
+          "l": "images/bmvknof88/p02-l-mvknof8f.jpg"
+        },
+        {
+          "r": "images/bmvknof88/p03-r-mvknof8f.jpg",
+          "l": "images/bmvknof88/p03-l-mvknof8f.jpg"
+        },
+        {
+          "r": "images/bmvknof88/p04-r-mvknof8f.jpg",
+          "l": "images/bmvknof88/p04-l-mvknof8f.jpg"
+        },
+        {
+          "r": "images/bmvknof88/p05-r-mvknof8f.jpg",
+          "l": "images/bmvknof88/p05-l-mvknof8f.jpg"
+        },
+        {
+          "r": "images/bmvknof88/p06-r-mvknof8f.jpg",
+          "l": "images/bmvknof88/p06-l-mvknof8f.jpg"
+        },
+        {
+          "r": "images/bmvknof88/p07-r-mvknof8f.jpg",
+          "l": "images/bmvknof88/p07-l-mvknof8f.jpg"
+        },
+        {
+          "r": "images/bmvknof88/p08-r-mvknof8f.jpg",
+          "l": "images/bmvknof88/p08-l-mvknof8f.jpg"
+        }
+      ],
+      "updatedAt": "2026-10-23T07:36:00.112Z",
+      "order": 47
     }
   ]
 }
