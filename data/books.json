@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T18:12:08.898Z",
+  "updated": "2026-10-23T07:35:42.932Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -2587,6 +2587,65 @@
       ],
       "updatedAt": "2026-10-22T18:12:08.898Z",
       "order": 44
+    },
+    {
+      "id": "bmvkno0pu",
+      "title": "خطة بيت العمر",
+      "author": "أمل محمد",
+      "year": "١٤٤٨ه - ٢٠٢٦م",
+      "note": "دليل المواطن الكويتي من التخصيص إلى استلام المفتاح",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#6d6c79",
+      "hidden": false,
+      "ar": 0.666,
+      "sar": 0.0705,
+      "cover": {
+        "front": "images/bmvkno0pu/front-mvkno0q1.jpg",
+        "spine": "images/bmvkno0pu/spine-mvkno0q1.jpg",
+        "back": "images/bmvkno0pu/back-mvkno0q1.jpg"
+      },
+      "par": 0.667,
+      "pageCount": 132,
+      "pages": [
+        {
+          "r": "images/bmvkno0pu/p01-r-mvkno0q1.jpg",
+          "l": "images/bmvkno0pu/p01-l-mvkno0q1.jpg"
+        },
+        {
+          "r": "images/bmvkno0pu/p02-r-mvkno0q1.jpg",
+          "l": "images/bmvkno0pu/p02-l-mvkno0q1.jpg"
+        },
+        {
+          "r": "images/bmvkno0pu/p03-r-mvkno0q1.jpg",
+          "l": "images/bmvkno0pu/p03-l-mvkno0q1.jpg"
+        },
+        {
+          "r": "images/bmvkno0pu/p04-r-mvkno0q1.jpg",
+          "l": "images/bmvkno0pu/p04-l-mvkno0q1.jpg"
+        },
+        {
+          "r": "images/bmvkno0pu/p05-r-mvkno0q1.jpg",
+          "l": "images/bmvkno0pu/p05-l-mvkno0q1.jpg"
+        },
+        {
+          "r": "images/bmvkno0pu/p06-r-mvkno0q1.jpg",
+          "l": "images/bmvkno0pu/p06-l-mvkno0q1.jpg"
+        },
+        {
+          "r": "images/bmvkno0pu/p07-r-mvkno0q1.jpg",
+          "l": "images/bmvkno0pu/p07-l-mvkno0q1.jpg"
+        },
+        {
+          "r": "images/bmvkno0pu/p08-r-mvkno0q1.jpg",
+          "l": "images/bmvkno0pu/p08-l-mvkno0q1.jpg"
+        }
+      ],
+      "updatedAt": "2026-10-23T07:35:42.932Z",
+      "order": 45
     }
   ]
 }
