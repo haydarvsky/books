@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T07:36:00.112Z",
+  "updated": "2026-10-23T08:29:36.022Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -2764,6 +2764,65 @@
       ],
       "updatedAt": "2026-10-23T07:36:00.112Z",
       "order": 47
+    },
+    {
+      "id": "bmvkplcr3",
+      "title": "كنا أعضاء في المنتدى",
+      "author": "حمد الحمد",
+      "year": "٢٠٢٦م",
+      "note": "شهادات أعضاء منتدى المبدعين الجدد — ٢٥ سنة على التأسيس",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#b18c67",
+      "hidden": false,
+      "ar": 0.708,
+      "sar": 0.0615,
+      "cover": {
+        "front": "images/bmvkplcr3/front-mvkplcra.jpg",
+        "spine": "images/bmvkplcr3/spine-mvkplcra.jpg",
+        "back": "images/bmvkplcr3/back-mvkplcra.jpg"
+      },
+      "par": 0.708,
+      "pageCount": 284,
+      "pages": [
+        {
+          "r": "images/bmvkplcr3/p01-r-mvkplcra.jpg",
+          "l": "images/bmvkplcr3/p01-l-mvkplcra.jpg"
+        },
+        {
+          "r": "images/bmvkplcr3/p02-r-mvkplcra.jpg",
+          "l": "images/bmvkplcr3/p02-l-mvkplcra.jpg"
+        },
+        {
+          "r": "images/bmvkplcr3/p03-r-mvkplcra.jpg",
+          "l": "images/bmvkplcr3/p03-l-mvkplcra.jpg"
+        },
+        {
+          "r": "images/bmvkplcr3/p04-r-mvkplcra.jpg",
+          "l": "images/bmvkplcr3/p04-l-mvkplcra.jpg"
+        },
+        {
+          "r": "images/bmvkplcr3/p05-r-mvkplcra.jpg",
+          "l": "images/bmvkplcr3/p05-l-mvkplcra.jpg"
+        },
+        {
+          "r": "images/bmvkplcr3/p06-r-mvkplcra.jpg",
+          "l": "images/bmvkplcr3/p06-l-mvkplcra.jpg"
+        },
+        {
+          "r": "images/bmvkplcr3/p07-r-mvkplcra.jpg",
+          "l": "images/bmvkplcr3/p07-l-mvkplcra.jpg"
+        },
+        {
+          "r": "images/bmvkplcr3/p08-r-mvkplcra.jpg",
+          "l": "images/bmvkplcr3/p08-l-mvkplcra.jpg"
+        }
+      ],
+      "updatedAt": "2026-10-23T08:29:36.022Z",
+      "order": 48
     }
   ]
 }
