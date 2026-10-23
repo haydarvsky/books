@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T16:34:32.529Z",
+  "updated": "2026-10-23T17:36:26.933Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -2941,6 +2941,65 @@
       ],
       "updatedAt": "2026-10-23T16:34:32.529Z",
       "order": 50
+    },
+    {
+      "id": "bmvl94lno",
+      "title": "أوراق من حياة بعيدة",
+      "author": "منيرة الحسن",
+      "year": "٢٠٢٦م",
+      "note": "رحلة مبتعثة بين الحنين واكتشاف الذات",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#372b1f",
+      "hidden": false,
+      "ar": 0.666,
+      "sar": 0.0725,
+      "cover": {
+        "front": "images/bmvl94lno/front-mvl94lnv.jpg",
+        "spine": "images/bmvl94lno/spine-mvl94lnv.jpg",
+        "back": "images/bmvl94lno/back-mvl94lnv.jpg"
+      },
+      "par": 0.667,
+      "pageCount": 258,
+      "pages": [
+        {
+          "r": "images/bmvl94lno/p01-r-mvl94lnv.jpg",
+          "l": "images/bmvl94lno/p01-l-mvl94lnv.jpg"
+        },
+        {
+          "r": "images/bmvl94lno/p02-r-mvl94lnv.jpg",
+          "l": "images/bmvl94lno/p02-l-mvl94lnv.jpg"
+        },
+        {
+          "r": "images/bmvl94lno/p03-r-mvl94lnv.jpg",
+          "l": "images/bmvl94lno/p03-l-mvl94lnv.jpg"
+        },
+        {
+          "r": "images/bmvl94lno/p04-r-mvl94lnv.jpg",
+          "l": "images/bmvl94lno/p04-l-mvl94lnv.jpg"
+        },
+        {
+          "r": "images/bmvl94lno/p05-r-mvl94lnv.jpg",
+          "l": "images/bmvl94lno/p05-l-mvl94lnv.jpg"
+        },
+        {
+          "r": "images/bmvl94lno/p06-r-mvl94lnv.jpg",
+          "l": "images/bmvl94lno/p06-l-mvl94lnv.jpg"
+        },
+        {
+          "r": "images/bmvl94lno/p07-r-mvl94lnv.jpg",
+          "l": "images/bmvl94lno/p07-l-mvl94lnv.jpg"
+        },
+        {
+          "r": "images/bmvl94lno/p08-r-mvl94lnv.jpg",
+          "l": "images/bmvl94lno/p08-l-mvl94lnv.jpg"
+        }
+      ],
+      "updatedAt": "2026-10-23T17:36:26.933Z",
+      "order": 51
     }
   ]
 }
