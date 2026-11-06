@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T17:36:26.933Z",
+  "updated": "2026-11-06T07:18:16.001Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -3000,6 +3000,65 @@
       ],
       "updatedAt": "2026-10-23T17:36:26.933Z",
       "order": 51
+    },
+    {
+      "id": "bmw4n7dxo",
+      "title": "زبيغ",
+      "author": "إدوارد لوس",
+      "year": "2026",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#a8a2ac",
+      "hidden": false,
+      "ar": 0.666,
+      "sar": 0.146,
+      "cover": {
+        "front": "images/bmw4n7dxo/front-mw4n7dxv.jpg",
+        "spine": "images/bmw4n7dxo/spine-mw4n7dxv.jpg",
+        "back": "images/bmw4n7dxo/back-mw4n7dxv.jpg"
+      },
+      "par": 0.667,
+      "pageCount": 568,
+      "pages": [
+        {
+          "r": "images/bmw4n7dxo/p01-r-mw4n7dxv.jpg",
+          "l": "images/bmw4n7dxo/p01-l-mw4n7dxv.jpg"
+        },
+        {
+          "r": "images/bmw4n7dxo/p02-r-mw4n7dxv.jpg",
+          "l": "images/bmw4n7dxo/p02-l-mw4n7dxv.jpg"
+        },
+        {
+          "r": "images/bmw4n7dxo/p03-r-mw4n7dxv.jpg",
+          "l": "images/bmw4n7dxo/p03-l-mw4n7dxv.jpg"
+        },
+        {
+          "r": "images/bmw4n7dxo/p04-r-mw4n7dxv.jpg",
+          "l": "images/bmw4n7dxo/p04-l-mw4n7dxv.jpg"
+        },
+        {
+          "r": "images/bmw4n7dxo/p05-r-mw4n7dxv.jpg",
+          "l": "images/bmw4n7dxo/p05-l-mw4n7dxv.jpg"
+        },
+        {
+          "r": "images/bmw4n7dxo/p06-r-mw4n7dxv.jpg",
+          "l": "images/bmw4n7dxo/p06-l-mw4n7dxv.jpg"
+        },
+        {
+          "r": "images/bmw4n7dxo/p07-r-mw4n7dxv.jpg",
+          "l": "images/bmw4n7dxo/p07-l-mw4n7dxv.jpg"
+        },
+        {
+          "r": "images/bmw4n7dxo/p08-r-mw4n7dxv.jpg",
+          "l": "images/bmw4n7dxo/p08-l-mw4n7dxv.jpg"
+        }
+      ],
+      "updatedAt": "2026-11-06T07:18:16.001Z",
+      "order": 52
     }
   ]
 }
