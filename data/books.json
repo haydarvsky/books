@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T07:18:16.001Z",
+  "updated": "2026-11-06T07:18:39.390Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -3059,6 +3059,66 @@
       ],
       "updatedAt": "2026-11-06T07:18:16.001Z",
       "order": 52
+    },
+    {
+      "id": "bmw4n81jm",
+      "title": "The Language of the Qurʾān",
+      "author": "Basil Hatim",
+      "year": "2026",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#b81520",
+      "hidden": false,
+      "dir": "ltr",
+      "ar": 0.667,
+      "sar": 0.0805,
+      "cover": {
+        "front": "images/bmw4n81jm/front-mw4n81jt.jpg",
+        "spine": "images/bmw4n81jm/spine-mw4n81jt.jpg",
+        "back": "images/bmw4n81jm/back-mw4n81jt.jpg"
+      },
+      "par": 0.667,
+      "pageCount": 348,
+      "pages": [
+        {
+          "r": "images/bmw4n81jm/p01-r-mw4n81jt.jpg",
+          "l": "images/bmw4n81jm/p01-l-mw4n81jt.jpg"
+        },
+        {
+          "r": "images/bmw4n81jm/p02-r-mw4n81jt.jpg",
+          "l": "images/bmw4n81jm/p02-l-mw4n81jt.jpg"
+        },
+        {
+          "r": "images/bmw4n81jm/p03-r-mw4n81jt.jpg",
+          "l": "images/bmw4n81jm/p03-l-mw4n81jt.jpg"
+        },
+        {
+          "r": "images/bmw4n81jm/p04-r-mw4n81jt.jpg",
+          "l": "images/bmw4n81jm/p04-l-mw4n81jt.jpg"
+        },
+        {
+          "r": "images/bmw4n81jm/p05-r-mw4n81jt.jpg",
+          "l": "images/bmw4n81jm/p05-l-mw4n81jt.jpg"
+        },
+        {
+          "r": "images/bmw4n81jm/p06-r-mw4n81jt.jpg",
+          "l": "images/bmw4n81jm/p06-l-mw4n81jt.jpg"
+        },
+        {
+          "r": "images/bmw4n81jm/p07-r-mw4n81jt.jpg",
+          "l": "images/bmw4n81jm/p07-l-mw4n81jt.jpg"
+        },
+        {
+          "r": "images/bmw4n81jm/p08-r-mw4n81jt.jpg",
+          "l": "images/bmw4n81jm/p08-l-mw4n81jt.jpg"
+        }
+      ],
+      "updatedAt": "2026-11-06T07:18:39.390Z",
+      "order": 53
     }
   ]
 }
