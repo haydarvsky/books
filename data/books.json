@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T08:28:31.222Z",
+  "updated": "2026-11-07T08:28:37.486Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -3414,6 +3414,65 @@
       ],
       "updatedAt": "2026-11-07T08:28:31.222Z",
       "order": 58
+    },
+    {
+      "id": "bmw655v05",
+      "title": "المباركية الحين …!؟",
+      "author": "علي عادل",
+      "year": "",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#c5906b",
+      "hidden": false,
+      "ar": 0.666,
+      "sar": 0.051,
+      "cover": {
+        "front": "images/bmw655v05/front-mw655v0c.jpg",
+        "spine": "images/bmw655v05/spine-mw655v0c.jpg",
+        "back": "images/bmw655v05/back-mw655v0c.jpg"
+      },
+      "par": 0.667,
+      "pageCount": 204,
+      "pages": [
+        {
+          "r": "images/bmw655v05/p01-r-mw655v0c.jpg",
+          "l": "images/bmw655v05/p01-l-mw655v0c.jpg"
+        },
+        {
+          "r": "images/bmw655v05/p02-r-mw655v0c.jpg",
+          "l": "images/bmw655v05/p02-l-mw655v0c.jpg"
+        },
+        {
+          "r": "images/bmw655v05/p03-r-mw655v0c.jpg",
+          "l": "images/bmw655v05/p03-l-mw655v0c.jpg"
+        },
+        {
+          "r": "images/bmw655v05/p04-r-mw655v0c.jpg",
+          "l": "images/bmw655v05/p04-l-mw655v0c.jpg"
+        },
+        {
+          "r": "images/bmw655v05/p05-r-mw655v0c.jpg",
+          "l": "images/bmw655v05/p05-l-mw655v0c.jpg"
+        },
+        {
+          "r": "images/bmw655v05/p06-r-mw655v0c.jpg",
+          "l": "images/bmw655v05/p06-l-mw655v0c.jpg"
+        },
+        {
+          "r": "images/bmw655v05/p07-r-mw655v0c.jpg",
+          "l": "images/bmw655v05/p07-l-mw655v0c.jpg"
+        },
+        {
+          "r": "images/bmw655v05/p08-r-mw655v0c.jpg",
+          "l": "images/bmw655v05/p08-l-mw655v0c.jpg"
+        }
+      ],
+      "updatedAt": "2026-11-07T08:28:37.486Z",
+      "order": 59
     }
   ]
 }
