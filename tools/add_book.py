@@ -33,9 +33,13 @@ def b36(n):
 
 
 def render(page, max_edge, dpi_cap=400):
-    r = page.rect
+    # ملفات المطبعة (نزيف وعلامات قصّ) تُقصّ على TrimBox
+    r, clip = page.rect, None
+    t = page.trimbox
+    if t.width > 1 and t.height > 1 and (t.width < r.width - 1 or t.height < r.height - 1):
+        r = clip = t
     zoom = min(dpi_cap / 72, max_edge / max(r.width, r.height))
-    pix = page.get_pixmap(matrix=fitz.Matrix(zoom, zoom), alpha=False, colorspace=fitz.csRGB)
+    pix = page.get_pixmap(matrix=fitz.Matrix(zoom, zoom), clip=clip, alpha=False, colorspace=fitz.csRGB)
     return Image.frombytes('RGB', (pix.width, pix.height), pix.samples)
 
 
@@ -74,7 +78,7 @@ def diff(a, b):
 
 def split_cover(paths, ltr):
     # PDF بلوحاتٍ متعدّدة، أو صورٌ منفصلة (PNG/JPG) لكلّ لوحة
-    if len(paths) == 1 and paths[0].lower().endswith('.pdf'):
+    if len(paths) == 1 and paths[0].lower().endswith(('.pdf', '.ai')):  # ملف AI المتوافق مع PDF: لوحاته صفحات
         ims = [render(p, 3000) for p in fitz.open(paths[0])]
     else:
         ims = [fit(Image.open(x).convert('RGB'), 3000) for x in paths]
@@ -137,6 +141,7 @@ def main():
     ap.add_argument('--lang', choices=['ar', 'en'], default='ar')
     ap.add_argument('--spreads', type=int, default=8, help='عدد الفتحات مع الثابتة ٢–٣')
     ap.add_argument('--seed', type=int, default=None)
+    ap.add_argument('--pick', help='فتحات مختارة يدوياً بدل العشوائي: "2-3,8-9,26-27"')
     ap.add_argument('--year', default=''); ap.add_argument('--note', default='')
     ap.add_argument('--featured', action='store_true'); ap.add_argument('--hidden', action='store_true')
     ap.add_argument('--dry-run', action='store_true', help='يجهّز الأصول والمعاينة بلا كتابة في المستودع')
@@ -193,7 +198,10 @@ def main():
             files[f'{rel}/front-{ts}.jpg'] = jpeg(fr, 88); cov['front'] = f'{rel}/front-{ts}.jpg'
             book['ar'] = round(fr.width / fr.height, 3)
         if 'typeset' in work:
-            spreads = pick_spreads(doc, a.spreads, seed)
+            if a.pick:
+                spreads = [tuple(int(n) for n in s.split('-')) for s in a.pick.split(',')]
+            else:
+                spreads = pick_spreads(doc, a.spreads, seed)
             pars = []
             for i, (e, o) in enumerate(spreads, 1):
                 ime, imo = render(doc[e - 1], 2400), render(doc[o - 1], 2400)
