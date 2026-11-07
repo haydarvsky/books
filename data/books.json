@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T08:28:17.460Z",
+  "updated": "2026-11-07T08:28:25.143Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -3296,6 +3296,65 @@
       ],
       "updatedAt": "2026-11-07T08:28:17.460Z",
       "order": 56
+    },
+    {
+      "id": "bmw655knj",
+      "title": "علي أحمد الديري.. سيرة فكرية",
+      "author": "",
+      "year": "",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#8ba6a8",
+      "hidden": false,
+      "ar": 0.734,
+      "sar": 0.019,
+      "cover": {
+        "front": "images/bmw655knj/front-mw655knq.jpg",
+        "spine": "images/bmw655knj/spine-mw655knq.jpg",
+        "back": "images/bmw655knj/back-mw655knq.jpg"
+      },
+      "par": 0.733,
+      "pageCount": 44,
+      "pages": [
+        {
+          "r": "images/bmw655knj/p01-r-mw655knq.jpg",
+          "l": "images/bmw655knj/p01-l-mw655knq.jpg"
+        },
+        {
+          "r": "images/bmw655knj/p02-r-mw655knq.jpg",
+          "l": "images/bmw655knj/p02-l-mw655knq.jpg"
+        },
+        {
+          "r": "images/bmw655knj/p03-r-mw655knq.jpg",
+          "l": "images/bmw655knj/p03-l-mw655knq.jpg"
+        },
+        {
+          "r": "images/bmw655knj/p04-r-mw655knq.jpg",
+          "l": "images/bmw655knj/p04-l-mw655knq.jpg"
+        },
+        {
+          "r": "images/bmw655knj/p05-r-mw655knq.jpg",
+          "l": "images/bmw655knj/p05-l-mw655knq.jpg"
+        },
+        {
+          "r": "images/bmw655knj/p06-r-mw655knq.jpg",
+          "l": "images/bmw655knj/p06-l-mw655knq.jpg"
+        },
+        {
+          "r": "images/bmw655knj/p07-r-mw655knq.jpg",
+          "l": "images/bmw655knj/p07-l-mw655knq.jpg"
+        },
+        {
+          "r": "images/bmw655knj/p08-r-mw655knq.jpg",
+          "l": "images/bmw655knj/p08-l-mw655knq.jpg"
+        }
+      ],
+      "updatedAt": "2026-11-07T08:28:25.143Z",
+      "order": 57
     }
   ]
 }
