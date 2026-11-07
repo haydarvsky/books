@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T08:28:25.143Z",
+  "updated": "2026-11-07T08:28:31.222Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -3355,6 +3355,65 @@
       ],
       "updatedAt": "2026-11-07T08:28:25.143Z",
       "order": 57
+    },
+    {
+      "id": "bmw655qb9",
+      "title": "أَرَحْتُه",
+      "author": "تركي محمد الحرازي",
+      "year": "",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#af9b6a",
+      "hidden": false,
+      "ar": 0.666,
+      "sar": 0.0325,
+      "cover": {
+        "front": "images/bmw655qb9/front-mw655qbg.jpg",
+        "spine": "images/bmw655qb9/spine-mw655qbg.jpg",
+        "back": "images/bmw655qb9/back-mw655qbg.jpg"
+      },
+      "par": 0.667,
+      "pageCount": 124,
+      "pages": [
+        {
+          "r": "images/bmw655qb9/p01-r-mw655qbg.jpg",
+          "l": "images/bmw655qb9/p01-l-mw655qbg.jpg"
+        },
+        {
+          "r": "images/bmw655qb9/p02-r-mw655qbg.jpg",
+          "l": "images/bmw655qb9/p02-l-mw655qbg.jpg"
+        },
+        {
+          "r": "images/bmw655qb9/p03-r-mw655qbg.jpg",
+          "l": "images/bmw655qb9/p03-l-mw655qbg.jpg"
+        },
+        {
+          "r": "images/bmw655qb9/p04-r-mw655qbg.jpg",
+          "l": "images/bmw655qb9/p04-l-mw655qbg.jpg"
+        },
+        {
+          "r": "images/bmw655qb9/p05-r-mw655qbg.jpg",
+          "l": "images/bmw655qb9/p05-l-mw655qbg.jpg"
+        },
+        {
+          "r": "images/bmw655qb9/p06-r-mw655qbg.jpg",
+          "l": "images/bmw655qb9/p06-l-mw655qbg.jpg"
+        },
+        {
+          "r": "images/bmw655qb9/p07-r-mw655qbg.jpg",
+          "l": "images/bmw655qb9/p07-l-mw655qbg.jpg"
+        },
+        {
+          "r": "images/bmw655qb9/p08-r-mw655qbg.jpg",
+          "l": "images/bmw655qb9/p08-l-mw655qbg.jpg"
+        }
+      ],
+      "updatedAt": "2026-11-07T08:28:31.222Z",
+      "order": 58
     }
   ]
 }
