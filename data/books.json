@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T08:28:37.486Z",
+  "updated": "2026-11-07T08:33:30.472Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -3058,7 +3058,8 @@
         }
       ],
       "updatedAt": "2026-11-06T07:18:16.001Z",
-      "order": 52
+      "order": 52,
+      "featured": true
     },
     {
       "id": "bmw4n81jm",
@@ -3118,7 +3119,8 @@
         }
       ],
       "updatedAt": "2026-11-06T07:18:39.390Z",
-      "order": 53
+      "order": 53,
+      "featured": true
     },
     {
       "id": "bmw6550tn",
@@ -3295,7 +3297,8 @@
         }
       ],
       "updatedAt": "2026-11-07T08:28:17.460Z",
-      "order": 56
+      "order": 56,
+      "featured": true
     },
     {
       "id": "bmw655knj",
@@ -3354,7 +3357,8 @@
         }
       ],
       "updatedAt": "2026-11-07T08:28:25.143Z",
-      "order": 57
+      "order": 57,
+      "featured": true
     },
     {
       "id": "bmw655qb9",
