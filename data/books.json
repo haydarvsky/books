@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T08:28:08.063Z",
+  "updated": "2026-11-07T08:28:17.460Z",
   "books": [
     {
       "id": "bmsu458rv",
@@ -3237,6 +3237,65 @@
       ],
       "updatedAt": "2026-11-07T08:28:08.063Z",
       "order": 55
+    },
+    {
+      "id": "bmw655d3i",
+      "title": "رواق المراثي",
+      "author": "الشيخ محمد جمعة",
+      "year": "",
+      "note": "",
+      "work": [
+        "cover",
+        "typeset"
+      ],
+      "thick": 3,
+      "color": "#b89e61",
+      "hidden": false,
+      "ar": 0.709,
+      "sar": 0.1215,
+      "cover": {
+        "front": "images/bmw655d3i/front-mw655d3p.jpg",
+        "spine": "images/bmw655d3i/spine-mw655d3p.jpg",
+        "back": "images/bmw655d3i/back-mw655d3p.jpg"
+      },
+      "par": 0.708,
+      "pageCount": 558,
+      "pages": [
+        {
+          "r": "images/bmw655d3i/p01-r-mw655d3p.jpg",
+          "l": "images/bmw655d3i/p01-l-mw655d3p.jpg"
+        },
+        {
+          "r": "images/bmw655d3i/p02-r-mw655d3p.jpg",
+          "l": "images/bmw655d3i/p02-l-mw655d3p.jpg"
+        },
+        {
+          "r": "images/bmw655d3i/p03-r-mw655d3p.jpg",
+          "l": "images/bmw655d3i/p03-l-mw655d3p.jpg"
+        },
+        {
+          "r": "images/bmw655d3i/p04-r-mw655d3p.jpg",
+          "l": "images/bmw655d3i/p04-l-mw655d3p.jpg"
+        },
+        {
+          "r": "images/bmw655d3i/p05-r-mw655d3p.jpg",
+          "l": "images/bmw655d3i/p05-l-mw655d3p.jpg"
+        },
+        {
+          "r": "images/bmw655d3i/p06-r-mw655d3p.jpg",
+          "l": "images/bmw655d3i/p06-l-mw655d3p.jpg"
+        },
+        {
+          "r": "images/bmw655d3i/p07-r-mw655d3p.jpg",
+          "l": "images/bmw655d3i/p07-l-mw655d3p.jpg"
+        },
+        {
+          "r": "images/bmw655d3i/p08-r-mw655d3p.jpg",
+          "l": "images/bmw655d3i/p08-l-mw655d3p.jpg"
+        }
+      ],
+      "updatedAt": "2026-11-07T08:28:17.460Z",
+      "order": 56
     }
   ]
 }
